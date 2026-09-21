@@ -23,7 +23,7 @@ REPORT_SECTIONS = [
     "Appendix / model exhibits",
 ]
 
-TARGET_COMPANY = "Borusan"
+TARGET_COMPANY = "Borusan Mannesmann Boru (Borusan Birleşik Boru Fabrikaları San. ve Tic. A.Ş., BIST: BRSAN)"
 
 st.title("📊 CFA Research Challenge")
 st.caption(f"Hedef şirket: {TARGET_COMPANY}")
@@ -33,6 +33,40 @@ if days_left >= 0:
     st.error(f"⏳ Son başvuru tarihine {days_left} gün kaldı — {DEADLINE.strftime('%d %B %Y')}")
 else:
     st.warning("Son başvuru tarihi geçti.")
+
+with st.expander("🏭 Şirket Profili (kaynak: Borusan Boru resmi 1Ç26 yatırımcı sunumu)", expanded=True):
+    st.markdown(
+        """
+**Ortaklık yapısı:** Borusan Grubu %83,93 (Borusan Holding %74,85, Borusan Yatırım ve Pazarlama %9,08) —
+halka açık kısım %16,07 (Holding'in elindeki halka açık paylarla birlikte fiilen %19,85).
+BIST'te 1994'ten beri işlem görüyor.
+
+**Faaliyet:** Çelik boru üreticisi — 10 tesis (Türkiye/Gemlik ana kampüs, ABD/Baytown-Panama City-Mobile,
+İtalya/Vobarno, Romanya), 1,7 milyon ton kapasite, 4 segment: Altyapı&Proje, Endüstri&İnşaat, Otomotiv, Enerji.
+
+**1Ç26 finansal özet (konsolide, mln $):**
+| | 1Ç26 | 1Ç25 | 2025 (FY) | 2024 (FY) |
+|---|---|---|---|---|
+| Gelir | 421,6 | 319,1 | 1.796,1 | 1.689,5 |
+| FAVÖK (EBITDA) | 26,6 | 17,6 | 133,1 | 101,9 |
+| FAVÖK Marjı | %6,3 | %5,5 | %7,4 | %6,0 |
+| Net Kar | 6,3 | (7,9) | 31,7 | (5,1) |
+| Net Finansal Borç | 160 | 251 | 178 | 280 |
+
+**2026 şirket beklentisi (guidance):** Satış hacmi 1,15–1,25 mln ton, gelir 2,1–2,3 milyar $,
+FAVÖK marjı %8–%10.
+
+**Sipariş portföyü:** ABD'de altyapı/enerji segmentinde 2026-2027'ye uzanan ~1,9 milyar $ yeni anlaşma.
+
+*Kaynak: [borusanboru.com yatırımcı sunumu, Ocak-Mart 2026](https://borusanboru.com/Uploads/investor/docs/2026/yatirimci-sunumlari/borusan-boru-yatirimci-sunumu-1c26.pdf) —
+2026-09-21'de çekildi. Bu tek kaynak; rapora koymadan önce KAP bildirimleri ve son çeyrek (2Ç26) sunumuyla çapraz doğrula.*
+        """
+    )
+    st.warning(
+        "Henüz eklenmedi: rakip/peer şirket listesi (Tenaris, Vallourec, EVRAZ vb. — çelik boru sektörü), "
+        "detaylı nakit akış tablosu (serbest nakit akımı grafik olarak sunumda var ama sayısal değeri metinden "
+        "çıkmadı), WACC hesaplaması. Bunları istersen sıradaki adımda ekleyelim."
+    )
 
 tab_report, tab_dcf, tab_comps = st.tabs(
     ["📝 Rapor İlerleme Takibi", "💰 DCF Hesaplayıcı", "📈 Çarpan (Comps) Hesaplayıcı"]
@@ -96,16 +130,27 @@ with tab_report:
 with tab_dcf:
     st.subheader("İndirgenmiş Nakit Akışı (DCF)")
     st.caption("Basit tek-aşamalı DCF: son yıl serbest nakit akışından ileriye projeksiyon + terminal değer.")
+    st.caption(
+        "Varsayılan FCF₀ = Borusan Boru'nun 2025 FAVÖK'ü (133,1 mln $) — gerçek Serbest Nakit Akımı değil, "
+        "sadece başlangıç noktası. Yatırım harcaması ve işletme sermayesi değişimini düşüp gerçek FCF'yi "
+        "nakit akış tablosundan (KAP/faaliyet raporu) çekip buraya elle gir."
+    )
 
     col1, col2 = st.columns(2)
     with col1:
-        fcf0 = st.number_input("Son yıl Serbest Nakit Akışı (FCF₀, milyon)", value=100.0, step=1.0)
-        growth = st.number_input("Projeksiyon dönemi büyüme oranı (%)", value=8.0, step=0.5) / 100
+        fcf0 = st.number_input("Son yıl Serbest Nakit Akışı (FCF₀, milyon $)", value=133.1, step=1.0)
+        growth = st.number_input(
+            "Projeksiyon dönemi büyüme oranı (%)", value=10.0, step=0.5,
+            help="Şirket 2026 guidance'ı gelir için %17-28 büyüme, FAVÖK marjı için %8-10 aralığı veriyor — bu tek bir büyüme oranı değil, kendi varsayımını gir."
+        ) / 100
         years = st.number_input("Projeksiyon süresi (yıl)", min_value=1, max_value=15, value=5)
     with col2:
         wacc = st.number_input("İskonto oranı / WACC (%)", value=12.0, step=0.5) / 100
         terminal_growth = st.number_input("Terminal büyüme oranı (%)", value=3.0, step=0.5) / 100
-        shares = st.number_input("Hisse adedi (milyon)", value=100.0, step=1.0)
+        shares = st.number_input(
+            "Hisse adedi (milyon)", value=100.0, step=1.0,
+            help="Gerçek pay sayısını KAP/BIST'ten doğrula — ödenmiş sermaye 69 mln TL (nominal), pay sayısına birebir çevirme yapılmadı."
+        )
 
     if wacc <= terminal_growth:
         st.error("WACC, terminal büyüme oranından büyük olmalı (aksi halde terminal değer sonsuza gider).")
