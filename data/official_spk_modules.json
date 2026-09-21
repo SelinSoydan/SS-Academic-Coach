@@ -1,0 +1,23 @@
+{
+  "modules": [
+    {"module_id": "M01", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
+    {"module_id": "M02", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
+    {"module_id": "M03", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
+    {"module_id": "M04", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
+    {"module_id": "M05", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
+    {"module_id": "M06", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
+    {"module_id": "M07", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
+    {"module_id": "M08", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
+    {"module_id": "M09", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
+    {"module_id": "M10", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
+    {"module_id": "M11", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
+    {"module_id": "M12", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []}
+  ],
+  "regulatory_watch": {
+    "last_checked": null,
+    "sources": [
+      "https://spk.gov.tr/duyurular",
+      "https://www.resmigazete.gov.tr/"
+    ]
+  }
+}
