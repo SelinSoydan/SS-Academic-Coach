@@ -24,6 +24,21 @@ create table bug_reports (
   message text,
   traceback text
 );
+
+create table cfa_progress (
+  user_id uuid primary key,
+  progress jsonb not null,
+  updated_at timestamptz not null default now()
+);
+
+create table spl_error_log (
+  id bigint generated always as identity primary key,
+  user_id uuid not null,
+  question text not null,
+  category text not null,
+  note text,
+  created_at timestamptz not null default now()
+);
 ```
 
 3. Proje ayarlarından `Project URL` ve `anon public key`'i al.
