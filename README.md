@@ -1,6 +1,6 @@
 # SS Academic Coach
 
-SPK lisanslama sınavlarına hazırlık için Streamlit tabanlı çalışma koçu. Sadece resmi SPL modüllerinden gelen içerik kullanır; mevzuat/tebliğ güncellemelerini günlük olarak tarar.
+SPK lisanslama sınavlarına hazırlık ve CFA Research Challenge hazırlığı için Streamlit tabanlı çalışma koçu (çok sayfalı tek app: ana sayfa = SPK, `pages/1_CFA_Research_Challenge.py` = CFA). SPK tarafı sadece resmi SPL modüllerinden gelen içerik kullanır; mevzuat/tebliğ güncellemelerini günlük olarak tarar.
 
 ## Kurulum
 
