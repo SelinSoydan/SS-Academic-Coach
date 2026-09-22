@@ -1,9 +1,28 @@
 import datetime
 
+import pandas as pd
 import streamlit as st
+import yfinance as yf
 
 from utils.bug_tracker import BugTracker
 from utils.supabase_client import get_supabase_client
+
+TICKER = "BRSAN.IS"
+
+
+@st.cache_data(ttl=300)
+def get_live_market_data():
+    t = yf.Ticker(TICKER)
+    fi = t.fast_info
+    return {
+        "lastPrice": fi.get("lastPrice"),
+        "previousClose": fi.get("previousClose"),
+        "marketCap": fi.get("marketCap"),
+        "shares": fi.get("shares"),
+        "yearHigh": fi.get("yearHigh"),
+        "yearLow": fi.get("yearLow"),
+        "currency": fi.get("currency"),
+    }
 
 st.set_page_config(page_title="CFA Research Challenge", page_icon="📊", layout="wide")
 
@@ -67,6 +86,36 @@ FAVÖK marjı %8–%10.
         "detaylı nakit akış tablosu (serbest nakit akımı grafik olarak sunumda var ama sayısal değeri metinden "
         "çıkmadı), WACC hesaplaması. Bunları istersen sıradaki adımda ekleyelim."
     )
+
+st.subheader(f"📡 Canlı Piyasa Verisi — {TICKER}")
+st.caption("Kaynak: Yahoo Finance (yfinance) — yaklaşık 15 dk gecikmeli BIST verisi, önbellek 5 dk.")
+try:
+    md = get_live_market_data()
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Son Fiyat", f"{md['lastPrice']:,.2f} {md['currency']}",
+              delta=f"{md['lastPrice'] - md['previousClose']:,.2f}" if md["lastPrice"] and md["previousClose"] else None)
+    c2.metric("Piyasa Değeri", f"{md['marketCap'] / 1e9:,.2f} milyar {md['currency']}" if md["marketCap"] else "—")
+    c3.metric("Hisse Adedi", f"{md['shares']:,.0f}" if md["shares"] else "—")
+    c4.metric("52 Hafta Aralığı", f"{md['yearLow']:,.1f} – {md['yearHigh']:,.1f}" if md["yearLow"] else "—")
+except Exception as exc:
+    bug_tracker.log(exc, context="cfa_live_market_data")
+    st.error("Canlı veri çekilemedi (bağlantı sorunu olabilir).")
+
+with st.expander("📁 EquityRT Excel'ini yükle"):
+    st.caption(
+        "EquityRT'den export ettiğin Excel dosyasını buraya yükle — sadece bu oturumda görüntülenir, "
+        "kaydedilmez. İçeriğe göre hangi sütunları DCF/comps'a bağlayacağımızı birlikte netleştiririz."
+    )
+    uploaded = st.file_uploader("Excel dosyası (.xlsx)", type=["xlsx"])
+    if uploaded is not None:
+        try:
+            xls = pd.ExcelFile(uploaded)
+            sheet = st.selectbox("Sayfa (sheet) seç:", xls.sheet_names)
+            df = xls.parse(sheet)
+            st.dataframe(df, use_container_width=True)
+        except Exception as exc:
+            bug_tracker.log(exc, context="cfa_equityrt_upload")
+            st.error("Excel okunamadı — dosya formatını kontrol et.")
 
 tab_report, tab_dcf, tab_comps = st.tabs(
     ["📝 Rapor İlerleme Takibi", "💰 DCF Hesaplayıcı", "📈 Çarpan (Comps) Hesaplayıcı"]
@@ -148,8 +197,8 @@ with tab_dcf:
         wacc = st.number_input("İskonto oranı / WACC (%)", value=12.0, step=0.5) / 100
         terminal_growth = st.number_input("Terminal büyüme oranı (%)", value=3.0, step=0.5) / 100
         shares = st.number_input(
-            "Hisse adedi (milyon)", value=100.0, step=1.0,
-            help="Gerçek pay sayısını KAP/BIST'ten doğrula — ödenmiş sermaye 69 mln TL (nominal), pay sayısına birebir çevirme yapılmadı."
+            "Hisse adedi (milyon)", value=141.77, step=1.0,
+            help="Kaynak: Yahoo Finance (yfinance) canlı veri, yukarıdaki 'Canlı Piyasa Verisi' bölümü — 141.771.582 hisse."
         )
 
     if wacc <= terminal_growth:

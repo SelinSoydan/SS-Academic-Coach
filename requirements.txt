@@ -3,3 +3,6 @@ supabase
 python-dotenv
 requests
 beautifulsoup4
+yfinance
+openpyxl
+pandas
