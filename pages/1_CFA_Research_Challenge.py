@@ -121,8 +121,8 @@ with st.expander("📁 EquityRT Excel'ini yükle"):
             bug_tracker.log(exc, context="cfa_equityrt_upload")
             st.error("Excel okunamadı — dosya formatını kontrol et.")
 
-tab_report, tab_dcf, tab_comps = st.tabs(
-    ["📝 Rapor İlerleme Takibi", "💰 DCF Hesaplayıcı", "📈 Çarpan (Comps) Hesaplayıcı"]
+tab_report, tab_dcf, tab_comps, tab_ratios = st.tabs(
+    ["📝 Rapor İlerleme Takibi", "💰 DCF Hesaplayıcı", "📈 Çarpan (Comps) Hesaplayıcı", "📚 Rasyo Ansiklopedisi"]
 )
 
 with tab_report:
@@ -291,3 +291,32 @@ with tab_comps:
         c2.metric(f"Medyan {metric_name} ile ima edilen değer", f"{implied_value_median:,.1f} M")
     else:
         st.info("En az bir benzer şirket çarpanı gir.")
+
+RATIOS_PATH = Path(__file__).parent.parent / "data" / "ratio_encyclopedia.json"
+
+with tab_ratios:
+    st.subheader("📚 Rasyo Ansiklopedisi — BRSAN özelinde")
+    try:
+        ratios_data = json.loads(RATIOS_PATH.read_text(encoding="utf-8"))
+    except Exception as exc:
+        bug_tracker.log(exc, context="ratio_encyclopedia_load")
+        ratios_data = {"source": None, "ratios": []}
+
+    if ratios_data.get("source"):
+        st.caption(f"Birincil kaynak: {ratios_data['source']}")
+
+    for r in ratios_data.get("ratios", []):
+        with st.expander(f"{r['baslik']} — {r['deger']}"):
+            st.markdown(f"**Anlamı:** {r['anlami']}")
+            st.markdown(f"**Kim, neden kullanır:** {r['kim_kullanir']}")
+            st.markdown(f"**Nasıl kullanılır:** {r['nasil_kullanilir']}")
+            c1, c2 = st.columns(2)
+            with c1:
+                st.markdown(f"**👤 Bireysel yatırımcı okuması:**\n\n{r['bireysel_okuma']}")
+            with c2:
+                st.markdown(f"**🎓 Deneyimli analist okuması:**\n\n{r['deneyimli_okuma']}")
+            st.markdown(f"**⚠️ Gözden kaçırılmaması gerekenler / tuzaklar:** {r['tuzaklar']}")
+            st.markdown(f"**📰 Haber ↔ Bilanço ↔ Fiyat bağlantısı:** {r['haber_baglantisi']}")
+
+    if not ratios_data.get("ratios"):
+        st.info("Henüz rasyo eklenmedi.")
