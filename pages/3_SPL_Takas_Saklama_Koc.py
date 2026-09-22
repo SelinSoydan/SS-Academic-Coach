@@ -7,8 +7,10 @@ import streamlit as st
 
 from utils.bug_tracker import BugTracker
 from utils.supabase_client import get_supabase_client
+from utils.theme import inject_theme
 
 st.set_page_config(page_title="SPL Takas ve Saklama Koçu", page_icon="🧭", layout="wide")
+inject_theme()
 
 client = get_supabase_client()
 bug_tracker = BugTracker(supabase_client=client)
@@ -21,6 +23,10 @@ MODULES_PATH = Path(__file__).parent.parent / "data" / "official_spk_modules.jso
 module_data = json.loads(MODULES_PATH.read_text(encoding="utf-8"))
 m01 = next(m for m in module_data["modules"] if m["module_id"] == "M01")
 
+LESSONS_PATH = Path(__file__).parent.parent / "data" / "spl_lessons" / "M01.json"
+lessons_data = json.loads(LESSONS_PATH.read_text(encoding="utf-8"))
+lessons_by_id = {b["id"]: b for b in lessons_data["bolumler"]}
+
 st.title("🧭 SPL Takas ve Saklama Koçu")
 st.caption("Ders Kodu 1012 — kaynak: 1012_MKT_30062026 (SPK/Takasbank/MKK ortak yayını, 189 sayfa)")
 
@@ -29,16 +35,20 @@ if days_left >= 0:
 else:
     st.warning("Sınav tarihi geçti.")
 
+TOC_STATIC = [
+    {"Bölüm": "1", "Konu": "Takas ve Saklamaya İlişkin Temel Kavramlar", "Sayfa": "1-6"},
+    {"Bölüm": "2.1", "Konu": "MKK Kuruluş/Faaliyet/Çalışma/Denetim Yönetmeliği", "Sayfa": "7-14"},
+    {"Bölüm": "2.2", "Konu": "Kaydileştirme Tebliği", "Sayfa": "15-27"},
+    {"Bölüm": "2.3", "Konu": "Merkezi Takas ile MKT Uygulaması", "Sayfa": "28-58"},
+    {"Bölüm": "2.4", "Konu": "Portföy Saklama Hizmeti Tebliği (III-56.1)", "Sayfa": "59-70"},
+    {"Bölüm": "3", "Konu": "BİAŞ Pay Piyasası Takas/Temerrüt/Transfer", "Sayfa": "71-87"},
+    {"Bölüm": "4", "Konu": "Borçlanma Araçları Transfer/Takas/Temerrüt", "Sayfa": "88-130"},
+    {"Bölüm": "5", "Konu": "Türev Araçlarda Takas, Uzlaşma, Fiziki Teslimat", "Sayfa": "131-162"},
+    {"Bölüm": "6", "Konu": "Takasbank Teminat Yönetimi", "Sayfa": "163-174"},
+]
 TOC = [
-    {"Bölüm": "1", "Konu": "Takas ve Saklamaya İlişkin Temel Kavramlar", "Sayfa": "1-6", "Durum": "İşlendi"},
-    {"Bölüm": "2.1", "Konu": "MKK Kuruluş/Faaliyet/Çalışma/Denetim Yönetmeliği", "Sayfa": "7-14", "Durum": "İşlendi"},
-    {"Bölüm": "2.2", "Konu": "Kaydileştirme Tebliği", "Sayfa": "15-27", "Durum": "Sırada"},
-    {"Bölüm": "2.3", "Konu": "Merkezi Takas ile MKT Uygulaması", "Sayfa": "28-58", "Durum": "Sırada"},
-    {"Bölüm": "2.4", "Konu": "Portföy Saklama Hizmeti Tebliği (III-56.1)", "Sayfa": "59-70", "Durum": "Sırada"},
-    {"Bölüm": "3", "Konu": "BİAŞ Pay Piyasası Takas/Temerrüt/Transfer", "Sayfa": "71-87", "Durum": "Sırada"},
-    {"Bölüm": "4", "Konu": "Borçlanma Araçları Transfer/Takas/Temerrüt", "Sayfa": "88-130", "Durum": "Sırada"},
-    {"Bölüm": "5", "Konu": "Türev Araçlarda Takas, Uzlaşma, Fiziki Teslimat", "Sayfa": "131-162", "Durum": "Sırada"},
-    {"Bölüm": "6", "Konu": "Takasbank Teminat Yönetimi", "Sayfa": "163-174", "Durum": "Sırada"},
+    {**row, "Durum": "İşlendi" if row["Bölüm"] in lessons_by_id else "Sırada"}
+    for row in TOC_STATIC
 ]
 
 STUDY_PHASES = [
@@ -168,56 +178,48 @@ with tab_diag:
             "aşağıdaki Error Log sekmesinden elle kaydet."
         )
 
+LESSON_FIELD_LABELS = [
+    ("konu", "Konu"), ("ana_fikir", "Ana fikir"), ("mevzuat", "Mevzuat"),
+    ("mantik", "🧠 MANTIK"), ("ezber", "🔴 EZBER"), ("tuzak", "⚠️ SINAV TUZAĞI"),
+    ("gercek_hayat", "Gerçek hayattaki karşılığı"),
+]
+
 with tab_lesson:
     st.subheader("Sayfa Sayfa Ders")
     section = st.selectbox("Bölüm seç:", [f"{t['Bölüm']} — {t['Konu']}" for t in TOC])
+    bolum_id = section.split(" — ")[0]
+    lesson = lessons_by_id.get(bolum_id)
 
-    if section.startswith("1 —"):
-        st.markdown("""
-### SAYFA 1-6 — Takas ve Saklamaya İlişkin Temel Kavramlar
+    if lesson is not None and m01["questions"]:
+        with st.expander("🔁 Önce hatırla (spaced repetition — yeni konuya geçmeden 2 eski soru)", expanded=False):
+            due = m01["questions"]
+            if client is not None and st.session_state.get("user"):
+                try:
+                    stats = (
+                        client.table("spl_question_stats")
+                        .select("*")
+                        .eq("user_id", st.session_state["user"].id)
+                        .order("last_seen_at")
+                        .limit(2)
+                        .execute()
+                        .data
+                    )
+                    seen_ids = {s["question_id"] for s in stats}
+                    due = [q for q in m01["questions"] if q["id"] in seen_ids] or m01["questions"][:2]
+                except Exception as exc:
+                    bug_tracker.log(exc, context="spl_spaced_repetition_fetch")
+            for q in due[:2]:
+                st.markdown(f"**Soru:** {q['soru']}")
+                st.caption(f"Doğru cevap: {q['dogru']}")
 
-**Konu:** Takas, saklama, kaydileştirme kavramlarının tanımı ve birbirinden ayrılması.
-
-**Ana fikir:** Sermaye piyasası işlemi gerçekleştikten (T günü) sonra, para ve menkul kıymetin
-taraflar arasında güvenli şekilde el değiştirmesi (takas) ve bu araçların merkezi olarak
-elektronik ortamda izlenmesi (saklama/kaydileştirme) iki ayrı ama birbirini tamamlayan süreçtir.
-
-**🧠 MANTIK:** Fiziki senet sisteminde işlem sonrası mülkiyet devri yavaş, riskli ve maliyetliydi.
-Takas+kaydileştirme ikilisi bunu elektronik, hızlı ve garantili hale getirir.
-
-**🔴 EZBER:** Açık pozisyon, başlangıç teminatı, değişim teminatı, garanti fonu tanımları (bkz. glossary).
-
-**⚠️ SINAV TUZAĞI:** Takas = süreç/an, Saklama = süregelen durum. "Takas nedir" sorusuna "saklama" ile
-karışık cevap vermek en sık yapılan hata.
-
-**Gerçek hayattaki karşılığı:** Rasyonet gibi bir fintech, BIST işlem verisini çekerken aslında
-Takasbank/MKK'nın ürettiği takas/saklama kayıtlarının türevini kullanır.
-        """)
-    elif section.startswith("2.1"):
-        st.markdown("""
-### SAYFA 7-14 — MKK Kuruluş/Faaliyet/Çalışma/Denetim Yönetmeliği
-
-**Konu:** Merkezi Kayıt Kuruluşu'nun (MKK) kuruluş amacı, görev/yetkileri, üyelik şartları.
-
-**Ana fikir:** MKK, kaydileştirilen sermaye piyasası araçlarını ve bunlara bağlı hakları elektronik
-ortamda kayden izleyen ve merkezi saklamasını yapan kuruluştur. SPK'nın gözetim ve denetimi altındadır.
-
-**Mevzuat:** Merkezi Kayıt Kuruluşunun Kuruluş, Faaliyet, Çalışma ve Denetim Esasları Hakkında Yönetmelik.
-
-**🧠 MANTIK:** MKK'nın işi "kim, neye, ne kadar sahip" sorusuna cevap vermek — mülkiyet kaydı.
-Fiziki takas/işlem sürecine karışmaz, o Takasbank'ın işi.
-
-**🔴 EZBER:** MKK'ya üye olabilecekler (ihraççı kuruluşlar, TCMB, yatırım kuruluşları, merkezi takas
-kuruluşları) vs. **olamayacaklar** (TSPB gibi meslek birlikleri hesap açamaz, üye de değildir).
-
-**⚠️ SINAV TUZAĞI:** "MKK'ya üye olabilir mi" ile "MKK nezdinde hesap açabilir mi" ayrı sorular gibi
-görünüp aynı cevaba (TSPB hayır) çıkabiliyor — dikkatli oku, hangisi sorulmuş.
-
-**Gerçek hayattaki karşılığı:** e-Yatırımcı, e-Genel Kurul gibi MKK'nın işlettiği sistemler; Rasyonet'in
-kullandığı pay sahipliği/kayıt verisi MKK kaynaklı.
-        """)
-    else:
+    if lesson is None:
         st.info("Bu bölüm henüz işlenmedi — sıradaki adım. 'Bu sayfayı anlat' dediğinde birlikte işleriz.")
+    else:
+        st.markdown(f"### SAYFA {lesson['sayfa']} — {lesson['baslik']}")
+        ders = lesson["ders"]
+        for field_key, label in LESSON_FIELD_LABELS:
+            if ders.get(field_key):
+                st.markdown(f"**{label}:** {ders[field_key]}")
 
 with tab_recall:
     st.subheader("Aktif Recall — PDF kaynaklı gerçek sorular (Bölüm 2.1)")

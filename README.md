@@ -39,6 +39,16 @@ create table spl_error_log (
   note text,
   created_at timestamptz not null default now()
 );
+
+create table spl_question_stats (
+  id bigint generated always as identity primary key,
+  user_id uuid not null,
+  question_id text not null,
+  times_seen int not null default 0,
+  times_correct int not null default 0,
+  last_seen_at timestamptz not null default now(),
+  unique (user_id, question_id)
+);
 ```
 
 3. Proje ayarlarından `Project URL` ve `anon public key`'i al.

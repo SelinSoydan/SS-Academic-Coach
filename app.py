@@ -7,8 +7,10 @@ import streamlit as st
 from utils.auth import render_login_gate, sign_out
 from utils.bug_tracker import BugTracker
 from utils.supabase_client import get_supabase_client
+from utils.theme import inject_theme
 
 st.set_page_config(page_title="SS Academic Coach", page_icon="🎓", layout="wide")
+inject_theme()
 
 client = get_supabase_client()
 bug_tracker = BugTracker(supabase_client=client)

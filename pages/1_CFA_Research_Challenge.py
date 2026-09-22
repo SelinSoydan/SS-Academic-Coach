@@ -1,4 +1,6 @@
 import datetime
+import json
+from pathlib import Path
 
 import pandas as pd
 import streamlit as st
@@ -6,6 +8,7 @@ import yfinance as yf
 
 from utils.bug_tracker import BugTracker
 from utils.supabase_client import get_supabase_client
+from utils.theme import inject_theme
 
 TICKER = "BRSAN.IS"
 
@@ -25,6 +28,7 @@ def get_live_market_data():
     }
 
 st.set_page_config(page_title="CFA Research Challenge", page_icon="📊", layout="wide")
+inject_theme()
 
 client = get_supabase_client()
 bug_tracker = BugTracker(supabase_client=client)
@@ -230,19 +234,49 @@ with tab_dcf:
             "kalemler dahil değil. Gerçek CFA raporunda bu kalemleri elle ekle."
         )
 
+PEERS_PATH = Path(__file__).parent.parent / "data" / "cfa_peers.json"
+
 with tab_comps:
     st.subheader("Çarpan (Comparable Companies) Analizi")
-    st.caption("Benzer şirketlerin çarpanlarını gir, hedef şirketin metriğine uygulayıp ima edilen değeri gör.")
+    st.caption("Kaynak: data/cfa_peers.json — EquityRT'den gönderdiğin veriyle doldurulur, uydurma sayı yok.")
+
+    try:
+        peers_data = json.loads(PEERS_PATH.read_text(encoding="utf-8"))
+    except Exception as exc:
+        bug_tracker.log(exc, context="cfa_peers_load")
+        peers_data = {"peers": [], "target": {}}
+
+    live_price = None
+    try:
+        live_price = get_live_market_data().get("lastPrice")
+    except Exception:
+        pass
+
+    target = peers_data.get("target", {})
+    eps = target.get("eps")
+    if eps and live_price:
+        st.metric("Canlı P/E (fiyat / EPS)", f"{live_price / eps:,.2f}",
+                   help=f"Fiyat: {live_price:,.2f} TRY (yfinance, canlı) / EPS: {eps} (kaynak: {target.get('source', '—')})")
+    else:
+        st.info(
+            "P/E henüz hesaplanamıyor — `data/cfa_peers.json` içindeki `target.eps` boş. "
+            "EquityRT'den EPS değerini gönderince fiyat zaten canlı aktığı için otomatik hesaplanır."
+        )
+
+    st.markdown("**Benzer şirket çarpanları**")
+    if not peers_data.get("peers"):
+        st.warning(
+            "Henüz hiç peer şirket eklenmedi — `data/cfa_peers.json` boş. EquityRT'den F/K, EV/EBITDA gibi "
+            "rakip çarpanlarını gönderince buraya işlenir. Aşağıdaki tablo sadece bu oturumda deneme yapman için."
+        )
 
     metric_name = st.selectbox("Metrik", ["EV/EBITDA", "P/E", "EV/Sales"])
     target_metric_value = st.number_input(f"Hedef şirketin {metric_name} paydası (EBITDA/Net Kar/Satış, milyon)", value=50.0)
 
-    st.markdown("**Benzer şirket çarpanları**")
     default_peers = [
-        {"Şirket": "Peer 1", "Çarpan": 8.0},
-        {"Şirket": "Peer 2", "Çarpan": 9.5},
-        {"Şirket": "Peer 3", "Çarpan": 7.2},
-    ]
+        {"Şirket": p.get("name", ""), "Çarpan": p.get(metric_name.lower().replace("/", "_"))}
+        for p in peers_data.get("peers", [])
+    ] or [{"Şirket": "", "Çarpan": None}]
     peers = st.data_editor(default_peers, num_rows="dynamic", key="peers_editor")
 
     multiples = [p["Çarpan"] for p in peers if p.get("Çarpan") not in (None, "")]
