@@ -11,6 +11,8 @@ from utils.supabase_client import get_supabase_client
 from utils.theme import inject_theme
 
 TICKER = "BRSAN.IS"
+PEERS_PATH = Path(__file__).parent.parent / "data" / "cfa_peers.json"
+RATIOS_PATH = Path(__file__).parent.parent / "data" / "ratio_encyclopedia.json"
 
 
 @st.cache_data(ttl=300)
@@ -86,10 +88,43 @@ FAVÖK marjı %8–%10.
         """
     )
     st.warning(
-        "Henüz eklenmedi: rakip/peer şirket listesi (Tenaris, Vallourec, EVRAZ vb. — çelik boru sektörü), "
-        "detaylı nakit akış tablosu (serbest nakit akımı grafik olarak sunumda var ama sayısal değeri metinden "
-        "çıkmadı), WACC hesaplaması. Bunları istersen sıradaki adımda ekleyelim."
+        "Henüz eklenmedi: detaylı nakit akış tablosu (serbest nakit akımı grafik olarak sunumda var ama "
+        "sayısal değeri metinden çıkmadı), WACC hesaplaması. Peer/rakip listesi artık Comps sekmesinde var."
     )
+
+try:
+    peers_data_preview = json.loads(PEERS_PATH.read_text(encoding="utf-8"))
+except Exception:
+    peers_data_preview = {}
+
+if peers_data_preview.get("ownership"):
+    own = peers_data_preview["ownership"]
+    with st.expander("👥 Ortaklık Yapısı (kaynak: EquityRT Holdings ekranı, 22 Eylül 2026)"):
+        bd = own["breakdown"]
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Kurumsal (Corporations)", f"%{bd['corporations_pct']:.2f}")
+        c2.metric("Kurumlar (Institutions)", f"%{bd['institutions_pct']:.2f}")
+        c3.metric("Halka Açık & Diğer", f"%{bd['public_and_other_pct']:.2f}")
+        st.markdown("**En büyük kurumsal ortaklar:**")
+        st.dataframe(own["top_corporations"], use_container_width=True, hide_index=True)
+        st.markdown("**En büyük kurumsal yatırımcılar (fonlar):**")
+        st.dataframe(own["top_institutions"], use_container_width=True, hide_index=True)
+        st.caption(
+            "🧠 Okuma: %77,9'u tek elde (Borusan Mannesmann Boru Yatırım Holding) — bu, kontrol gücünün "
+            "tamamen ana ortaklıkta olduğu, halka açık kısmın küçük olduğu anlamına gelir (float riski/likidite "
+            "CFA raporunda mutlaka değinilmesi gereken bir nokta). Vanguard/BlackRock/Goldman Sachs gibi "
+            "küresel isimlerin varlığı, kurumsal yatırımcı ilgisinin uluslararası olduğunu gösterir."
+        )
+
+if peers_data_preview.get("recent_news"):
+    with st.expander("📰 Son Haberler (kaynak: EquityRT News ekranı — Reuters / Turkish Company News)"):
+        for item in peers_data_preview["recent_news"]["items"]:
+            st.markdown(f"- **{item['date']}** — {item['headline']} _(​{item['source']})_")
+        st.caption(
+            "🧠 Okuma: Ağustos 2026'daki art arda ABD sipariş haberleri (~$555M + ~$360M) — Rasyo "
+            "Ansiklopedisi'ndeki F/K bölümünde anlatılan 'sipariş portföyü → gelecek kâr → F/K normalleşmesi' "
+            "zincirinin tam kanıtı. Raporunda bu haberleri doğrudan valuation gerekçesi olarak kullanabilirsin."
+        )
 
 st.subheader(f"📡 Canlı Piyasa Verisi — {TICKER}")
 st.caption("Kaynak: Yahoo Finance (yfinance) — yaklaşık 15 dk gecikmeli BIST verisi, önbellek 5 dk.")
@@ -234,8 +269,6 @@ with tab_dcf:
             "kalemler dahil değil. Gerçek CFA raporunda bu kalemleri elle ekle."
         )
 
-PEERS_PATH = Path(__file__).parent.parent / "data" / "cfa_peers.json"
-
 with tab_comps:
     st.subheader("Çarpan (Comparable Companies) Analizi")
     st.caption("Kaynak: data/cfa_peers.json — EquityRT'den gönderdiğin veriyle doldurulur, uydurma sayı yok.")
@@ -246,37 +279,49 @@ with tab_comps:
         bug_tracker.log(exc, context="cfa_peers_load")
         peers_data = {"peers": [], "target": {}}
 
-    live_price = None
-    try:
-        live_price = get_live_market_data().get("lastPrice")
-    except Exception:
-        pass
+    if peers_data.get("source"):
+        st.caption(f"Birincil kaynak: {peers_data['source']}")
+    if peers_data.get("note"):
+        st.warning(peers_data["note"])
 
     target = peers_data.get("target", {})
-    eps = target.get("eps")
-    if eps and live_price:
-        st.metric("Canlı P/E (fiyat / EPS)", f"{live_price / eps:,.2f}",
-                   help=f"Fiyat: {live_price:,.2f} TRY (yfinance, canlı) / EPS: {eps} (kaynak: {target.get('source', '—')})")
+    peers_list = peers_data.get("peers", [])
+
+    if not peers_list:
+        st.info("Henüz hiç peer şirket eklenmedi — `data/cfa_peers.json` boş.")
     else:
-        st.info(
-            "P/E henüz hesaplanamıyor — `data/cfa_peers.json` içindeki `target.eps` boş. "
-            "EquityRT'den EPS değerini gönderince fiyat zaten canlı aktığı için otomatik hesaplanır."
-        )
+        rows = [
+            {"Şirket": p["name"], "Ülke": p.get("ulke", "—"), "Piyasa Değeri (mn $)": p["market_cap_mn_usd"],
+             "P/BV": p["p_bv"], "P/E": p["p_e"]}
+            for p in peers_list
+        ]
+        if target:
+            rows.append({
+                "Şirket": f"⭐ {target['name']} (hedef)", "Ülke": "Türkiye",
+                "Piyasa Değeri (mn $)": target.get("market_cap_mn_usd"),
+                "P/BV": target.get("p_bv"), "P/E": target.get("p_e"),
+            })
+        st.dataframe(rows, use_container_width=True, hide_index=True)
 
-    st.markdown("**Benzer şirket çarpanları**")
-    if not peers_data.get("peers"):
-        st.warning(
-            "Henüz hiç peer şirket eklenmedi — `data/cfa_peers.json` boş. EquityRT'den F/K, EV/EBITDA gibi "
-            "rakip çarpanlarını gönderince buraya işlenir. Aşağıdaki tablo sadece bu oturumda deneme yapman için."
-        )
+        pes = [p["p_e"] for p in peers_list if p.get("p_e")]
+        pbvs = [p["p_bv"] for p in peers_list if p.get("p_bv")]
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Peer medyan P/E", f"{sorted(pes)[len(pes)//2]:.2f}" if pes else "—")
+        c2.metric("Peer medyan P/BV", f"{sorted(pbvs)[len(pbvs)//2]:.2f}" if pbvs else "—")
+        c3.metric("BRSAN P/E vs medyan", f"{target.get('p_e', 0) - sorted(pes)[len(pes)//2]:+.2f}" if pes and target.get("p_e") else "—",
+                   help="Pozitifse BRSAN peer medyanına göre daha yüksek çarpanla işlem görüyor.")
 
-    metric_name = st.selectbox("Metrik", ["EV/EBITDA", "P/E", "EV/Sales"])
-    target_metric_value = st.number_input(f"Hedef şirketin {metric_name} paydası (EBITDA/Net Kar/Satış, milyon)", value=50.0)
+        if peers_data.get("sector_median"):
+            sm = peers_data["sector_median"]
+            st.caption(f"EquityRT'nin kendi sektör medyanı: P/E {sm.get('p_e')}, P/BV {sm.get('p_bv')} — yukarıdaki hesapladığımızla karşılaştır.")
 
-    default_peers = [
-        {"Şirket": p.get("name", ""), "Çarpan": p.get(metric_name.lower().replace("/", "_"))}
-        for p in peers_data.get("peers", [])
-    ] or [{"Şirket": "", "Çarpan": None}]
+    st.markdown("---")
+    st.markdown("**Serbest deneme alanı** — kendi çarpanlarınla implied value hesapla:")
+    metric_name = st.selectbox("Metrik", ["P/E", "P/BV"])
+    target_metric_value = st.number_input(f"Hedef şirketin {metric_name} paydası (Net Kâr veya Defter Değeri, milyon)", value=50.0)
+
+    field = "p_e" if metric_name == "P/E" else "p_bv"
+    default_peers = [{"Şirket": p["name"], "Çarpan": p.get(field)} for p in peers_list] or [{"Şirket": "", "Çarpan": None}]
     peers = st.data_editor(default_peers, num_rows="dynamic", key="peers_editor")
 
     multiples = [p["Çarpan"] for p in peers if p.get("Çarpan") not in (None, "")]
@@ -291,8 +336,6 @@ with tab_comps:
         c2.metric(f"Medyan {metric_name} ile ima edilen değer", f"{implied_value_median:,.1f} M")
     else:
         st.info("En az bir benzer şirket çarpanı gir.")
-
-RATIOS_PATH = Path(__file__).parent.parent / "data" / "ratio_encyclopedia.json"
 
 with tab_ratios:
     st.subheader("📚 Rasyo Ansiklopedisi — BRSAN özelinde")

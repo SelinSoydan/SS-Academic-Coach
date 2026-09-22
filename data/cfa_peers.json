@@ -1,10 +1,79 @@
 {
-  "peers": [],
+  "source": "EquityRT — BRSAN Peer Performance ekranı (Ratios sekmesi altında), Selin'in ekran görüntüsü, 22 Eylül 2026",
+  "note": "P/E burada 33,89 görünüyor; aynı gün Snapshot ekranındaki P/E TTM 38,39 idi — iki EquityRT ekranı farklı hesap dönemi/kaynak kullanıyor olabilir, rapora koymadan önce hangisinin TTM hangisinin farklı bir dönem olduğunu netleştir.",
+  "peers": [
+    {"name": "Nucor Corp", "ulke": "ABD", "market_cap_mn_usd": 54994.66, "total_assets_mn_usd": 36954.00, "p_bv": 2.49, "p_e": 19.14, "ev_ebitda": null},
+    {"name": "Steel Dynamics Inc", "ulke": "ABD", "market_cap_mn_usd": 32964.03, "total_assets_mn_usd": 17113.40, "p_bv": 3.50, "p_e": 20.51, "ev_ebitda": null},
+    {"name": "Nippon Steel Corp", "ulke": "Japonya", "market_cap_mn_usd": 23947.91, "total_assets_mn_usd": 93352.23, "p_bv": 0.69, "p_e": 12.33, "ev_ebitda": null},
+    {"name": "Reliance Inc", "ulke": "ABD", "market_cap_mn_usd": 19638.13, "total_assets_mn_usd": 11165.20, "p_bv": 2.65, "p_e": 21.97, "ev_ebitda": null},
+    {"name": "BlueScope Steel Ltd", "ulke": "Avustralya", "market_cap_mn_usd": 9358.79, "total_assets_mn_usd": 11341.48, "p_bv": 1.31, "p_e": 17.22, "ev_ebitda": null},
+    {"name": "JFE Holdings Inc", "ulke": "Japonya", "market_cap_mn_usd": 7720.82, "total_assets_mn_usd": 37129.28, "p_bv": 0.47, "p_e": 16.57, "ev_ebitda": null},
+    {"name": "Cleveland-Cliffs Inc", "ulke": "ABD", "market_cap_mn_usd": 6886.42, "total_assets_mn_usd": 20115.00, "p_bv": 1.23, "p_e": null, "ev_ebitda": null},
+    {"name": "Ereğli Demir Çelik (Erdemir)", "ulke": "Türkiye", "market_cap_mn_usd": 5371.45, "total_assets_mn_usd": 12863.19, "p_bv": 0.79, "p_e": 32.09, "ev_ebitda": null},
+    {"name": "Kobe Steel Ltd", "ulke": "Japonya", "market_cap_mn_usd": 5300.00, "total_assets_mn_usd": 17409.04, "p_bv": 0.69, "p_e": 12.28, "ev_ebitda": null},
+    {"name": "Yamato Kogyo Co Ltd", "ulke": "Japonya", "market_cap_mn_usd": 4987.43, "total_assets_mn_usd": 3977.98, "p_bv": 1.48, "p_e": 11.07, "ev_ebitda": null},
+    {"name": "Daido Steel Co Ltd", "ulke": "Japonya", "market_cap_mn_usd": 3391.34, "total_assets_mn_usd": 5572.29, "p_bv": 1.14, "p_e": 14.81, "ev_ebitda": null},
+    {"name": "SIMS Ltd", "ulke": "Avustralya", "market_cap_mn_usd": 3343.83, "total_assets_mn_usd": 3279.91, "p_bv": 1.82, "p_e": 20.11, "ev_ebitda": null},
+    {"name": "Champion Iron Ltd", "ulke": "Kanada/Avustralya", "market_cap_mn_usd": 1282.34, "total_assets_mn_usd": 2873.77, "p_bv": 1.13, "p_e": 17.12, "ev_ebitda": null},
+    {"name": "Tiangong International Co Ltd", "ulke": "Çin", "market_cap_mn_usd": 1075.06, "total_assets_mn_usd": 1972.02, "p_bv": 1.01, "p_e": 19.31, "ev_ebitda": null}
+  ],
+  "sector_median": {"market_cap_mn_usd": 112.48, "total_assets_mn_usd": 215.75, "p_bv": 1.03, "p_e": 15.92},
   "target": {
-    "name": "Borusan Mannesmann Boru (BRSAN)",
+    "name": "Borusan Boru Sanayi (BRSAN)",
+    "market_cap_mn_usd": 1917.91,
+    "total_assets_mn_usd": 2095.91,
+    "p_bv": 2.06,
+    "p_e": 33.89,
     "eps": null,
     "book_value_per_share": null,
-    "source": null,
-    "updated_at": null
+    "source": "EquityRT Peer Performance ekranı, 22 Eylül 2026",
+    "updated_at": "2026-09-22"
+  },
+  "ownership": {
+    "source": "EquityRT Holdings ekranı, 22 Eylül 2026",
+    "breakdown": {"institutions_pct": 24.77, "corporations_pct": 73.48, "public_and_other_pct": 1.74},
+    "top_corporations": [
+      {"owner": "Borusan Mannesmann Boru Yatırım Holding A.Ş.", "shares": 110491000, "pct": 77.936, "market_cap_mn_usd": 1516.83},
+      {"owner": "Norges Bank Investment Management", "shares": 287240, "pct": 0.203, "market_cap_mn_usd": 3.94},
+      {"owner": "Alternatifbank A.Ş.", "shares": 100000, "pct": 0.071, "market_cap_mn_usd": 1.37},
+      {"owner": "Fibabanka A.Ş.", "shares": 26075, "pct": 0.018, "market_cap_mn_usd": 0.36},
+      {"owner": "Nurol Portföy Yönetimi A.Ş.", "shares": 11125, "pct": 0.008, "market_cap_mn_usd": 0.15},
+      {"owner": "Legal & General Investment Management Limited", "shares": 6553, "pct": 0.005, "market_cap_mn_usd": 0.09}
+    ],
+    "top_institutions": [
+      {"owner": "Vanguard Capital Management, LLC", "shares": 720083, "pct": 0.508, "market_cap_mn_usd": 9.89},
+      {"owner": "Ak Portföy Yönetimi AS", "shares": 581621, "pct": 0.410, "market_cap_mn_usd": 7.98},
+      {"owner": "Ziraat Portföy", "shares": 418275, "pct": 0.295, "market_cap_mn_usd": 5.74},
+      {"owner": "BlackRock, Inc.", "shares": 362921, "pct": 0.256, "market_cap_mn_usd": 4.98},
+      {"owner": "Dimensional Fund Advisors LP", "shares": 153253, "pct": 0.108, "market_cap_mn_usd": 2.10},
+      {"owner": "Garanti Portföy Yönetimi AS", "shares": 128274, "pct": 0.090, "market_cap_mn_usd": 1.76},
+      {"owner": "Fiba Portföy Yönetimi AS", "shares": 120264, "pct": 0.085, "market_cap_mn_usd": 1.65},
+      {"owner": "Goldman Sachs Asset Management, L.P.", "shares": 90330, "pct": 0.064, "market_cap_mn_usd": 1.24},
+      {"owner": "State Street Investment Management", "shares": 80777, "pct": 0.057, "market_cap_mn_usd": 1.11},
+      {"owner": "Hedef Portföy Yönetimi A.Ş.", "shares": 47409, "pct": 0.033, "market_cap_mn_usd": 0.65}
+    ]
+  },
+  "recent_news": {
+    "source": "EquityRT News ekranı (Reuters + Turkish Company News), 22 Eylül 2026'da görüntülendi",
+    "items": [
+      {"date": "2026-09-16", "headline": "BRSAN.E işlem sırasında Pay Bazında Devre Kesici Uygulaması devreye girmiştir", "source": "Turkish Company News"},
+      {"date": "2026-08-28", "headline": "Kredi Derecelendirme Notu", "source": "Turkish Company News"},
+      {"date": "2026-08-21", "headline": "BRIEF-Borusan Mannesmann Boru Says Subsidiary Borusan Berg Pipe Gets New Sales Order Amounting To Nearly $555 Million", "source": "Reuters"},
+      {"date": "2026-08-18", "headline": "Amerika Birleşik Devletleri'nde Yeni Satış Siparişi Alınması", "source": "Turkish Company News"},
+      {"date": "2026-08-14", "headline": "BRIEF-Borusan Boru Says Its US-Based Unit Receives New Sales Orders Of About $360 Mln", "source": "Reuters"},
+      {"date": "2026-08-13", "headline": "Amerika Birleşik Devletleri'nde Yeni Satış Siparişlerinin Alınması", "source": "Reuters"},
+      {"date": "2026-08-10", "headline": "BRSAN Q2 Net Profit Up At 1.5 Bln Lira YoY", "source": "Reuters"},
+      {"date": "2026-08-07", "headline": "2Ç26 Yatırımcı Sunumu, Finansal Sonuç Duyurusu ve 2026 Yılı Beklentileri", "source": "Turkish Company News"}
+    ]
+  },
+  "earnings_history": {
+    "source": "EquityRT Earnings ekranı, 22 Eylül 2026",
+    "note": "EPS değerleri dönemler arası tutarsız büyüklükte görünüyor (0,13 / 0,02 / 8,97 / 0,11) — muhtemelen bir bölünme/düzeltme farkı var, kullanmadan önce KAP'tan teyit et.",
+    "items": [
+      {"period": "2026/6M", "type": "Interim", "announced": "2026-08-07", "eps": 0.13, "currency": "TRL", "annual_earnings_ttm_mn": 2470.61},
+      {"period": "2026/3M", "type": "Quarterly", "announced": "2026-05-07", "eps": 0.02, "currency": "TRL", "annual_earnings_ttm_mn": 1829.74},
+      {"period": "2025/YE", "type": "Final", "announced": "2026-02-26", "eps": 8.97, "currency": "TRL", "annual_earnings_ttm_mn": 1271.66},
+      {"period": "2025/9M", "type": "Quarterly", "announced": "2025-11-07", "eps": 0.11, "currency": "TRL", "annual_earnings_ttm_mn": 995.58}
+    ]
   }
 }
