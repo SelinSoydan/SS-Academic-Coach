@@ -7,12 +7,12 @@
       "sayfa": "1-6",
       "durum": "işlendi",
       "ders": {
-        "konu": "Takas, saklama, kaydileştirme kavramlarının tanımı ve birbirinden ayrılması.",
-        "ana_fikir": "Sermaye piyasası işlemi gerçekleştikten (T günü) sonra, para ve menkul kıymetin taraflar arasında güvenli şekilde el değiştirmesi (takas) ve bu araçların merkezi olarak elektronik ortamda izlenmesi (saklama/kaydileştirme) iki ayrı ama birbirini tamamlayan süreçtir.",
-        "mantik": "Fiziki senet sisteminde işlem sonrası mülkiyet devri yavaş, riskli ve maliyetliydi. Takas+kaydileştirme ikilisi bunu elektronik, hızlı ve garantili hale getirir.",
-        "ezber": "Açık pozisyon, başlangıç teminatı, değişim teminatı, garanti fonu tanımları (bkz. glossary).",
-        "tuzak": "Takas = süreç/an, Saklama = süregelen durum. 'Takas nedir' sorusuna 'saklama' ile karışık cevap vermek en sık yapılan hata.",
-        "gercek_hayat": "Rasyonet gibi bir fintech, BIST işlem verisini çekerken aslında Takasbank/MKK'nın ürettiği takas/saklama kayıtlarının türevini kullanır."
+        "konu": "Takas, saklama ve kaydileştirme kavramlarının tanımı ve birbirinden ayrılması.",
+        "ana_fikir": "Sermaye piyasasında bir işlem gerçekleştiğinde iki şey olması gerekir. Birincisi, alıcının parası satıcıya, satıcının menkul kıymeti alıcıya güvenli şekilde ulaşmalıdır, buna takas denir. İkincisi, bu menkul kıymetlerin kimin üzerine kayıtlı olduğu sürekli ve güvenilir şekilde tutulmalıdır, buna da saklama ya da kaydileştirme denir. Takas bir anlık süreçtir, işlem olur ve biter. Saklama ise süregelen bir durumdur, sen o hisseyi elinde tuttuğun sürece devam eder.",
+        "mantik": "Eskiden hisse senetleri kağıt olarak basılırdı ve mülkiyetin el değiştirmesi için bu kağıdın fiziken teslim edilmesi gerekirdi. Bu hem yavaştı hem kaybolma, sahtecilik gibi riskler taşıyordu. Takas ve kaydileştirme ikilisi bu süreci tamamen elektronik ortama taşıyarak hem hızlandırdı hem güvenli hale getirdi.",
+        "ezber": "Açık pozisyon, başlangıç teminatı, değişim teminatı ve garanti fonu gibi temel tanımları bu bölümde net şekilde öğrenmen gerekiyor, çünkü ilerideki bütün bölümler bu kavramların üzerine kuruluyor.",
+        "tuzak": "Takas bir süreç veya andır, saklama ise süregelen bir durumdur. Sınavda 'takas nedir' diye sorulduğunda saklamanın tanımıyla karıştırmak en sık yapılan hatalardan biri.",
+        "gercek_hayat": "Rasyonet gibi bir fintech şirketi BIST işlem verisini çektiğinde aslında Takasbank ve MKK'nın ürettiği takas ve saklama kayıtlarının türevini kullanır."
       }
     },
     {
@@ -21,13 +21,42 @@
       "sayfa": "7-14",
       "durum": "işlendi",
       "ders": {
-        "konu": "Merkezi Kayıt Kuruluşu'nun (MKK) kuruluş amacı, görev/yetkileri, üyelik şartları.",
-        "ana_fikir": "MKK, kaydileştirilen sermaye piyasası araçlarını ve bunlara bağlı hakları elektronik ortamda kayden izleyen ve merkezi saklamasını yapan kuruluştur. SPK'nın gözetim ve denetimi altındadır.",
+        "konu": "Merkezi Kayıt Kuruluşu'nun, yani MKK'nın kuruluş amacı, görev ve yetkileri, üyelik şartları.",
+        "ana_fikir": "MKK, kaydileştirilen sermaye piyasası araçlarını ve bunlara bağlı hakları elektronik ortamda kayden izleyen ve merkezi saklamasını yapan kuruluştur. SPK'nın gözetimi ve denetimi altında çalışır.",
         "mevzuat": "Merkezi Kayıt Kuruluşunun Kuruluş, Faaliyet, Çalışma ve Denetim Esasları Hakkında Yönetmelik.",
-        "mantik": "MKK'nın işi 'kim, neye, ne kadar sahip' sorusuna cevap vermek — mülkiyet kaydı. Fiziki takas/işlem sürecine karışmaz, o Takasbank'ın işi.",
-        "ezber": "MKK'ya üye olabilecekler (ihraççı kuruluşlar, TCMB, yatırım kuruluşları, merkezi takas kuruluşları) vs. olamayacaklar (TSPB gibi meslek birlikleri hesap açamaz, üye de değildir).",
-        "tuzak": "'MKK'ya üye olabilir mi' ile 'MKK nezdinde hesap açabilir mi' ayrı sorular gibi görünüp aynı cevaba (TSPB hayır) çıkabiliyor — dikkatli oku, hangisi sorulmuş.",
-        "gercek_hayat": "e-Yatırımcı, e-Genel Kurul gibi MKK'nın işlettiği sistemler; Rasyonet'in kullandığı pay sahipliği/kayıt verisi MKK kaynaklı."
+        "mantik": "MKK'nın işini şöyle özetleyebilirsin, kim neye ne kadar sahip sorusuna cevap vermek. Yani mülkiyet kaydını tutmak. Fiziki takas ya da işlem sürecine karışmaz, o tamamen Takasbank'ın görevidir.",
+        "ezber": "MKK'ya üye olabilecek kuruluşlar ihraççı kuruluşlar, TCMB, yatırım kuruluşları ve merkezi takas kuruluşlarıdır. TSPB gibi meslek birlikleri ise ne üye olabilir ne de hesap açabilir, bunu iyi ayırt et.",
+        "tuzak": "MKK'ya üye olabilir mi sorusu ile MKK nezdinde hesap açabilir mi sorusu farklı sorular gibi görünse de genelde aynı cevaba, yani TSPB için hayır cevabına çıkar. Soruyu dikkatli oku, hangisinin sorulduğunu kaçırma.",
+        "gercek_hayat": "e Yatırımcı ve e Genel Kurul gibi MKK'nın işlettiği sistemler bunun somut örnekleri. Rasyonet'in kullandığı pay sahipliği ve kayıt verisi de aslında MKK kaynaklıdır."
+      }
+    },
+    {
+      "id": "2.2",
+      "baslik": "Kaydileştirilen Sermaye Piyasası Araçlarına İlişkin Kayıtların Tutulmasının Usul ve Esasları Hakkında Tebliğ",
+      "sayfa": "15-27",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Kaydileştirme tebliğinin çerçevesi, kaydileşen araçların neler olduğu ve MKK nezdinde açılan hesap türleri.",
+        "ana_fikir": "Sermaye piyasası kanunu artık senet basılmasına izin vermiyor, kaydileştirilmesine karar verilen bütün araçlar elektronik ortamda kayden izleniyor. Bu tebliğ, o kaydın tam olarak nasıl tutulacağını, kimin hangi hesapta izleneceğini anlatıyor. Beş ana hesap türü var. İhraççı hesabı, şirketin kendi ihraç sürecini takip ettiği hesap. TCMB hesabı, Merkez Bankası'na ait devlet iç borçlanma senetlerinin toplu izlendiği hesap. Yatırım kuruluşu hesabı, aracı kurumların hem kendi işlemleri hem müşteri işlemleri için kullandığı hesap. Merkezi takas kuruluşu hesabı, Takasbank'ın takas sürecini yürütmek için kullandığı hesap. Ve yabancı merkezi saklama kuruluşu hesabı, yurt dışında yerleşik yatırımcıların topluca izlendiği hesap.",
+        "ezber": "Kaydileşen araçların listesini ezbere bilmen gerekmiyor ama hangi ana grupların olduğunu bilmelisin. Pay senetleri, devlet iç borçlanma senetleri, yatırım fonları, borsa yatırım fonları, özel sektör tahvilleri, varantlar, sertifikalar gibi çok geniş bir yelpaze kaydileştirmeye tabi. Teslim edilmeyen araçlar kaydileştirme kararından sonra artık borsada işlem göremez, teslim edilenler ise kendiliğinden hükümsüz hale gelir. Bu iki cümleyi birbirine karıştırma.",
+        "mantik": "Her hesap türü aslında bir soruya cevap veriyor, bu kıymet kimin adına, hangi amaçla tutuluyor. İhraççı hesabı ihraç sürecini, yatırım kuruluşu hesabı müşteri işlemlerini, merkezi takas kuruluşu hesabı ise takasın kendisini temsil ediyor. Bu ayrımı anladığında hangi işlemde hangi hesabın devreye gireceğini tahmin edebilirsin.",
+        "tuzak": "Teslim edilen araçlar kendiliğinden hükümsüz hale gelir, teslim edilmeyenler ise borsada işlem göremez ve aracı kurumlarca alım satımına aracılık edilemez. Sınav bu iki durumu bilerek yer değiştirip sorar, hangisinin hükümsüz hangisinin işlem yasaklı olduğunu karıştırma. Ayrıca rehin ve teminat konusunda, kaydi sermaye piyasası aracının teminat verenin alt hesabında izlenmesi mümkündür, bunun mümkün olmadığını söyleyen seçenekler yanlıştır.",
+        "gercek_hayat": "Bir şirket sermaye artırımına gittiğinde, yeni pay alma hakları önce yatırımcıların hesaplarına kaydedilir, bedel yatırıldığında bu haklar silinip gerçek paylar ihraççının havuz hesabından yatırımcı hesaplarına aktarılır. Rasyonet gibi bir platformun KAP üzerinden takip ettiği sermaye artırımı haberleri, arka planda tam olarak bu hesap hareketlerine karşılık geliyor."
+      }
+    },
+    {
+      "id": "2.3-giris",
+      "baslik": "Merkezi Takas ile Merkezi Karşı Taraf Uygulaması, giriş ve tarihçe",
+      "sayfa": "28-34",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Merkezi takas kuruluşu ve merkezi karşı taraf kavramlarının kanuni dayanağı, tarihçesi ve Takasbank'ın bu iki rolü nasıl üstlendiği.",
+        "ana_fikir": "Türkiye'de menkul kıymet takası önceleri işlem taraflarının kendi arasında yürütülüyordu, sonra borsa bünyesinde bir müdürlük bu işi üstlendi, en sonunda 1992'de İMKB Takas ve Saklama A.Ş. kuruldu. Bu kuruluş 1996'da bankacılık lisansı alarak bugünkü Takasbank'a dönüştü. Sermaye Piyasası Kanunu'nun 77'nci maddesi merkezi takas kuruluşlarını, yani MTK'ları düzenler, 78'inci maddesi ise merkezi karşı taraf uygulamasını, yani MKT'yi düzenler. Bu iki kavramı birbirinden ayırmak çok önemli. Merkezi takas kuruluşu, işlemlerin teslim ve ödeme sürecini yürüten kurumdur. Merkezi karşı taraf ise bir adım daha ileri gidip alıcıya karşı satıcı, satıcıya karşı alıcı rolünü üstlenir ve takasın tamamlanacağını garanti eder.",
+        "mevzuat": "Sermaye Piyasası Kanunu madde 77 ve 78, Merkezi Takas Kuruluşlarının Kuruluş ve Çalışma Esasları Hakkında Genel Yönetmelik, Takasbank'ın kendi Merkezi Takas Yönetmeliği ve Merkezi Karşı Taraf Yönetmeliği.",
+        "mantik": "MKT rolünü üstlenen bir kurum aslında karşı taraf riskini kendi üzerine alıyor demektir. Sen bir hisse sattığında, karşındaki alıcının parayı gerçekten ödeyip ödemeyeceğini bilemezsin, ama Takasbank MKT rolündeyse sana karşı o Takasbank'tır, alıcının kim olduğu ya da ödeyip ödemeyeceği artık senin riskin değildir. Bu yüzden MKT, piyasadaki güveni ve işlem hacmini büyük ölçüde artıran bir mekanizmadır.",
+        "ezber": "Takasbank'ın MKT rolü üstlendiği piyasalar arasında pay piyasası, vadeli işlem ve opsiyon piyasası, borçlanma araçları piyasası ve ödünç pay piyasası var. Kıymetli madenler piyasası ve TEFAS gibi bazı platformlarda ise Takasbank sadece takas hizmeti verir, MKT rolü üstlenmez. Bu ayrımı bilmek önemli çünkü her piyasada aynı koruma yok.",
+        "tuzak": "Merkezi takas kuruluşu olmakla merkezi karşı taraf olmak aynı şey değil. Bir kurum MTK olabilir ama o piyasada MKT rolünü üstlenmemiş olabilir, bu durumda karşı taraf riskini garanti etmez. Sınav sorularında hangi piyasada Takasbank'ın MKT olduğunu, hangisinde sadece takas hizmeti verdiğini karıştırmak çok yaygın bir hata.",
+        "gercek_hayat": "Vadeli işlem ve opsiyon piyasasında, yani VİOP'ta işlem yapan bir yatırımcı aslında karşı tarafın kim olduğunu hiç bilmez ve bilmesine de gerek yoktur, çünkü Takasbank MKT rolüyle aradaki riski üstlenmiştir. Bu, bireysel yatırımcıların büyük kurumlarla güvenle işlem yapabilmesinin temel sebebidir."
       }
     }
   ]

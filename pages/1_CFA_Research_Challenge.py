@@ -305,11 +305,36 @@ with tab_comps:
 
         pes = [p["p_e"] for p in peers_list if p.get("p_e")]
         pbvs = [p["p_bv"] for p in peers_list if p.get("p_bv")]
-        c1, c2, c3 = st.columns(3)
-        c1.metric("Peer medyan P/E", f"{sorted(pes)[len(pes)//2]:.2f}" if pes else "—")
-        c2.metric("Peer medyan P/BV", f"{sorted(pbvs)[len(pbvs)//2]:.2f}" if pbvs else "—")
-        c3.metric("BRSAN P/E vs medyan", f"{target.get('p_e', 0) - sorted(pes)[len(pes)//2]:+.2f}" if pes and target.get("p_e") else "—",
-                   help="Pozitifse BRSAN peer medyanına göre daha yüksek çarpanla işlem görüyor.")
+        mean_pe = sum(pes) / len(pes) if pes else None
+        median_pe = sorted(pes)[len(pes) // 2] if pes else None
+        mean_pbv = sum(pbvs) / len(pbvs) if pbvs else None
+        median_pbv = sorted(pbvs)[len(pbvs) // 2] if pbvs else None
+
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Peer ortalama (mean) P/E", f"{mean_pe:.2f}" if mean_pe else "—")
+        c2.metric("Peer medyan (median) P/E", f"{median_pe:.2f}" if median_pe else "—")
+        c3.metric("Peer ortalama P/BV", f"{mean_pbv:.2f}" if mean_pbv else "—")
+        c4.metric("Peer medyan P/BV", f"{median_pbv:.2f}" if median_pbv else "—")
+
+        if target.get("p_e") and median_pe:
+            st.metric("BRSAN P/E vs medyan", f"{target['p_e'] - median_pe:+.2f}",
+                       help="Pozitifse BRSAN peer medyanına göre daha yüksek çarpanla işlem görüyor.")
+
+        with st.expander("🧠 Mean (ortalama) vs Median (medyan) — hangisini ne zaman kullanmalı?"):
+            st.markdown(
+                f"""
+**Mean (aritmetik ortalama):** Tüm değerleri topla, adede böl. Peer P/E ortalaması: {', '.join(f'{v:.2f}' for v in pes)} → toplam / {len(pes)} = **{mean_pe:.2f}**.
+
+**Median (medyan):** Değerleri küçükten büyüğe sırala, ortadaki değeri al. {len(pes)} şirket olduğu için sıralayınca ortadaki (7. sıradaki) değer **{median_pe:.2f}**.
+
+**🔑 Neden ikisi farklı çıkıyor, hangisine güvenmeli:**
+Mean, **aşırı uç (outlier) değerlerden çok etkilenir** — listede Cleveland-Cliffs'in P/E'si yok (veri eksik, ortalamaya hiç girmiyor) ama Ereğli Demir Çelik'in 32,09 gibi yüksek bir P/E'si var, bu tek başına ortalamayı yukarı çeker. Median ise outlier'lara karşı **dayanıklıdır** (robust) — sırf bir şirketin çarpanı aşırı olduğu için değişmez.
+
+**⚠️ Sınav/rapor tuzağı:** Comps analizinde CFA charterholder'lar neredeyse her zaman **medyanı** tercih eder, çünkü peer grupları genelde birkaç aşırı değer (çok küçük/çok büyük şirket, zarar eden şirket, kriz yaşayan şirket) içerir ve mean bunlardan çarpıtılır. Raporunda 'peer ortalaması X' yerine 'peer medyanı X' demek, jüriye istatistik okuryazarlığını gösterir.
+
+**Pratik kural:** Peer grubun küçükse (5-6 şirketten az) veya dağılım çarpıksa (biri aşırı yüksek/düşük) → medyana güven. Peer grubun büyük ve homojense (BRSAN'daki gibi 14 şirket, benzer sektör) → ikisi zaten birbirine yakın çıkar, farkın büyüklüğü senin için bir 'peer grubu ne kadar dağınık' sinyalidir.
+                """
+            )
 
         if peers_data.get("sector_median"):
             sm = peers_data["sector_median"]
