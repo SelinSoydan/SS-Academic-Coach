@@ -40,7 +40,8 @@ TOC_STATIC = [
     {"Bölüm": "2.1", "Konu": "MKK Kuruluş/Faaliyet/Çalışma/Denetim Yönetmeliği", "Sayfa": "7-14"},
     {"Bölüm": "2.2", "Konu": "Kaydileştirme Tebliği", "Sayfa": "15-27"},
     {"Bölüm": "2.3-giris", "Konu": "Merkezi Takas ile MKT Uygulaması (giriş, tarihçe, üyelik)", "Sayfa": "28-34"},
-    {"Bölüm": "2.3-devam", "Konu": "Merkezi Takas ile MKT Uygulaması (devamı, teminat ve temerrüt)", "Sayfa": "35-58"},
+    {"Bölüm": "2.3-takas-sureci", "Konu": "Merkezi Takas ile MKT Uygulaması (takas süreci, netleştirme, teminat türleri)", "Sayfa": "35-46"},
+    {"Bölüm": "2.3-teminat-temerrut", "Konu": "Merkezi Takas ile MKT Uygulaması (garanti fonu, temerrüt yönetimi)", "Sayfa": "47-58"},
     {"Bölüm": "2.4", "Konu": "Portföy Saklama Hizmeti Tebliği (III-56.1)", "Sayfa": "59-70"},
     {"Bölüm": "3", "Konu": "BİAŞ Pay Piyasası Takas/Temerrüt/Transfer", "Sayfa": "71-87"},
     {"Bölüm": "4", "Konu": "Borçlanma Araçları Transfer/Takas/Temerrüt", "Sayfa": "88-130"},
@@ -181,8 +182,8 @@ with tab_diag:
 
 LESSON_FIELD_LABELS = [
     ("konu", "Konu"), ("ana_fikir", "Ana fikir"), ("mevzuat", "Mevzuat"),
-    ("mantik", "🧠 MANTIK"), ("ezber", "🔴 EZBER"), ("tuzak", "⚠️ SINAV TUZAĞI"),
-    ("gercek_hayat", "Gerçek hayattaki karşılığı"),
+    ("mantik", "🧠 MANTIK"), ("ezber", "🔴 EZBER"), ("onemli_sayilar", "🔢 SPK'nın sevdiği sayılar"),
+    ("tuzak", "⚠️ SINAV TUZAĞI"), ("gercek_hayat", "Gerçek hayattaki karşılığı"),
 ]
 
 with tab_lesson:

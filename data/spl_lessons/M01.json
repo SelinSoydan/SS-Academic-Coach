@@ -58,6 +58,38 @@
         "tuzak": "Merkezi takas kuruluşu olmakla merkezi karşı taraf olmak aynı şey değil. Bir kurum MTK olabilir ama o piyasada MKT rolünü üstlenmemiş olabilir, bu durumda karşı taraf riskini garanti etmez. Sınav sorularında hangi piyasada Takasbank'ın MKT olduğunu, hangisinde sadece takas hizmeti verdiğini karıştırmak çok yaygın bir hata.",
         "gercek_hayat": "Vadeli işlem ve opsiyon piyasasında, yani VİOP'ta işlem yapan bir yatırımcı aslında karşı tarafın kim olduğunu hiç bilmez ve bilmesine de gerek yoktur, çünkü Takasbank MKT rolüyle aradaki riski üstlenmiştir. Bu, bireysel yatırımcıların büyük kurumlarla güvenle işlem yapabilmesinin temel sebebidir."
       }
+    },
+    {
+      "id": "2.3-takas-sureci",
+      "baslik": "Merkezi Takas ile MKT Uygulaması, takas süreci ve teminat türlerine giriş",
+      "sayfa": "35-46",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Takasın gerçekte nasıl işlediği, netleştirme, teslim karşılığı ödeme prensibi ve teminat sisteminin ilk katmanı.",
+        "ana_fikir": "Kanunda geçen çok önemli bir ilke var, buna takas kesinliği deniyor. Bir kere tamamlanan takas talimatı, üye iflas etse bile, hakkında tasfiye kararı alınsa bile geri alınamaz ve iptal edilemez. Bu, sistemin güvenini sağlayan temel taş. Günlük işlemler tek tek değil, çok taraflı netleştirme denilen bir yöntemle toplanır. Bir üyenin aynı gün içindeki bütün alışları ve satışları birbirine mahsup edilir, geriye sadece tek bir net borç veya net alacak kalır. Takas ise teslim karşılığı ödeme prensibiyle yürür, yani yükümlülüğünü yerine getirmeyen bir üyeye alacağı da ödenmez, iki taraf birbirine bağlıdır.",
+        "mevzuat": "Sermaye Piyasası Kanunu'ndaki takasın kesinliği hükmü ve Takasbank'ın Merkezi Takas Yönetmeliği'nin takas esaslarını düzenleyen bölümleri.",
+        "mantik": "Bütün bu kurallar aslında tek bir amaca hizmet ediyor, zincirleme bir çöküşü önlemek. Bir üye borcunu ödeyemediğinde, ona alacağı olan başka üyelerin de zincirleme sıkıntıya girmesini istemezsin. Teslim karşılığı ödeme ve netleştirme, sistemdeki riski tek bir noktada toplayıp yönetilebilir hale getiriyor.",
+        "ezber": "Teminatlar iki ana türe ayrılıyor. Başlangıç teminatı, ileride bir temerrüt olursa pozisyonu kapatana kadar geçecek süredeki riski karşılamak için baştan alınır. Değişim teminatı ise mevcut pozisyonun güncel piyasa fiyatıyla yeniden değerlenmesinden doğan farkları karşılar. Teminat hesaplamasında en az yüzde doksan dokuzluk tek taraflı güven aralığı kullanılır ve nakde dönüştürme süresi en az iki iş günü olarak alınır.",
+        "onemli_sayilar": "Teminat hesaplamasında asgari yüzde doksan dokuzluk tek taraflı güven aralığı kullanılır. Nakde dönüştürme süresi asgari iki iş günüdür. Volatilite hesaplamalarında kullanılan tarihsel veri asgari on iki ayı kapsar. Bu üç sayı, teminat yeterliliğiyle ilgili sorularda doğrudan çıkma ihtimali yüksek rakamlar.",
+        "tuzak": "Netleştirme sadece aynı gün içindeki işlemler için geçerlidir, farklı günler arasındaki borç ve alacaklar birbirine mahsup edilmez. Ayrıca serbest virman ile şartlı virman farklı şeylerdir, serbest virman hiçbir şarta bağlı olmadan yapılan transferdir, şartlı virman ise karşı taraftan bir varlığın gelmesi şartına bağlıdır, bunu teslim karşılığı ödeme mantığıyla karıştırma.",
+        "gercek_hayat": "Bir yatırımcı aynı gün içinde aynı hisseden hem alım hem satım yaptığında, arka planda Takasbank o işlemleri tek tek değil netleştirerek görür, senin gerçek net pozisyonunu hesaplar. Rasyonet gibi bir platformda gördüğün günlük net pozisyon raporları da bu netleştirme mantığının bir yansımasıdır."
+      }
+    },
+    {
+      "id": "2.3-teminat-temerrut",
+      "baslik": "Merkezi Takas ile MKT Uygulaması, garanti fonu ve temerrüt yönetimi",
+      "sayfa": "47-58",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Teminat tamamlama çağrısı, garanti fonu ve bir üye temerrüde düştüğünde kaynakların hangi sırayla kullanıldığı.",
+        "ana_fikir": "Bir üyenin teminatı, piyasa hareketleri yüzünden gerekli seviyenin altına düştüğünde Takasbank ona teminat tamamlama çağrısı yapar, bunu bildiğimiz adla margin call diyebilirsin. Üye bu çağrıya belirlenen sürede cevap vermezse temerrüde düşmüş sayılır. Ama tek koruma teminat değil, bunun üstüne bir de garanti fonu var. Garanti fonu, üyelerin ortak katkılarıyla oluşturulan, tek bir üyenin temerrüdünün bütün sistemi sarsmasını önlemek için kurulan bir tür ortak güvenlik yastığı.",
+        "mevzuat": "Takasbank Merkezi Karşı Taraf Yönetmeliği'nin garanti fonu ve temerrüt esaslarını düzenleyen bölümleri, özellikle kaynak kullanım sırasını belirleyen 36'ncı madde.",
+        "mantik": "Temerrüt yönetiminde kaynaklar rastgele değil, çok net bir sırayla kullanılır ve bu sıra hep önce temerrüde düşen üyenin kendi cebini, en son da ortak havuzu tüketecek şekilde kurulmuştur. Önce temerrüde düşen üyenin kendi teminatı kullanılır, sonra kendi garanti fonu katkı payı, sonra varsa sigorta, sonra Takasbank'ın ayırdığı sermaye, ondan sonra diğer üyelerin garanti fonu katkı payları, en sonunda da Takasbank'ın kalan sermayesinden yapılan taahhüt. Yani dürüst üyelerin parası en son kullanılan kaynaktır, bu adalet duygusunu koruyan bir tasarım.",
+        "ezber": "Temerrüt faizi hesaplanırken üç farklı gecelik faiz oranından en yükseği esas alınır, bunlar Borsa İstanbul repo ters repo pazarı, TCMB Bankalararası Para Piyasası ve Takasbank Para Piyasası oranlarıdır. MKT'nin karşı taraf rolünü üstlenme yöntemi olarak iki isim geçer, açık teklif yöntemi ve sözleşme yenileme yöntemi, ikisinin de ne anlama geldiğini karıştırmadan bilmen gerekiyor.",
+        "onemli_sayilar": "MKT'de temerrüt anında kaynakların kullanılma sırası altı adımdan oluşur ve bu sıralamayı ezbere bilmen lazım. Önce temerrüde düşen üyenin kendi teminatı, sonra kendi garanti fonu katkı payı, sonra varsa sigorta tazminleri, sonra Takasbank'ın karşılanmış riskler için ayırdığı sermaye, sonra diğer üyelerin yatırılmış garanti fonu katkı payları, en son da MKT üyelerinden talep edilebilecek ilave katkı payları ve Takasbank'ın kalan sermayesinden yapılan taahhüt. Talep edilebilecek ilave garanti fonu katkı payı, yatırılmış katkı payı tutarını geçemez, bu da ezberlenmesi gereken bir sınır.",
+        "tuzak": "Açık teklif yöntemi, Takasbank'ın işlem eşleştiği anda otomatik olarak alıcıya karşı satıcı, satıcıya karşı alıcı konumuna geçmesidir. Sözleşme yenileme yöntemi ise taraflar arasındaki mevcut sözleşmenin iptal edilip Takasbank'ın taraflarla ayrı ayrı yeni sözleşme yapmasıdır, ikisi farklı mekanizmalar ama sonuçta ikisi de aynı amaca, MKT'nin araya girmesine hizmet eder. Sınav bu iki yöntemi birbirinin tanımıyla karıştırmayı çok sever.",
+        "gercek_hayat": "VİOP'ta işlem yapan bir yatırımcının karşı tarafı gerçekte kim olursa olsun, o üye temerrüde düşse bile senin pozisyonun etkilenmez, çünkü önce onun kendi teminatı, sonra garanti fonu devreye girer. Bu yapı sayesinde 2008 küresel kriz gibi dönemlerde bile organize piyasalardaki takas sistemleri çökmeden çalışmaya devam edebildi."
+      }
     }
   ]
 }
