@@ -50,7 +50,7 @@ TOC_STATIC = [
     {"Bölüm": "4.5-4.13", "Konu": "Borçlanma Araçları Takas Prensipleri, Risk ve Teminat Yönetimi, Temerrüt", "Sayfa": "116-130"},
     {"Bölüm": "5.1", "Konu": "VİOP Takas İşlemleri, İşlem Saatleri, Fiziki Teslimat", "Sayfa": "131-145"},
     {"Bölüm": "5.2", "Konu": "VİOP Üç Katmanlı Risk Yönetimi ve Teminatlandırma", "Sayfa": "146-162"},
-    {"Bölüm": "6", "Konu": "Takasbank Teminat Yönetimi", "Sayfa": "163-174"},
+    {"Bölüm": "6", "Konu": "Takasbank Teminat Yönetimi (piyasa bazında garanti fonu ve teminat özeti)", "Sayfa": "163-174"},
 ]
 TOC = [
     {**row, "Durum": "İşlendi" if row["Bölüm"] in lessons_by_id else "Sırada"}

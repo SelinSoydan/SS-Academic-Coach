@@ -218,6 +218,22 @@
         "onemli_sayilar": "İşlem öncesi risk parametrelerinde asgari 1 yıllık veri seti, yüzde 99,50 güven düzeyi kullanılır ve ayda bir gözden geçirilir. Risk katmanları üçtür, işlem öncesi, işlem anı, işlem sonrası.",
         "gercek_hayat": "VİOP'ta emir girerken bazen emrinin anında reddedildiğini görebilirsin, teminatın o pozisyonu açmaya yetmiyorsa, bu tam olarak işlem öncesi risk yönetimi katmanının PTRM arayüzü üzerinden anlık olarak seni durdurmasıdır, emir borsaya bile gitmeden engellenir."
       }
+    },
+    {
+      "id": "6",
+      "baslik": "İstanbul Takas ve Saklama Bankası A.Ş. Teminat Yönetimi",
+      "sayfa": "163-174",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Kitabın son bölümü, bütün piyasalarda gördüğün teminat ve garanti fonu kavramlarını tek bir çatı altında topluyor ve piyasa bazında karşılaştırmalı rakamlar veriyor.",
+        "ana_fikir": "Bu bölüm aslında daha önce VİOP, Pay Piyasası, SWAP Piyasası gibi ayrı ayrı öğrendiğin teminat mantığının Takasbank genelindeki özeti. Üç ana teminat türü var, üyelik teminatı, işlem teminatı ve garanti fonu katkı payı. İşlem teminatı da kendi içinde başlangıç, değişim ve fiziki teslimat teminatı olarak üçe ayrılıyor. Her piyasanın kendine özgü asgari garanti fonu tutarı var ve hangi varlıkların hangi piyasada teminat olarak kabul edildiğini gösteren büyük bir tablo bu bölümün kalbi.",
+        "mevzuat": "Takasbank Merkezi Karşı Taraf Yönetmeliği ve ilgili piyasa prosedürleri, özellikle teminata kabul edilen varlıkları ve kompozisyon limitlerini düzenleyen EK-2 tablosu.",
+        "mantik": "Piyasalar arasında garanti fonu tutarlarının bu kadar farklı olmasının sebebi, her piyasanın taşıdığı riskin büyüklüğünün farklı olması. VİOP gibi kaldıraçlı ve oynak bir piyasada garanti fonu çok daha büyük tutulurken, BİAŞ Para Piyasası gibi görece düşük riskli bir piyasada çok daha küçük bir tutar yeterli görülüyor. Yani rakamlar rastgele değil, her piyasanın kendi risk profiline göre kalibre edilmiş.",
+        "ezber": "Asgari garanti fonu katkı payı tutarları piyasaya göre değişiyor. VİOP için 3.575.000 TL, SWAP Piyasası için 2.875.000 TL, BAP için 700.000 TL, Pay Piyasası için 200.000 TL, Takasbank Ödünç Pay Piyasası için 125.000 TL, Tezgah Üstü Türev Araç Piyasası için 500.000 TL, BİAŞ Para Piyasası için ise sadece 50.000 TL. En riskli görülen VİOP'un en yüksek, en düşük riskli görülen BİAŞ Para Piyasası'nın en düşük tutara sahip olduğunu fark edersen bu sıralamayı ezberlemek çok daha kolaylaşır.",
+        "tuzak": "Herhangi bir ihraççı veya bankanın (ve aynı sermaye grubundaki diğer kuruluşların) menkul kıymet ve garantileri toplamının, kabul edilen teminatlar içindeki payı yüzde 25'i geçemez, bunu yüzde 30 veya yüzde 50 gibi diğer sayılarla karıştırma. VİOP'ta toplam teminat gereksiniminin en az yüzde 50'si Türk Lirası olmalı, garanti fonu katkı payının ise en az yüzde 30'u nakit Türk Lirası olmalı, bu iki farklı oranı (yüzde 50 işlem teminatı için, yüzde 30 garanti fonu için) birbirine karıştırmak klasik bir sınav tuzağı. Ayrıca üyeler kendi ihraç ettikleri veya kendi sermaye grubundaki kuruluşların menkul kıymetlerini teminat olarak veremez, kendi kağıdınla kendi borcunu teminatlandıramazsın.",
+        "onemli_sayilar": "Tek bir ihraççı/banka grubunun teminatlar içindeki payı en fazla yüzde 25 olabilir. VİOP'ta işlem teminatının en az yüzde 50'si TL nakit olmalı. Garanti fonu katkı payının en az yüzde 30'u nakit TL olmalı. Başlangıç teminatı hesaplamasında asgari yüzde 99 tek taraflı güven aralığı, asgari 2 iş günü elde tutma süresi, asgari 12 aylık tarihsel veri kullanılır. Asgari garanti fonu tutarları: VİOP 3.575.000 TL, SWAP 2.875.000 TL, BAP 700.000 TL, Pay Piyasası 200.000 TL, Ödünç Pay Piyasası 125.000 TL, Tezgah Üstü Türev 500.000 TL, BİAŞ Para Piyasası 50.000 TL.",
+        "gercek_hayat": "Bir aracı kurumun risk yöneticisi, hangi piyasada ne kadar garanti fonu ayırması gerektiğini planlarken tam olarak bu tabloya bakar, VİOP'ta faaliyet göstermek BİAŞ Para Piyasası'na göre çok daha büyük bir sermaye taahhüdü gerektirir, bu da kurumların hangi piyasalarda faaliyet göstereceğine karar verirken dikkate aldığı gerçek bir maliyet kalemidir."
+      }
     }
   ]
 }
