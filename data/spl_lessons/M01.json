@@ -90,6 +90,54 @@
         "tuzak": "Açık teklif yöntemi, Takasbank'ın işlem eşleştiği anda otomatik olarak alıcıya karşı satıcı, satıcıya karşı alıcı konumuna geçmesidir. Sözleşme yenileme yöntemi ise taraflar arasındaki mevcut sözleşmenin iptal edilip Takasbank'ın taraflarla ayrı ayrı yeni sözleşme yapmasıdır, ikisi farklı mekanizmalar ama sonuçta ikisi de aynı amaca, MKT'nin araya girmesine hizmet eder. Sınav bu iki yöntemi birbirinin tanımıyla karıştırmayı çok sever.",
         "gercek_hayat": "VİOP'ta işlem yapan bir yatırımcının karşı tarafı gerçekte kim olursa olsun, o üye temerrüde düşse bile senin pozisyonun etkilenmez, çünkü önce onun kendi teminatı, sonra garanti fonu devreye girer. Bu yapı sayesinde 2008 küresel kriz gibi dönemlerde bile organize piyasalardaki takas sistemleri çökmeden çalışmaya devam edebildi."
       }
+    },
+    {
+      "id": "2.4",
+      "baslik": "Portföy Saklama Hizmetine ve Bu Hizmette Bulunacak Kuruluşlara İlişkin Esaslar Tebliği",
+      "sayfa": "59-70",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Kolektif yatırım kuruluşlarının, yani yatırım fonları ve yatırım ortaklıklarının portföylerinin nasıl ve kimin tarafından saklandığı.",
+        "ana_fikir": "Bir yatırım fonunun içindeki hisse, tahvil gibi varlıklar fonu yöneten portföy yönetim şirketinin kasasında durmaz, ayrı ve bağımsız bir kurum olan portföy saklayıcısı nezdinde saklanır. Bunun sebebi çok basit, fonu yöneten şirket ile parayı saklayan şirket aynı olursa kötüye kullanım riski doğar. Portföy saklayıcısı sadece varlığı saklamakla kalmaz, aynı zamanda fonun kendi kurallarına, içtüzüğüne uygun davranıp davranmadığını da denetler. Bu hizmeti Takasbank ile SPK tarafından yetkilendirilen banka ve aracı kurumlar verebilir.",
+        "mevzuat": "Portföy Saklama Hizmetine ve Bu Hizmette Bulunacak Kuruluşlara İlişkin Esaslar Tebliği, kısaca Portföy Saklama Tebliği.",
+        "mantik": "Portföy saklayıcısının en temel görevi bir denge unsuru olmak. Fonu yöneten kimse kendi kendini denetleyemez, bu yüzden aradaki saklayıcı kurum bağımsız bir göz görevi görür. Mesela fon yöneticisi mevzuata aykırı bir talimat verirse, saklayıcı bunu tespit edip önce ilgili kuruluşu uyarır, düzeltilmezse SPK'ya bildirir. Yani saklayıcı pasif bir kasa değil, aktif bir denetleyicidir.",
+        "ezber": "Gayrimenkul yatırım ortaklıkları, altyapı gayrimenkul yatırım ortaklıkları, girişim sermayesi yatırım ortaklıkları ve emeklilik yatırım fonlarının portföyleri bu tebliğ kapsamında saklama zorunluluğuna tabi değildir. Ama girişim sermayesi fonlarının, yani ortaklık değil fon olanların, portföyleri bu tebliğ kapsamındadır, bu ince ayrımı karıştırma. Ayrıca portföy saklayıcısı olacak bir aracı kurum, saklama hizmeti verdiği fona aynı zamanda pay alım satımına aracılık hizmeti veremez, bu bir çıkar çatışması yasağıdır.",
+        "tuzak": "Portföy saklayıcısı KYK'ya ait varlıkları kendi aktifleriyle asla ilişkilendiremez ve kendi uhdesinde tutamaz, bu kesin bir yasaktır. Saklama hizmet birimi yöneticisinin Sermaye Piyasası Faaliyetleri Düzey 3 Lisansı ile Türev Araçlar Lisansı'na sahip olması ve en az beş yıl tecrübeli olması şartı sınavda sıkça karıştırılan bir detay, hangi lisansın hangi göreve karşılık geldiğini net tut.",
+        "onemli_sayilar": "Saklama hizmet birimi yöneticisi için asgari beş yıl sektör tecrübesi şartı aranır. Portföy saklayıcısı, saklamaya konu varlıkların mutabakatını her gün yapmakla yükümlüdür, bu günlük kontrol periyodunu unutma.",
+        "gercek_hayat": "Bir yatırım fonuna para yatırdığında, o paranın karşılığı olan varlıklar fonu yöneten şirketin değil, ayrı bir bankanın veya aracı kurumun saklama biriminde tutulur. Bu sayede fon yönetim şirketi batsa bile senin varlığın ayrı ve güvende kalır, TEFAS üzerinden fon alan her yatırımcı aslında bu korumadan faydalanıyor."
+      }
+    },
+    {
+      "id": "3.1",
+      "baslik": "BİAŞ Pay Piyasası Takas İşlemleri",
+      "sayfa": "71-77",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Pay piyasasında bir hisse alım satımının işlem gününden takasın tamamlanmasına kadar geçen üç günlük süreç ve temerrüt kuralları.",
+        "ana_fikir": "Bir hisse aldığında işlem T günü Borsa'da gerçekleşir ama takas iki iş günü sonra, yani T+2'de tamamlanır. Bu üç günlük sürecin her günü kendi içinde ayrı bir işleve sahip. T günü işlemler devam ederken anlık takas pozisyonları oluşur ve gün sonunda netleşir. T+1 günü aracı kurumlar varsa hatalı sözleşme bilgilerini düzeltir. T+2 günü ise blokede bekleyen kıymetler otomatik olarak serbestleşip aracı kurumun takas havuz hesabına, oradan da Takasbank'ın takas havuz hesabına aktarılır ve borç kapanır. Bütün bu süreç netleştirme, teslim karşılığı ödeme, kaydi takas, merkezi takas ve aynı gün valörlü ödeme gibi beş temel prensip üzerine kurulu.",
+        "mevzuat": "Takasbank MTK Yönetmeliği madde 17 ve İstanbul Takas ve Saklama Bankası A.Ş.'nin Merkezi Karşı Taraf Hizmeti Sunduğu Piyasalara İlişkin Takas Hizmetleri Yönergesi.",
+        "mantik": "Neden tam olarak iki gün beklendiğini merak edebilirsin. Bu süre, tarafların yükümlülüklerini toplayıp netleştirmesine, hataların düzeltilmesine ve gerekli nakit veya kıymetin hazırlanmasına yetecek asgari süre olarak tasarlanmış. Aynı zamanda teslim karşılığı ödeme prensibi, borcunu kapatmayan aracı kuruma alacağının da ödenmeyeceğini söyleyerek sistemi kendi kendini koruyan bir yapıya kavuşturuyor.",
+        "ezber": "Takas günü işlem gününü takip eden ikinci iş günüdür, yani T+2. Yarım günlerde takas yapılmaz, bir sonraki günün işlemleriyle birleştirilerek ikinci iş gününde toplu yapılır. Nakit takas borçları saat 16:45'e kadar ilgili hesaplara yatırılmak zorundadır, bu saat aynı zamanda temerrüdün başlangıç anı olarak kabul edilir.",
+        "tuzak": "Aracı kurumlar takas borcunu erken kapatmak isteseler bile, taraflarca yükümlülüğün takas tarihinden önce yerine getirilip sürecin erken sonlandırılması mümkün değildir, süreç mutlaka T+2'yi bekler. Ayrıca brüt takas ile netleştirilmiş takas farklı süreçlerdir, brüt takasta üye satış toplamı kadar kıymet borçlu, alış toplamı kadar nakit borçlu sayılır, ikisini birbirine karıştırma.",
+        "onemli_sayilar": "Nakit takas borçları saat 16:45'e kadar yatırılmalıdır. Temerrüt faizi formülünde matrah, faiz oranı ve gün sayısı üç yüz altmışa bölünerek hesaplanır. Yükümlülük takas gününde saat 17:30'a kadar (dahil) yerine getirilirse katsayı bir, daha sonra veya izleyen günlerde yerine getirilirse katsayı üç olarak uygulanır. Tahakkuk eden temerrüt faizi üç iş günü içinde ödenmelidir. Mağduriyet ödemesi, tahsil edilen temerrüt cezasının üçte ikisi kadardır. Temerrüde düşen aracı kurum için T+3 günü saat 11:00'e kadar borcunu kapatamazsa Takasbank re'sen borç kapatma yoluna gider.",
+        "gercek_hayat": "Bir hisseyi Pazartesi aldığında paranın hesabından tam olarak Pazartesi değil Çarşamba (T+2) çekildiğini fark etmişsindir, bu boşluk tam olarak burada anlatılan takas süreci. Rasyonet gibi platformlarda gördüğün 'valör tarihi' bilgisi de bu T+2 mantığının kullanıcıya yansımasıdır."
+      }
+    },
+    {
+      "id": "3.2",
+      "baslik": "BİAŞ Pay Piyasası Risk ve Teminat Yönetimi",
+      "sayfa": "78-87",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Pay piyasasında BISTECH Marjin Yöntemi ile teminat hesaplaması, teminat tamamlama çağrıları ve risk limitleri.",
+        "ana_fikir": "Takasbank, pay piyasasında MKT hizmeti verdiği pozisyonlar için üyelerden başlangıç ve değişim teminatı ister, tıpkı daha önce genel çerçevede öğrendiğin gibi. Ama burada işin somut matematiği var. Başlangıç teminatı, tarama riski ile vadeler arası risk teminatının toplanıp, ürün grupları arası risk teminatının çıkarılması ve netleştirme etkisinin eklenmesiyle bulunuyor. Değişim teminatı ise pozisyon sayısı ile cari fiyat ve takas fiyatı arasındaki farkın çarpılmasıyla hesaplanıyor. Teminat gün içinde de gün sonunda da sürekli izleniyor, yetersiz kaldığı anda çağrı geliyor.",
+        "mevzuat": "Takasbank Pay Piyasası Prosedürü ve ilgili MKT Yönetmeliği hükümleri.",
+        "mantik": "Başlangıç teminatı ile değişim teminatı arasındaki fark burada da aynı, başlangıç 'ileride ne olabilir' sorusuna, değişim 'şu an ne oldu' sorusuna cevap veriyor. Risk limiti mekanizması ise bir güvenlik valfi gibi çalışıyor, üye riskini çok büyütürse önce ek teminat istenir, yüzde iki yüzü geçerse artık teminata bile bakılmadan emir girişi tamamen durdurulur. Bu, tek bir üyenin aşırı risk alıp bütün sistemi tehlikeye atmasını engelliyor.",
+        "ezber": "Teminat kompozisyonunun en az yüzde onu Türk Lirası nakit olmak zorunda. Başlangıç teminatına esas istatistiksel parametrelerde güven düzeyi yüzde doksan dokuz virgül elli, elde tutma süresi yeni işlemler için iki gündür. Değerleme katsayılarının hesaplanmasında ise güven düzeyi yüzde doksan dokuz virgül doksana çıkar ve likidite etme süresi yine iki iş günüdür, bu iki farklı güven düzeyini birbirine karıştırma.",
+        "tuzak": "Gün içi teminat tamamlama çağrısının yerine getirilme süresi iki saattir, gün sonu teminat tamamlama çağrısının süresi ise bir sonraki iş günü saat 15:00'tir, bu iki farklı süreyi karıştırmak sınavın klasik tuzaklarından biri. Ayrıca risk limit oranı yüzde iki yüzü aştığında teminat yeterli olsa bile emir iletimi engellenir, bu kuralı 'teminatım yeterliyse engellenmem' diye yanlış anlamamak lazım.",
+        "onemli_sayilar": "Teminat kompozisyonunun asgari yüzde onu nakit Türk Lirası olmalı. Başlangıç teminatı parametrelerinde güven düzeyi yüzde 99,50, elde tutma süresi 2 gün. Değerleme katsayısı hesaplamasında güven düzeyi yüzde 99,90, likidite süresi 2 iş günü, kullanılan tarihsel veri en az 1 yıl. Gün içi teminat tamamlama çağrısı süresi 2 saat, gün sonu çağrısı süresi ertesi gün saat 15:00. Risk limit oranı yüzde 200'ü aşarsa emir iletimi durur.",
+        "gercek_hayat": "VİOP'ta veya pay piyasasında yüksek kaldıraçlı pozisyon taşıyan bir aracı kurumun, piyasa aniden hareket ettiğinde telefonuna veya ekranına düşen 'teminat tamamlama çağrısı' bildirimi tam olarak burada anlatılan gün içi teminat tamamlama sürecinin gerçek hayattaki karşılığıdır, iki saat içinde tamamlamazsa temerrüt sürecine girer."
+      }
     }
   ]
 }
