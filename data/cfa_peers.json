@@ -1,6 +1,6 @@
 {
-  "source": "EquityRT — BRSAN Peer Performance ekranı (Ratios sekmesi altında), Selin'in ekran görüntüsü, 22 Eylül 2026",
-  "note": "P/E burada 33,89 görünüyor; aynı gün Snapshot ekranındaki P/E TTM 38,39 idi — iki EquityRT ekranı farklı hesap dönemi/kaynak kullanıyor olabilir, rapora koymadan önce hangisinin TTM hangisinin farklı bir dönem olduğunu netleştir.",
+  "source": "EquityRT, BRSAN Peer Performance ekranı (Ratios sekmesi altında), Selin'in ekran görüntüsü, 22 Eylül 2026",
+  "note": "P/E burada 33,89 görünüyor; aynı gün Snapshot ekranındaki P/E TTM 38,39 idi, iki EquityRT ekranı farklı hesap dönemi/kaynak kullanıyor olabilir, rapora koymadan önce hangisinin TTM hangisinin farklı bir dönem olduğunu netleştir.",
   "peers": [
     {"name": "Nucor Corp", "ulke": "ABD", "market_cap_mn_usd": 54994.66, "total_assets_mn_usd": 36954.00, "p_bv": 2.49, "p_e": 19.14, "ev_ebitda": null},
     {"name": "Steel Dynamics Inc", "ulke": "ABD", "market_cap_mn_usd": 32964.03, "total_assets_mn_usd": 17113.40, "p_bv": 3.50, "p_e": 20.51, "ev_ebitda": null},
@@ -18,6 +18,8 @@
     {"name": "Tiangong International Co Ltd", "ulke": "Çin", "market_cap_mn_usd": 1075.06, "total_assets_mn_usd": 1972.02, "p_bv": 1.01, "p_e": 19.31, "ev_ebitda": null}
   ],
   "sector_median": {"market_cap_mn_usd": 112.48, "total_assets_mn_usd": 215.75, "p_bv": 1.03, "p_e": 15.92},
+  "peer_methodology": "Yukarıdaki 14 şirket EquityRT'nin kendi 'Steel & Iron' sektör sınıflamasından geliyor, yani geniş bir sektör karşılaştırması. CFA Institute'un resmi rehberi (Equity Research Report Essentials) bunu tek başına yeterli görmüyor, peer seçiminde asıl kriterin gelirin/faaliyet kârının önemli kısmının hedef şirketle aynı iş kolundan gelmesi ve benzer bir talep ortamına maruz kalması olduğunu söylüyor. Nippon Steel veya Erdemir gibi entegre/yassı çelik üreticileri aynı sektör kodunu paylaşsa da BRSAN gibi bir boru/tüp uzmanıyla iş modeli örtüşmüyor, bu yüzden geniş listede bağlam için kalıyorlar ama dar peer grubuna girmiyorlar. Dar peer grubu için aranması gereken gerçek boru/tüp üreticileri: Tenaris (NYSE: TS), Vallourec (Euronext Paris: VK), Jindal SAW (NSE: JINDALSAW). TMK (Rusya) da iş modeli olarak uyuyor ama 2022 sonrası yaptırımlar yüzünden batı veri kaynaklarında fiyat/likidite sorunu olabilir, EquityRT'de bulunursa dikkatle kullan. EVRAZ, 2022'de Londra borsasından çıkarıldığı için karşılaştırmaya dahil edilmemeli. Profesyonel pratikte tipik bir dar peer grubu 5 ile 10 gerçek şirket arasında tutulur, çok azı istatistiksel olarak anlamsız kalır, çok fazlası farklı iş modellerini araya sokup medyanı bozar.",
+  "narrow_peers": [],
   "target": {
     "name": "Borusan Boru Sanayi (BRSAN)",
     "market_cap_mn_usd": 1917.91,
@@ -68,7 +70,7 @@
   },
   "earnings_history": {
     "source": "EquityRT Earnings ekranı, 22 Eylül 2026",
-    "note": "EPS değerleri dönemler arası tutarsız büyüklükte görünüyor (0,13 / 0,02 / 8,97 / 0,11) — muhtemelen bir bölünme/düzeltme farkı var, kullanmadan önce KAP'tan teyit et.",
+    "note": "EPS değerleri dönemler arası tutarsız büyüklükte görünüyor (0,13 / 0,02 / 8,97 / 0,11), muhtemelen bir bölünme/düzeltme farkı var, kullanmadan önce KAP'tan teyit et.",
     "items": [
       {"period": "2026/6M", "type": "Interim", "announced": "2026-08-07", "eps": 0.13, "currency": "TRL", "annual_earnings_ttm_mn": 2470.61},
       {"period": "2026/3M", "type": "Quarterly", "announced": "2026-05-07", "eps": 0.02, "currency": "TRL", "annual_earnings_ttm_mn": 1829.74},

@@ -1,28 +1,28 @@
 {
-  "source": "EquityRT — BRSAN Snapshot/Key Statistics ekranı, Selin'in ekran görüntüsü, 22 Eylül 2026 18:09 TRL",
+  "source": "EquityRT, BRSAN Snapshot/Key Statistics ekranı, Selin'in ekran görüntüsü, 22 Eylül 2026 18:09 TRL",
   "ratios": [
     {
       "id": "pe",
-      "baslik": "F/K (P/E — Fiyat/Kazanç)",
+      "baslik": "F/K (P/E, Fiyat/Kazanç)",
       "deger": "TTM: 38,39x · Forward: veri yok",
-      "anlami": "Piyasanın, şirketin bugünkü kâr seviyesini kaç katına satın almaya razı olduğu — ama tek başına okunduğunda 'kaç yılda geri öder' gibi yanlış bir sadeliğe indirgenir. Gerçekte F/K bir büyüme + risk + kalite bileşkesidir.",
-      "kim_kullanir": "Hisse seçiminde ilk elemede hemen herkes kullanır (bireysel yatırımcıdan fon yöneticisine) — ama profesyoneller asla tek başına, her zaman PEG veya EV/EBITDA ile üçgenleştirerek kullanır.",
+      "anlami": "Piyasanın, şirketin bugünkü kâr seviyesini kaç katına satın almaya razı olduğu, ama tek başına okunduğunda 'kaç yılda geri öder' gibi yanlış bir sadeliğe indirgenir. Gerçekte F/K bir büyüme + risk + kalite bileşkesidir.",
+      "kim_kullanir": "Hisse seçiminde ilk elemede hemen herkes kullanır (bireysel yatırımcıdan fon yöneticisine), ama profesyoneller asla tek başına, her zaman PEG veya EV/EBITDA ile üçgenleştirerek kullanır.",
       "nasil_kullanilir": "TTM F/K'yı sektör ortalaması ve şirketin kendi 5 yıllık ortalamasıyla karşılaştır. Forward F/K yoksa, guidance'tan (BRSAN'da 2026 gelir 2,1-2,3 milyar $, FAVÖK marjı %8-10) kendi tahminini kur.",
-      "bireysel_okuma": "Bireysel yatırımcı çoğunlukla '38x = pahalı' der ve geçer — bağlamı (kârın toparlanma aşamasında olup olmadığını) atlar.",
-      "deneyimli_okuma": "Deneyimli analist önce payda(kâr)nın normalize olup olmadığını sorar: BRSAN'da 2024 net zarar (-5,1 mln$), 2025 toparlanma (31,7 mln$) — yüksek F/K, düşük bir kâr tabanına bölündüğü için şişkin görünüyor olabilir. 52 haftalık fiyat aralığının neresinde olunduğuna (BRSAN 669, aralık 383,5-789) da bakar — F/K'nın yüksekliği fiyatın zirveye yakınlığından mı geliyor, kârın düşüklüğünden mü, ayırt eder.",
-      "tuzaklar": "1) Yüksek F/K'yı otomatik 'pahalı' sanmak (growth trap'i kaçırmak). 2) Düşük F/K'lı bir şirketi otomatik 'ucuz' sanmak (value trap — yapısal çöküşü ıskalamak). 3) TTM ile Forward'ı karıştırmak.",
+      "bireysel_okuma": "Bireysel yatırımcı çoğunlukla '38x = pahalı' der ve geçer, bağlamı (kârın toparlanma aşamasında olup olmadığını) atlar.",
+      "deneyimli_okuma": "Deneyimli analist önce payda(kâr)nın normalize olup olmadığını sorar: BRSAN'da 2024 net zarar (-5,1 mln$), 2025 toparlanma (31,7 mln$), yüksek F/K, düşük bir kâr tabanına bölündüğü için şişkin görünüyor olabilir. 52 haftalık fiyat aralığının neresinde olunduğuna (BRSAN 669, aralık 383,5-789) da bakar, F/K'nın yüksekliği fiyatın zirveye yakınlığından mı geliyor, kârın düşüklüğünden mü, ayırt eder.",
+      "tuzaklar": "1) Yüksek F/K'yı otomatik 'pahalı' sanmak (growth trap'i kaçırmak). 2) Düşük F/K'lı bir şirketi otomatik 'ucuz' sanmak (value trap, yapısal çöküşü ıskalamak). 3) TTM ile Forward'ı karıştırmak.",
       "haber_baglantisi": "ABD'de tarife/korumacılık haberleri → BRSAN'ın ABD tesisleri (Baytown, Panama City, Mobile) yerel üretici avantajı kazanır → FAVÖK marjı genişler → EPS büyür → fiyat sabit kalsa bile F/K 'otomatik' daralır (çarpan sıkışması olmadan ucuzlama)."
     },
     {
       "id": "ev_ebitda",
       "baslik": "EV/EBITDA (Firma Değeri / FAVÖK)",
       "deger": "TTM: 14,94x · Forward: veri yok",
-      "anlami": "Şirketin sermaye yapısından (borç/özkaynak karışımından) bağımsız, 'operasyonel motorun' ne kadar pahalı fiyatlandığını gösterir — F/K'nın aksine borçlu ve borçsuz şirketleri adil karşılaştırır.",
+      "anlami": "Şirketin sermaye yapısından (borç/özkaynak karışımından) bağımsız, 'operasyonel motorun' ne kadar pahalı fiyatlandığını gösterir, F/K'nın aksine borçlu ve borçsuz şirketleri adil karşılaştırır.",
       "kim_kullanir": "Özellikle M&A (birleşme-satın alma) analistleri ve borçluluğu yüksek/siklik sektörlerdeki (çelik, boru gibi) analistler F/K yerine bunu tercih eder.",
-      "nasil_kullanilir": "EV = Piyasa değeri + Net borç. BRSAN'da net finansal borç 178 mln$ (2025 FY) — bu FAVÖK'e (133,1 mln$) eklenip firma değeri bulunuyor. F/K ile EV/EBITDA arasındaki makas büyükse, borç yükü hikayenin önemli bir parçasıdır.",
-      "bireysel_okuma": "Genelde F/K'yı bilir, EV/EBITDA'yı atlar — borcu göz ardı ederek 'ucuz/pahalı' hükmü verir.",
-      "deneyimli_okuma": "F/K (38,39x) ile EV/EBITDA (14,94x) arasındaki farkı okur: F/K çok daha yüksek görünüyorsa, bu genelde net kârın amortisman/faiz/vergi gibi 'FAVÖK'ün altındaki' kalemlerden fazla etkilendiğini gösterir — BRSAN'da finansman giderlerinin (28,8 mln$, 2025) kâra oranı yüksek, bu da F/K'yı EV/EBITDA'ya göre şişiriyor olabilir.",
-      "tuzaklar": "EV hesaplarken net borcu güncel çeyrekten almayı unutmak (eski/stale veri kullanmak) — borç hızlı değişen bir şirkette bu ciddi hata olur.",
+      "nasil_kullanilir": "EV = Piyasa değeri + Net borç. BRSAN'da net finansal borç 178 mln$ (2025 FY), bu FAVÖK'e (133,1 mln$) eklenip firma değeri bulunuyor. F/K ile EV/EBITDA arasındaki makas büyükse, borç yükü hikayenin önemli bir parçasıdır.",
+      "bireysel_okuma": "Genelde F/K'yı bilir, EV/EBITDA'yı atlar, borcu göz ardı ederek 'ucuz/pahalı' hükmü verir.",
+      "deneyimli_okuma": "F/K (38,39x) ile EV/EBITDA (14,94x) arasındaki farkı okur: F/K çok daha yüksek görünüyorsa, bu genelde net kârın amortisman/faiz/vergi gibi 'FAVÖK'ün altındaki' kalemlerden fazla etkilendiğini gösterir, BRSAN'da finansman giderlerinin (28,8 mln$, 2025) kâra oranı yüksek, bu da F/K'yı EV/EBITDA'ya göre şişiriyor olabilir.",
+      "tuzaklar": "EV hesaplarken net borcu güncel çeyrekten almayı unutmak (eski/stale veri kullanmak), borç hızlı değişen bir şirkette bu ciddi hata olur.",
       "haber_baglantisi": "Takasbank/Merkez Bankası faiz kararları → BRSAN'ın finansman giderleri değişir → net kâr etkilenir ama FAVÖK etkilenmez → EV/EBITDA daha 'temiz' bir operasyonel görünüm verirken F/K faiz ortamından etkilenmeye devam eder."
     },
     {
@@ -31,9 +31,9 @@
       "deger": "2,19x",
       "anlami": "Piyasanın, şirketin net varlıklarına (özkaynağına) göre ne kadar prim ödediği. 1'in altı 'piyasa varlıkları defter değerinden düşük görüyor' demektir (bankacılık/ağır sanayide sık), üstü ise piyasanın marka/verimlilik/büyüme potansiyeline prim verdiğini gösterir.",
       "kim_kullanir": "Özellikle bankacılık ve ağır sanayi/üretim analistleri, varlık yoğun şirketlerde F/K'dan çok bunu önemser.",
-      "nasil_kullanilir": "ROE ile birlikte okunur — yüksek ROE + makul P/BV 'kaliteli ve adil fiyatlı' sinyali, düşük ROE + yüksek P/BV ise uyarı sinyalidir.",
+      "nasil_kullanilir": "ROE ile birlikte okunur, yüksek ROE + makul P/BV 'kaliteli ve adil fiyatlı' sinyali, düşük ROE + yüksek P/BV ise uyarı sinyalidir.",
       "bireysel_okuma": "P/BV'yi çoğu zaman hiç bakmaz, sadece F/K'ya odaklanır.",
-      "deneyimli_okuma": "BRSAN'da ROE %6,44 (düşükçe) + P/BV 2,19x (özkaynağının 2 katından fazlası ödeniyor) kombinasyonunu birlikte okur — bu, piyasanın mevcut ROE'den çok gelecekteki ROE artışına (guidance'taki marj genişlemesine) bahis oynadığını gösterir.",
+      "deneyimli_okuma": "BRSAN'da ROE %6,44 (düşükçe) + P/BV 2,19x (özkaynağının 2 katından fazlası ödeniyor) kombinasyonunu birlikte okur, bu, piyasanın mevcut ROE'den çok gelecekteki ROE artışına (guidance'taki marj genişlemesine) bahis oynadığını gösterir.",
       "tuzaklar": "Defter değerini güncel piyasa koşullarına göre yeniden değerlemeden (ör. gayrimenkul/tesislerin gerçek değeri defterdekinden çok farklı olabilir) ham almak.",
       "haber_baglantisi": "Gemlik kampüs konsolidasyonu gibi büyük yatırım haberleri (30 mln$ işletme sermayesi düşüşü, 29 mln$ yatırım) → defter değeri (duran varlıklar) değişir → P/BV'nin paydası hareket eder."
     },
@@ -41,25 +41,25 @@
       "id": "roe",
       "baslik": "ROE (Özkaynak Kârlılığı)",
       "deger": "%6,44",
-      "anlami": "Ortakların koyduğu her 1 TL özkaynağın yılda ne kadar kâr ürettiği — şirketin 'para üretme verimliliği'.",
+      "anlami": "Ortakların koyduğu her 1 TL özkaynağın yılda ne kadar kâr ürettiği, şirketin 'para üretme verimliliği'.",
       "kim_kullanir": "Warren Buffett tarzı kalite yatırımcıları ROE'yi en çok önemsenen rasyolardan biri sayar; sürdürülebilir yüksek ROE, rekabet avantajının (moat) bir göstergesi kabul edilir.",
       "nasil_kullanilir": "DuPont analiziyle üçe ayrılır: Net Kâr Marjı × Varlık Devir Hızı × Finansal Kaldıraç. Hangi bileşenin ROE'yi sürüklediğini bulmadan ROE tek başına eksik bilgidir.",
       "bireysel_okuma": "'%6,44 düşük, kötü şirket' der, geçer.",
-      "deneyimli_okuma": "BRSAN'ın Debt/Asset'i %55,54 — yani ROE'nin bir kısmı zaten kaldıraçla (borçla) şişirilmiş olabilir; DuPont'a bölmeden ROE'yi 'düşük' ya da 'yüksek' diye etiketlemek amatörlüktür. 2024'ün net zarar yılından yeni çıkan bir şirkette ROE'nin henüz normalize olmadığını da hesaba katar.",
-      "tuzaklar": "Yüksek ROE'yi otomatik 'iyi yönetim' sanmak — aşırı borçlanma da ROE'yi yapay olarak yükseltebilir (kaldıraç etkisi).",
+      "deneyimli_okuma": "BRSAN'ın Debt/Asset'i %55,54, yani ROE'nin bir kısmı zaten kaldıraçla (borçla) şişirilmiş olabilir; DuPont'a bölmeden ROE'yi 'düşük' ya da 'yüksek' diye etiketlemek amatörlüktür. 2024'ün net zarar yılından yeni çıkan bir şirkette ROE'nin henüz normalize olmadığını da hesaba katar.",
+      "tuzaklar": "Yüksek ROE'yi otomatik 'iyi yönetim' sanmak, aşırı borçlanma da ROE'yi yapay olarak yükseltebilir (kaldıraç etkisi).",
       "haber_baglantisi": "Net kâr toparlanması (2024: -5,1 mln$ → 2025: 31,7 mln$) doğrudan ROE'yi yukarı taşıyan ana kalem; 2026 guidance gerçekleşirse ROE'nin de belirgin yükselmesi beklenir."
     },
     {
       "id": "net_debt_ebitda",
       "baslik": "Net Borç / FAVÖK",
-      "deger": "1,08x (EquityRT) — not: 1Ç26 yatırımcı sunumu grafiğinde 1,3x görünüyor, kaynaklar arası küçük fark var, hangi dönem/TTM tanımının kullanıldığını netleştirmek gerek",
-      "anlami": "Şirketin mevcut FAVÖK'üyle net borcunu kaç yılda kapatabileceği — borç yükünün 'ne kadar acil' olduğunun en direkt ölçüsü.",
+      "deger": "1,08x (EquityRT), not: 1Ç26 yatırımcı sunumu grafiğinde 1,3x görünüyor, kaynaklar arası küçük fark var, hangi dönem/TTM tanımının kullanıldığını netleştirmek gerek",
+      "anlami": "Şirketin mevcut FAVÖK'üyle net borcunu kaç yılda kapatabileceği, borç yükünün 'ne kadar acil' olduğunun en direkt ölçüsü.",
       "kim_kullanir": "Kredi analistleri ve tahvil yatırımcıları birinci sırada buna bakar; hisse analistleri temerrüt/iflas riskini elemek için kullanır.",
       "nasil_kullanilir": "3x üstü siklik sektörlerde (çelik gibi) kırmızı bayrak sayılır genelde; 1x civarı rahat bir seviyedir. BRSAN'ın 2024'teki 3,2x'ten (net finansal borç/FAVÖK, sunumdaki eski veriye göre) 2025'te ~1,3x'e (hatta EquityRT'ye göre 1,08x) inmesi ciddi bir borç azaltma/deleveraging hikayesidir.",
       "bireysel_okuma": "Bu rasyoya çoğunlukla hiç bakmaz.",
-      "deneyimli_okuma": "Trend'e bakar (tek noktaya değil): 3,2x → 1,3x düşüş, F/K'nın yüksekliğini kısmen açıklayan pozitif bir hikaye — piyasa bu deleveraging'e prim veriyor olabilir.",
+      "deneyimli_okuma": "Trend'e bakar (tek noktaya değil): 3,2x → 1,3x düşüş, F/K'nın yüksekliğini kısmen açıklayan pozitif bir hikaye, piyasa bu deleveraging'e prim veriyor olabilir.",
       "tuzaklar": "FAVÖK'ün TTM mi yoksa tek çeyreğin yıllıklandırılmış hali mi olduğunu karıştırmak, sonuçları çarpıtır.",
-      "haber_baglantisi": "Takasbank'ın 15 Eylül 2026'da güncellediği risk parametreleri, borçlanma/teminat maliyetini etkileyebilir — dolaylı olarak net borç yönetimi kararlarına bağlanır."
+      "haber_baglantisi": "Takasbank'ın 15 Eylül 2026'da güncellediği risk parametreleri, borçlanma/teminat maliyetini etkileyebilir, dolaylı olarak net borç yönetimi kararlarına bağlanır."
     },
     {
       "id": "beta",
@@ -70,7 +70,7 @@
       "nasil_kullanilir": "CAPM: Beklenen getiri = Risksiz oran + Beta × (Piyasa risk primi). Beta'yı tek başına değil, sektör betasıyla karşılaştırarak oku (siklik sektörler genelde 1'in üstünde beta taşır).",
       "bireysel_okuma": "Beta'yı çoğu zaman hiç kontrol etmez, sadece fiyat grafiğine bakar.",
       "deneyimli_okuma": "1,09 betayı 'piyasadan biraz daha oynak ama aşırı değil' olarak okur, DCF'teki iskonto oranını (WACC) buna göre kalibre eder.",
-      "tuzaklar": "2 yıllık betayı değişmez sanmak — şirketin borç yapısı veya sektör dinamiği değişirse beta da değişir, periyodik güncellenmesi gerekir.",
+      "tuzaklar": "2 yıllık betayı değişmez sanmak, şirketin borç yapısı veya sektör dinamiği değişirse beta da değişir, periyodik güncellenmesi gerekir.",
       "haber_baglantisi": "Küresel çelik fiyatlarındaki ani hareketler (tarife, jeopolitik arz şokları) BRSAN'ın betasını dönemsel olarak yükseltebilir."
     },
     {
@@ -79,10 +79,10 @@
       "deger": "TTM: %0,00 · Forward: veri yok",
       "anlami": "Hissenin fiyatına göre yıllık nakit temettü getirisi.",
       "kim_kullanir": "Gelir odaklı (income) yatırımcılar ve emeklilik fonları birinci sırada bakar.",
-      "nasil_kullanilir": "%0 temettü, şirketin kârını büyümeye/borç azaltmaya yönlendirdiği anlamına gelir — bu iyi ya da kötü değil, stratejiye bağlı bir tercihtir.",
+      "nasil_kullanilir": "%0 temettü, şirketin kârını büyümeye/borç azaltmaya yönlendirdiği anlamına gelir, bu iyi ya da kötü değil, stratejiye bağlı bir tercihtir.",
       "bireysel_okuma": "'%0 temettü = kötü şirket' diye düşünebilir.",
-      "deneyimli_okuma": "BRSAN'ın 2024 net zarar sonrası kârını büyümeye (Gemlik konsolidasyonu, ABD kapasitesi) ve borç azaltmaya (3,2x→1,3x) yönlendirdiğini bilir — bu aşamada temettü dağıtmaması stratejik olarak tutarlıdır, 'kötü' değil 'büyüme fazında' okunur.",
-      "tuzaklar": "Yüksek temettü verimini otomatik 'iyi' sanmak — bazen sürdürülemez/borçla finanse edilen temettüler bir uyarı işaretidir (BRSAN'da bu durum söz konusu değil, zaten %0).",
+      "deneyimli_okuma": "BRSAN'ın 2024 net zarar sonrası kârını büyümeye (Gemlik konsolidasyonu, ABD kapasitesi) ve borç azaltmaya (3,2x→1,3x) yönlendirdiğini bilir, bu aşamada temettü dağıtmaması stratejik olarak tutarlıdır, 'kötü' değil 'büyüme fazında' okunur.",
+      "tuzaklar": "Yüksek temettü verimini otomatik 'iyi' sanmak, bazen sürdürülemez/borçla finanse edilen temettüler bir uyarı işaretidir (BRSAN'da bu durum söz konusu değil, zaten %0).",
       "haber_baglantisi": "Şirket temettü politikasını değiştirirse (KAP bildirimi), bu genelde büyüme fazının bittiğinin veya nakit akışının rahatladığının sinyali olarak okunur."
     }
   ]
