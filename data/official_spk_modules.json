@@ -6,83 +6,127 @@
       "spl_source_ref": "1012_MKT_30062026_202607141057.pdf (SPK/Takasbank/MKK ortak yayını, Ders Kodu 1012, 30 Haziran 2026)",
       "last_reviewed": "2026-09-21",
       "related_communiques": [
-        {"code": "II-13.1", "name": "Kaydileştirilen Sermaye Piyasası Araçlarına İlişkin Kayıtların Tutulmasının Usul ve Esasları Hakkında Tebliğ", "last_updated": null, "resmi_gazete_url": null},
-        {"code": "III-56.1", "name": "Portföy Saklama Hizmetine ve Bu Hizmette Bulunacak Kuruluşlara İlişkin Esaslar Tebliği", "last_updated": null, "resmi_gazete_url": null}
-      ],
-      "real_world_links": [
-        {"context": "Takasbank/MKK", "note": "Modül doğrudan Takasbank (MKT/merkezi karşı taraf) ve MKK (kaydi sistem) süreçlerini anlatıyor — Rasyonet'in veri sağlayıcılarıyla aynı altyapı."}
-      ],
-      "questions": [
         {
-          "id": 1,
-          "soru": "Aşağıdakilerden hangisi/hangileri MKK'nın kuruluş amaçlarındandır? I. Sermaye piyasası araçlarının kaydileştirilmesine ilişkin işlemleri gerçekleştirmek II. Kaydileştirilen sermaye piyasası araçları ve bunlara bağlı hakları, elektronik ortamda, üyeler ve hak sahipleri itibarıyla kayden izlemek III. Kaydileştirilen sermaye piyasası araçları merkezî saklamasını yapmak",
-          "secenekler": ["a) Yalnız I", "b) I ve II", "c) I, II ve III", "d) II ve III", "e) Yalnız III"],
-          "dogru": "c) I, II ve III",
-          "aciklama": "SPL kaynağı Ders 1012, Bölüm 2.1 (Merkezi Kayıt Kuruluşunun Kuruluş, Faaliyet, Çalışma ve Denetim Esasları Hakkında Yönetmelik), Soru 1 — EK-1 cevap anahtarına göre doğru cevap C."
+          "code": "II-13.1",
+          "name": "Kaydileştirilen Sermaye Piyasası Araçlarına İlişkin Kayıtların Tutulmasının Usul ve Esasları Hakkında Tebliğ",
+          "last_updated": null,
+          "resmi_gazete_url": null
         },
         {
-          "id": 2,
-          "soru": "Kaydileştirilmiş olan sermaye piyasası araçları için merkezi saklama fonksiyonu üstlenen MKK'nın görev ve yetkilerine ilişkin aşağıda yer alanlardan hangisi/hangileri doğrudur? I. Kaydileştirilen sermaye piyasası araçlarının teslim alınması ve imhasını SPK'ca belirlenen esaslar çerçevesinde yerine getirmek II. Sermaye piyasalarına ilişkin verilerin tek bir noktada toplanmasını sağlamaya yönelik elektronik bir veri bankası oluşturmak III. Payları kayden izlenen anonim ortaklık genel kurullarına elektronik ortamda katılım için gerekli teknolojik altyapıyı sağlamak",
-          "secenekler": ["a) Yalnız I", "b) I ve II", "c) I ve III", "d) II ve III", "e) I, II ve III"],
-          "dogru": "e) I, II ve III",
-          "aciklama": "Ders 1012, Bölüm 2.1, Soru 2 — EK-1 cevap anahtarına göre doğru cevap E."
-        },
-        {
-          "id": 3,
-          "soru": "Aşağıdakilerden hangisi MKK nezdinde hesap açabilecek kuruluşlardan biri değildir?",
-          "secenekler": ["a) Takasbank", "b) Aracı kurumlar", "c) Bankalar", "d) TCMB", "e) TSPB"],
-          "dogru": "e) TSPB",
-          "aciklama": "Ders 1012, Bölüm 2.1, Soru 3 — EK-1 cevap anahtarına göre doğru cevap E."
-        },
-        {
-          "id": 4,
-          "soru": "MKK'nın iş kurallarına ilişkin olarak aşağıdakilerden hangisi/hangileri doğrudur? I. MKK üyelerinin, üyelik statüsü ile ilgili her türlü değişiklik, MKK tarafından derhal merkezi takas kuruluşuna bildirilir. II. Kaydileşmiş paylara ilişkin ihraççı kurumun sorumluluklarını yatırım fonları için 'fon kurucusu' üstlenir. III. Kaydileşmiş paylara ilişkin ihraççı kurumun sorumluluklarını yabancı yatırım fonları için 'fon temsilcisi' üstlenir.",
-          "secenekler": ["a) Yalnız I", "b) I ve II", "c) I ve III", "d) II ve III", "e) I, II ve III"],
-          "dogru": "e) I, II ve III",
-          "aciklama": "Ders 1012, Bölüm 2.1, Soru 4 — EK-1 cevap anahtarına göre doğru cevap E."
-        },
-        {
-          "id": 5,
-          "soru": "MKK'ya ilişkin olarak aşağıdaki ifadelerden hangisi/hangileri doğrudur? I. SPK, MKK'nın gözetim ve denetim merciidir. II. MKK üyelerinin kayıtların tutulmasındaki hata ve yanlışların nedeniyle hak sahiplerinin uğrayacağı zararlardan tamamen ve sadece MKK sorumludur. III. MKK, kayıtların yanlış tutulmasından dolayı doğacak zararların tazmini için, üyelerin sorumluluk sigortası yaptırmalarına karar verilebilir.",
-          "secenekler": ["a) Yalnız I", "b) I ve III", "c) I, II ve III", "d) I ve II", "e) I, II ve III"],
-          "dogru": "b) I ve III",
-          "aciklama": "Ders 1012, Bölüm 2.1, Soru 5 — EK-1 cevap anahtarına göre doğru cevap B. (Kaynak PDF'te b ve e şıkları aynı metinle iki kez basılmış; cevap anahtarındaki harf esas alınmıştır — orijinal PDF'i kontrol et.)"
-        },
-        {
-          "id": 6,
-          "soru": "Aşağıdakilerden hangisi MKK'ya üye olabilecek kuruluşlardan değildir?",
-          "secenekler": ["a) İhraççı Kuruluşlar", "b) TCMB", "c) TSPB", "d) Yatırım Kuruluşları", "e) Merkezi Takas Kuruluşları"],
-          "dogru": "c) TSPB",
-          "aciklama": "Ders 1012, Bölüm 2.1, Soru 6 — EK-1 cevap anahtarına göre doğru cevap C."
-        },
-        {
-          "id": 7,
-          "soru": "Hakkında tedrici tasfiye kararı verilen yatırım kuruluşlarının MKK nezdindeki kayıtları üzerinde işlem yapma yetkisi kime devredilir?",
-          "secenekler": ["a) MKK", "b) SPK", "c) TCMB", "d) Yatırımcı Tazmin Merkezi (YTM)", "e) Yabancı Merkezi Saklama Kuruluşu (YMSK)"],
-          "dogru": "d) Yatırımcı Tazmin Merkezi (YTM)",
-          "aciklama": "Ders 1012, Bölüm 2.1, Soru 7 — EK-1 cevap anahtarına göre doğru cevap D."
-        },
-        {
-          "id": 8,
-          "soru": "Aşağıdakilerden hangisi MKK üyeliği için başvuracak yatırım kuruluşlarında aranan şartlardan biridir?",
-          "secenekler": ["a) Halka açık ortaklık statüsünde bulunmak", "b) Portföy yönetim şirketi olmak", "c) Borsa İstanbul'da paylarının işlem görmesi", "d) Saklama hizmeti vermek üzere yetkilendirilmiş olmak", "e) Bağımsız denetim kuruluşu olarak yetkilendirilmiş olmak"],
-          "dogru": "d) Saklama hizmeti vermek üzere yetkilendirilmiş olmak",
-          "aciklama": "Ders 1012, Bölüm 2.1, Soru 8 — EK-1 cevap anahtarına göre doğru cevap D."
+          "code": "III-56.1",
+          "name": "Portföy Saklama Hizmetine ve Bu Hizmette Bulunacak Kuruluşlara İlişkin Esaslar Tebliği",
+          "last_updated": null,
+          "resmi_gazete_url": null
         }
       ],
-      "note": "189 sayfalık kaynağın Bölüm 2.1 (Merkezi Kayıt Kuruluşu Yönetmeliği) bölüm sonu sorularının tamamı (8/8) EK-1 cevap anahtarıyla birlikte işlendi. Kalan bölümler (2.2 Kaydileştirme Tebliği, 2.3 Merkezi Takas/MKT, 2.4 Portföy Saklama, 3-6. bölümler) henüz işlenmedi — sıradaki adım."
+      "real_world_links": [
+        {
+          "context": "Takasbank/MKK",
+          "note": "Modül doğrudan Takasbank (MKT/merkezi karşı taraf) ve MKK (kaydi sistem) süreçlerini anlatıyor — Rasyonet'in veri sağlayıcılarıyla aynı altyapı."
+        }
+      ],
+      "questions": [],
+      "note": "Bolum sonu sorulari (EK-1) telif nedeniyle bu public repodan cikarildi, local calisma icin ayri tutulur."
     },
-    {"module_id": "M02", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
-    {"module_id": "M03", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
-    {"module_id": "M04", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
-    {"module_id": "M05", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
-    {"module_id": "M06", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
-    {"module_id": "M07", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
-    {"module_id": "M08", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
-    {"module_id": "M09", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
-    {"module_id": "M10", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
-    {"module_id": "M11", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []},
-    {"module_id": "M12", "title": null, "spl_source_ref": null, "last_reviewed": null, "related_communiques": [], "real_world_links": [], "questions": []}
+    {
+      "module_id": "M02",
+      "title": null,
+      "spl_source_ref": null,
+      "last_reviewed": null,
+      "related_communiques": [],
+      "real_world_links": [],
+      "questions": []
+    },
+    {
+      "module_id": "M03",
+      "title": null,
+      "spl_source_ref": null,
+      "last_reviewed": null,
+      "related_communiques": [],
+      "real_world_links": [],
+      "questions": []
+    },
+    {
+      "module_id": "M04",
+      "title": null,
+      "spl_source_ref": null,
+      "last_reviewed": null,
+      "related_communiques": [],
+      "real_world_links": [],
+      "questions": []
+    },
+    {
+      "module_id": "M05",
+      "title": null,
+      "spl_source_ref": null,
+      "last_reviewed": null,
+      "related_communiques": [],
+      "real_world_links": [],
+      "questions": []
+    },
+    {
+      "module_id": "M06",
+      "title": null,
+      "spl_source_ref": null,
+      "last_reviewed": null,
+      "related_communiques": [],
+      "real_world_links": [],
+      "questions": []
+    },
+    {
+      "module_id": "M07",
+      "title": null,
+      "spl_source_ref": null,
+      "last_reviewed": null,
+      "related_communiques": [],
+      "real_world_links": [],
+      "questions": []
+    },
+    {
+      "module_id": "M08",
+      "title": null,
+      "spl_source_ref": null,
+      "last_reviewed": null,
+      "related_communiques": [],
+      "real_world_links": [],
+      "questions": []
+    },
+    {
+      "module_id": "M09",
+      "title": null,
+      "spl_source_ref": null,
+      "last_reviewed": null,
+      "related_communiques": [],
+      "real_world_links": [],
+      "questions": []
+    },
+    {
+      "module_id": "M10",
+      "title": null,
+      "spl_source_ref": null,
+      "last_reviewed": null,
+      "related_communiques": [],
+      "real_world_links": [],
+      "questions": []
+    },
+    {
+      "module_id": "M11",
+      "title": null,
+      "spl_source_ref": null,
+      "last_reviewed": null,
+      "related_communiques": [],
+      "real_world_links": [],
+      "questions": []
+    },
+    {
+      "module_id": "M12",
+      "title": null,
+      "spl_source_ref": null,
+      "last_reviewed": null,
+      "related_communiques": [],
+      "real_world_links": [],
+      "questions": []
+    }
   ],
   "regulatory_watch": {
     "last_checked": null,
