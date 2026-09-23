@@ -186,6 +186,38 @@
         "onemli_sayilar": "Başlangıç teminatında asgari yüzde 99 güven düzeyi, 1 yıllık veri. Değerleme katsayısında yüzde 99,90 güven düzeyi, 2 iş günü. Garanti fonu büyüklüğü stres testinde yüzde 99,5 güven düzeyi, 2 iş günü, 5 yıllık veri. Sabit garanti fonu katkı payı üye başına 2.875.000 TL. Bir yıl içinde (1 Nisan'dan 31 Mart'a) üyelerden en fazla iki kez ilave katkı payı istenebilir. TL yükümlülükleri saat 17:15'ten, USD/EUR yükümlülükleri saat 21:00'den, teminat ve değişim teminatı yükümlülükleri saat 13:00'ten sonra temerrüt sayılır. Gün içi teminat tamamlama süresi 2 saattir.",
         "gercek_hayat": "Bir bankanın döviz swap işlemlerinde karşı taraf riskini merak ettiğinde, aslında sorduğun soru tam olarak burada anlatılan garanti fonu büyüklüğü meselesi, sistem en kötü iki senaryoyu aynı anda düşünerek tasarlanmış, bu yüzden 2008 veya 2020 gibi kriz dönemlerinde bile swap piyasası çökmeden işlemeye devam edebiliyor."
       }
+    },
+    {
+      "id": "5.1",
+      "baslik": "VİOP'ta Takas İşlemleri, İşlem Saatleri ve Fiziki Teslimat",
+      "sayfa": "131-145",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Vadeli İşlem ve Opsiyon Piyasası'nda Takasbank'ın merkezi karşı taraf rolü, günlük takas saatleri ve fiziki teslimatın nasıl gerçekleştiği.",
+        "ana_fikir": "VİOP'ta Takasbank açık teklif yöntemiyle her işlemde alıcıya karşı satıcı, satıcıya karşı alıcı olur, yani her üye aslında karşısında hep Takasbank'ı görür. Bir günün içinde takas süreci çok sıkı bir saat çizelgesine bağlıdır, sabah teminat yatırma ile başlar, öğlen marjin kapama saatiyle devam eder, akşam üzeri uzlaşma fiyatı ilan edilir, gece yarısına yakın gün sonu işlemleriyle kapanır. Vade sonunda kârda olan opsiyonlar otomatik olarak kullanıma konur, hiçbir bildirime gerek kalmaz. Fiziki teslimatlı sözleşmelerde ise gerçek kıymet, ister pay olsun ister döviz ister devlet tahvili, üyeler arasında fiilen el değiştirir.",
+        "mevzuat": "Takasbank Merkezi Karşı Taraf Yönetmeliği ve VİOP Takas Prosedürü.",
+        "mantik": "Bu kadar çok saatin olmasının sebebi, günün farklı anlarında farklı riskler ortaya çıkması. Sabah teminat yatırılır çünkü gün başlamadan pozisyonların desteklenmesi gerekir, öğlen marjin kapama saati riskin en yoğun olduğu seans ortasını korur, akşam uzlaşma fiyatı ilan edilip kâr zarar hesaplanır çünkü gün sonunda herkesin pozisyonunun gerçek değeri netleşmesi lazım. Yani saat çizelgesi rastgele değil, riskin güne yayılan doğasına göre tasarlanmış.",
+        "ezber": "Marjin Kapama Son Saati aynı zamanda temerrüt başlangıç saatidir ve normal işlem gününde saat 15:00'tir. Uzlaşma fiyatı akşam 19:00'da ilan edilir. Opsiyon kullanım talimatının son saati 19:20'dir. Yarım işlem gününde bütün bu saatler öne çekilir, marjin kapama 11:00'e, uzlaşma fiyatı ilanı 13:30'a döner.",
+        "tuzak": "Kârda olmayan nakdi uzlaşmalı vadeli işlem sözleşmeleri, son işlem gününde seans içinde kapatılmazsa otomatik olarak kullanıma konmaz, bunun yerine Takasbank tarafından vade sonu uzlaşma fiyatı üzerinden ters işlemle kapatılır, bunu kârda olan opsiyonların otomatik kullanımıyla karıştırma, ikisi farklı mekanizmalar. Ayrıca döviz ve fiziki teslimata konu sözleşmelerde, teslimata konu dövizin tatil olduğu günlerde takas hiç yapılmaz, bu istisnayı unutma.",
+        "onemli_sayilar": "Normal işlem gününde Marjin Kapama Son Saati (temerrüt başlangıcı) 15:00. Uzlaşma fiyatı ilanı 19:00. Opsiyon kullanım talimatı son saati 19:20. Yarım işlem gününde marjin kapama 11:00, uzlaşma fiyatı ilanı 13:30. ELÜS vadeli işlem sözleşmeleri için fiziki teslimat son saati normal günde 17:00, yarım günde 14:00.",
+        "gercek_hayat": "VİOP'ta altın vadeli işlem sözleşmesi alan bir yatırımcı, vade sonunda pozisyonunu kapatmazsa gerçekten fiziki altın teslim alabilir ya da teslim etmek zorunda kalabilir, bu bölümde anlatılan fiziki teslimat süreci tam olarak bu senaryonun arkasındaki işleyiştir."
+      }
+    },
+    {
+      "id": "5.2",
+      "baslik": "VİOP'ta Üç Katmanlı Risk Yönetimi ve Teminatlandırma Esasları",
+      "sayfa": "146-162",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "İşlem öncesi, işlem anı ve işlem sonrası olmak üzere üç aşamalı risk yönetimi sisteminin nasıl işlediği.",
+        "ana_fikir": "VİOP'ta risk üç farklı anda kontrol edilir. İşlem öncesi risk yönetimi, bir emir daha piyasaya gitmeden önce, o emrin gerçekleşmesi halinde teminatın yeterli olup olmayacağını kontrol eder, bu PTRM adında bir arayüzden takip edilir. İşlem anı risk yönetimi, emir gerçekten işleme dönüştüğü anda yapılan kontroldür. İşlem sonrası risk yönetimi ise Takasbank'ın belirli zamanlarda bütün pozisyonları ve teminatları güncel fiyatlarla yeniden değerlendirdiği, 'bulunması gereken teminat' rakamının hesaplandığı katmandır. Bu üç katman birbirini tamamlıyor, biri anlık koruma sağlarken diğeri günün genelinde doğruluğu garanti ediyor.",
+        "mevzuat": "Takasbank VİOP Takas Prosedürü ve Merkezi Karşı Taraf Yönetmeliği'nin risk yönetimi hükümleri.",
+        "mantik": "Üç katmanlı sistemin mantığı basit, tek bir kontrol noktası yeterli değil çünkü piyasa sürekli hareket ediyor. İşlem öncesi kontrol olmasaydı, teminatı yetersiz bir hesap sürekli yeni pozisyon açabilirdi. İşlem anı kontrolü olmasaydı, emir gerçekleşme anındaki ani fiyat hareketleri gözden kaçabilirdi. İşlem sonrası kontrol olmasaydı, gün içinde oluşan küçük sapmalar birikip büyük bir riske dönüşebilirdi. Üçü birlikte, sistemi hem anlık hem kümülatif olarak korur.",
+        "ezber": "İşlem öncesi risk yönetiminde kullanılan parametreler asgari 1 yıllık veri seti ve yüzde 99,50 güven düzeyiyle belirlenir ve ayda bir gözden geçirilir. Sürdürme seviyesi aşıldığında hesabın pasif emirleri otomatik iptal edilir ve pozisyon artırıcı yeni emir engellenir ama bu durum otomatik olarak teminat tamamlama çağrısı anlamına gelmez, ikisini birbirine karıştırma.",
+        "tuzak": "İşlem öncesi risk yönetiminde hesaplanan geçici teminat değeri ile işlem anı risk yönetiminde hesaplanan nihai değer farklı çıkabilir, bu fark yüzünden oluşan geçici blokajlardan Takasbank sorumlu tutulamaz, bu ince ama sınavda sorulabilecek bir detay. Ayrıca gün sonlarında sürdürme seviyesi uygulaması yapılmaz, sürdürme seviyesi sadece gün içi bir kavramdır, gün sonu teminat tamamlama çağrısıyla karıştırma.",
+        "onemli_sayilar": "İşlem öncesi risk parametrelerinde asgari 1 yıllık veri seti, yüzde 99,50 güven düzeyi kullanılır ve ayda bir gözden geçirilir. Risk katmanları üçtür, işlem öncesi, işlem anı, işlem sonrası.",
+        "gercek_hayat": "VİOP'ta emir girerken bazen emrinin anında reddedildiğini görebilirsin, teminatın o pozisyonu açmaya yetmiyorsa, bu tam olarak işlem öncesi risk yönetimi katmanının PTRM arayüzü üzerinden anlık olarak seni durdurmasıdır, emir borsaya bile gitmeden engellenir."
+      }
     }
   ]
 }

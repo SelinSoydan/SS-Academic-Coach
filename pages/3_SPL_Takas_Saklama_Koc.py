@@ -48,7 +48,8 @@ TOC_STATIC = [
     {"Bölüm": "4.1-4.2", "Konu": "Borçlanma Araçları ISIN Kodu ve Kotasyon Yöntemi", "Sayfa": "88-100"},
     {"Bölüm": "4.3-4.4", "Konu": "Borçlanma Araçları Depo Hesapları ve Piyasa Pazarları (repo/ters repo)", "Sayfa": "101-115"},
     {"Bölüm": "4.5-4.13", "Konu": "Borçlanma Araçları Takas Prensipleri, Risk ve Teminat Yönetimi, Temerrüt", "Sayfa": "116-130"},
-    {"Bölüm": "5", "Konu": "Türev Araçlarda Takas, Uzlaşma, Fiziki Teslimat", "Sayfa": "131-162"},
+    {"Bölüm": "5.1", "Konu": "VİOP Takas İşlemleri, İşlem Saatleri, Fiziki Teslimat", "Sayfa": "131-145"},
+    {"Bölüm": "5.2", "Konu": "VİOP Üç Katmanlı Risk Yönetimi ve Teminatlandırma", "Sayfa": "146-162"},
     {"Bölüm": "6", "Konu": "Takasbank Teminat Yönetimi", "Sayfa": "163-174"},
 ]
 TOC = [
