@@ -170,6 +170,22 @@
         "onemli_sayilar": "Kesin Alım Satım Pazarı'nda DİBS için ileri valör süresi 90 gün, diğer araçlar için 30 gün. Repo Ters Repo Pazarı'nda ileri valör süresi 7 gün, repo bitiş valörü azami 1 yıl. Repo işleminde menkul kıymet yükümlülüğü en çok 5 farklı menkul kıymetle karşılanabilir.",
         "gercek_hayat": "Bankaların ve aracı kurumların gecelik veya birkaç günlük nakit ihtiyaçlarını karşılamak için en sık kullandığı araç repo işlemleridir, TCMB'nin para politikası uygularken kullandığı repo ihaleleri de temelde aynı mekanizmanın merkez bankası versiyonudur."
       }
+    },
+    {
+      "id": "4.5-4.13",
+      "baslik": "Borçlanma Araçları Takas Prensipleri, Risk Yönetimi ve SWAP Piyasası Temerrüt Esasları",
+      "sayfa": "116-130",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Borçlanma araçları piyasasında ve Borsa İstanbul SWAP Piyasası'nda risk yönetimi, teminat sistemi, garanti fonu ve temerrüt kuralları.",
+        "ana_fikir": "Bu bölümün sonu, öğrendiğin genel teminat ve temerrüt mantığının SWAP Piyasası özelinde nasıl işlediğini gösteriyor. Üyenin kendi işlemleri ile müşteri işlemleri ayrı hesaplarda izlenir ve her hesabın teminat yeterliliği ayrı kontrol edilir. Risk yönetimi üç aşamada yürür, işlem öncesi limit kontrolü, işlem anında ve sonrasında teminat güncellemesi. Garanti fonunun büyüklüğü boşuna belirlenmiyor, en büyük iki ya da üç açık pozisyona sahip üyenin birlikte temerrüde düşmesi senaryosuna göre hesaplanıyor, yani sistem en kötü senaryoya göre tasarlanmış.",
+        "mevzuat": "SWAP Piyasası Prosedürü ve Merkezi Karşı Taraf Yönetmeliği'nin garanti fonu ile temerrüt yönetimine ilişkin maddeleri.",
+        "mantik": "Garanti fonunun büyüklüğünü belirlerken neden 'en büyük iki üye birlikte batarsa ne olur' sorusunun sorulduğunu düşün. Çünkü gerçek krizlerde tek bir üyenin değil, birbirine bağlı birkaç büyük üyenin aynı anda zorlanması daha olası bir senaryo. Bu yüzden garanti fonu, tek büyük değil, ikinci ve üçüncü büyüklükteki üyelerin birlikte çöküşünü de karşılayacak kadar büyük tutuluyor.",
+        "ezber": "Başlangıç teminatı hesaplamasında asgari yüzde 99 güven düzeyi ve asgari 1 yıllık veri seti kullanılır. Değerleme katsayılarında ise yüzde 99,90 güven düzeyi ve 2 iş günü elde tutma süresi geçerlidir. Garanti fonu büyüklüğü hesaplanırken stres senaryosunda yüzde 99,5 güven düzeyi, 2 iş günü elde tutma süresi ve 5 yıllık veri seti kullanılır, üç farklı hesaplamada üç farklı güven düzeyi kullanıldığını karıştırma.",
+        "tuzak": "Gün içi teminat tamamlama çağrısının süresi burada da iki saat, ama muaccel olma saatleri para birimine göre değişiyor, TL yükümlülükleri 17:15'ten, USD ve EUR yükümlülükleri ise 21:00'den sonra temerrüt sayılır, bu saatleri tek bir saatmiş gibi ezberleme. Ayrıca sabit garanti fonu katkı payı belirli bir TL tutarıdır ve her üye en az bu kadar yatırmak zorundadır, değişken katkı payı ise buna ek olarak üyenin riskine göre hesaplanır, ikisini toplamı karıştırma.",
+        "onemli_sayilar": "Başlangıç teminatında asgari yüzde 99 güven düzeyi, 1 yıllık veri. Değerleme katsayısında yüzde 99,90 güven düzeyi, 2 iş günü. Garanti fonu büyüklüğü stres testinde yüzde 99,5 güven düzeyi, 2 iş günü, 5 yıllık veri. Sabit garanti fonu katkı payı üye başına 2.875.000 TL. Bir yıl içinde (1 Nisan'dan 31 Mart'a) üyelerden en fazla iki kez ilave katkı payı istenebilir. TL yükümlülükleri saat 17:15'ten, USD/EUR yükümlülükleri saat 21:00'den, teminat ve değişim teminatı yükümlülükleri saat 13:00'ten sonra temerrüt sayılır. Gün içi teminat tamamlama süresi 2 saattir.",
+        "gercek_hayat": "Bir bankanın döviz swap işlemlerinde karşı taraf riskini merak ettiğinde, aslında sorduğun soru tam olarak burada anlatılan garanti fonu büyüklüğü meselesi, sistem en kötü iki senaryoyu aynı anda düşünerek tasarlanmış, bu yüzden 2008 veya 2020 gibi kriz dönemlerinde bile swap piyasası çökmeden işlemeye devam edebiliyor."
+      }
     }
   ]
 }
