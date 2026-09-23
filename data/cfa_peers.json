@@ -19,7 +19,9 @@
   ],
   "sector_median": {"market_cap_mn_usd": 112.48, "total_assets_mn_usd": 215.75, "p_bv": 1.03, "p_e": 15.92},
   "peer_methodology": "Yukarıdaki 14 şirket EquityRT'nin kendi 'Steel & Iron' sektör sınıflamasından geliyor, yani geniş bir sektör karşılaştırması. CFA Institute'un resmi rehberi (Equity Research Report Essentials) bunu tek başına yeterli görmüyor, peer seçiminde asıl kriterin gelirin/faaliyet kârının önemli kısmının hedef şirketle aynı iş kolundan gelmesi ve benzer bir talep ortamına maruz kalması olduğunu söylüyor. Nippon Steel veya Erdemir gibi entegre/yassı çelik üreticileri aynı sektör kodunu paylaşsa da BRSAN gibi bir boru/tüp uzmanıyla iş modeli örtüşmüyor, bu yüzden geniş listede bağlam için kalıyorlar ama dar peer grubuna girmiyorlar. Dar peer grubu için aranması gereken gerçek boru/tüp üreticileri: Tenaris (NYSE: TS), Vallourec (Euronext Paris: VK), Jindal SAW (NSE: JINDALSAW). TMK (Rusya) da iş modeli olarak uyuyor ama 2022 sonrası yaptırımlar yüzünden batı veri kaynaklarında fiyat/likidite sorunu olabilir, EquityRT'de bulunursa dikkatle kullan. EVRAZ, 2022'de Londra borsasından çıkarıldığı için karşılaştırmaya dahil edilmemeli. Profesyonel pratikte tipik bir dar peer grubu 5 ile 10 gerçek şirket arasında tutulur, çok azı istatistiksel olarak anlamsız kalır, çok fazlası farklı iş modellerini araya sokup medyanı bozar.",
-  "narrow_peers": [],
+  "narrow_peers": [
+    {"name": "Tenaris SA", "ticker": "TS:USY / TEN:IT", "sektor": "Oil & Gas, Other", "fiyat": 55.42, "para_birimi": "USD", "market_cap_mn_usd": 27977, "p_e_ttm": 14.63, "p_e_forward": 13.54, "ev_ebitda_ttm": 9.03, "ev_ebitda_forward": 8.52, "p_bv": 1.65, "roa_pct": 9.61, "roe_pct": 11.60, "debt_asset_pct": 15.23, "net_debt_ebitda": -0.81, "beta_2y": 1.02, "dividend_yield_ttm_pct": 4.29, "kaynak": "EquityRT Snapshot ekranı, 22 Eylül 2026"}
+  ],
   "target": {
     "name": "Borusan Boru Sanayi (BRSAN)",
     "market_cap_mn_usd": 1917.91,
