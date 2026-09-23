@@ -138,6 +138,38 @@
         "onemli_sayilar": "Teminat kompozisyonunun asgari yüzde onu nakit Türk Lirası olmalı. Başlangıç teminatı parametrelerinde güven düzeyi yüzde 99,50, elde tutma süresi 2 gün. Değerleme katsayısı hesaplamasında güven düzeyi yüzde 99,90, likidite süresi 2 iş günü, kullanılan tarihsel veri en az 1 yıl. Gün içi teminat tamamlama çağrısı süresi 2 saat, gün sonu çağrısı süresi ertesi gün saat 15:00. Risk limit oranı yüzde 200'ü aşarsa emir iletimi durur.",
         "gercek_hayat": "VİOP'ta veya pay piyasasında yüksek kaldıraçlı pozisyon taşıyan bir aracı kurumun, piyasa aniden hareket ettiğinde telefonuna veya ekranına düşen 'teminat tamamlama çağrısı' bildirimi tam olarak burada anlatılan gün içi teminat tamamlama sürecinin gerçek hayattaki karşılığıdır, iki saat içinde tamamlamazsa temerrüt sürecine girer."
       }
+    },
+    {
+      "id": "4.1-4.2",
+      "baslik": "Borçlanma Araçlarında ISIN Kodu ve Kotasyon Yöntemi",
+      "sayfa": "88-100",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Her borçlanma aracına verilen ISIN kodunun yapısı ve devlet ile özel sektör borçlanma araçları arasındaki kotasyon farkları.",
+        "ana_fikir": "Her borçlanma aracı, tıpkı bir kimlik numarası gibi, on iki haneli bir ISIN koduyla tanımlanır. Bu kod rastgele değil, belirli bir mantıkla üretilir ve kodun içine bakarak aracın türünü, itfa tarihini, hatta ihraççısını bile çözebilirsin. Devlet iç borçlanma senetlerinde üçüncü hane aracın türünü gösterir, mesela T devlet tahvili, B hazine bonosu demektir. Özel sektör araçlarında ise dördüncü ile yedinci haneler arasında ihraççı şirketin kodu yer alır. Bu sistem sayesinde piyasadaki herhangi bir kağıdın kimliği tek bakışta anlaşılabilir.",
+        "mevzuat": "Sermaye Piyasası Kurulu'nun Borçlanma Araçları Tebliği ve buna bağlı ISIN kod üretim esasları.",
+        "mantik": "ISIN kodu aslında bir sınıflandırma dili. Binlerce farklı tahvil, bono ve kira sertifikasının karmaşasında, her aracı tek ve benzersiz şekilde tanımlamak lazım. Kodun içine itfa tarihini gömmek, piyasa katılımcılarının kağıdın ne zaman biteceğini kod üzerinden bile tahmin edebilmesini sağlıyor.",
+        "ezber": "Devlet iç borçlanma senetlerinde üçüncü hanedeki harfler şunları gösterir. T devlet tahvili, B hazine bonosu, H halka arz, S özel sektör tahvili, F finansman bonosu, D kira sertifikası. 2017'de yapılan bir düzenlemeyle banka bonosu tanımı kaldırıldı ve tüm kısa vadeli borçlanma araçları finansman bonosu olarak adlandırılmaya başlandı, ama eski banka bonolarının kodu değişmedi, bu tarihsel notu bilmen faydalı.",
+        "tuzak": "Devlet iç borçlanma senetleri ile özel sektör borçlanma araçlarının ISIN yapısı farklı haneler kullanır. Devlette 4 ila 9'uncu haneler itfa tarihini gösterirken, özel sektörde 4 ila 7'nci haneler ihraççı kodunu, 8 ila 10'uncu haneler itfa tarihini gösterir. Sınav bu iki yapıyı karıştırıp yanlış hane numarası sorabilir, hangi tür araçtan bahsedildiğine dikkat et.",
+        "onemli_sayilar": "ISIN kodu toplam 12 haneden oluşur. İlk iki hane ülke kodu, son hane her zaman kontrol hanesidir. 1 Haziran 2017 tarihi, banka bonosu ile finansman bonosu ayrımının kaldırıldığı tarih olarak akılda kalmalı.",
+        "gercek_hayat": "Bir yatırım uzmanı EquityRT veya Rasyonet gibi bir platformda bir tahvilin ISIN kodunu gördüğünde, kodu okuyarak aracın devlet mi özel sektör mü olduğunu, ne zaman itfa olacağını hemen anlayabilir, bu kod sistemi profesyoneller için bir çeşit kısayol dilidir."
+      }
+    },
+    {
+      "id": "4.3-4.4",
+      "baslik": "Borçlanma Araçları Depo Hesapları ve Piyasa Pazarları",
+      "sayfa": "101-115",
+      "durum": "işlendi",
+      "ders": {
+        "konu": "Takasbank nezdindeki depo hesaplarının amacı ve Borçlanma Araçları Piyasası'nın alt pazarları, özellikle repo ters repo mekanizması.",
+        "ana_fikir": "Devlet iç borçlanma senetleri ve özel sektör borçlanma araçları Takasbank nezdinde depo hesaplarında izlenir, bu hesaplar amaçlarına göre ayrılır, kimi doğrudan takas için, kimi teminat saklaması için kullanılır. Borçlanma Araçları Piyasası'nın kendi içinde birden fazla pazarı var, en önemlileri Kesin Alım Satım Pazarı ve Repo Ters Repo Pazarı. Kesin Alım Satım Pazarı'nda kıymet gerçekten el değiştirir, alan taraf kıymetin nominal değeri kadar alacaklı, piyasa değeri kadar borçlu olur. Repo ise aslında bir tür teminatlı borçlanma, bir taraf kıymetini geri alma taahhüdüyle satar, karşı taraf da geri satma taahhüdüyle alır, yani ödünç para alışverişinin kıymet üzerinden yapılmış hali.",
+        "mevzuat": "Takasbank Borçlanma Araçları Piyasası Prosedürü ve ilgili Borsa İstanbul pazar düzenlemeleri.",
+        "mantik": "Repo işleminin mantığını şöyle düşün, bir taraf nakde ihtiyaç duyar ama elindeki tahvili satmak istemez, bu yüzden tahvili teminat göstererek kısa vadeli borç alır ve belirlenen tarihte aynı tahvili geri alır. Ters repo ise bu işlemin karşı tarafı, elindeki nakti kısa süreliğine değerlendirmek isteyen tarafın yaptığı işlemdir. Zincirleme repo dediğimiz şey ise, ters repoyla alınan bir kıymetin, elinde tutan taraf tarafından başka bir repo işleminde tekrar kullanılabilmesidir, yani aynı kıymet zincirleme şekilde birden fazla işlemde teminat görevi görebilir.",
+        "ezber": "Repo Ters Repo Pazarı'nda en fazla 7 güne kadar ileri valörlü işlem yapılabilir, repo bitiş valörü ise en fazla 1 yıl olabilir. Kesin Alım Satım Pazarı'nda devlet iç borçlanma senetlerinde 90 güne, diğer sermaye piyasası araçlarında 30 güne kadar ileri valörlü işlem yapılabilir. Zincirleme repoda ikinci işlemin vadesi, birinci işlemin vadesinden en az bir gün önce olmak zorundadır.",
+        "tuzak": "Kesin Alım Satım Pazarı'nda menkul kıymet satan taraf kıymetin piyasa değeri kadar nakit alacaklı, nominal değeri kadar borçlu olur, alan taraf ise tam tersi. Bu iki değeri, yani piyasa değeri ile nominal değeri karıştırmamak lazım, sınav örnekleri tam olarak bu ayrımı test etmek için kuruluyor. Ayrıca repo işleminde teslim edilecek kıymetin itfa ve kupon tarihi, işlemin bitiş valöründen sonra gelmek zorundadır, önce gelirse o kıymet kullanılamaz.",
+        "onemli_sayilar": "Kesin Alım Satım Pazarı'nda DİBS için ileri valör süresi 90 gün, diğer araçlar için 30 gün. Repo Ters Repo Pazarı'nda ileri valör süresi 7 gün, repo bitiş valörü azami 1 yıl. Repo işleminde menkul kıymet yükümlülüğü en çok 5 farklı menkul kıymetle karşılanabilir.",
+        "gercek_hayat": "Bankaların ve aracı kurumların gecelik veya birkaç günlük nakit ihtiyaçlarını karşılamak için en sık kullandığı araç repo işlemleridir, TCMB'nin para politikası uygularken kullandığı repo ihaleleri de temelde aynı mekanizmanın merkez bankası versiyonudur."
+      }
     }
   ]
 }

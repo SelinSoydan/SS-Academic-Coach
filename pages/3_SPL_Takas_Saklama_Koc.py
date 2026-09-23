@@ -45,7 +45,9 @@ TOC_STATIC = [
     {"Bölüm": "2.4", "Konu": "Portföy Saklama Hizmeti Tebliği (III-56.1)", "Sayfa": "59-70"},
     {"Bölüm": "3.1", "Konu": "BİAŞ Pay Piyasası Takas İşlemleri (T, T+1, T+2, temerrüt)", "Sayfa": "71-77"},
     {"Bölüm": "3.2", "Konu": "BİAŞ Pay Piyasası Risk ve Teminat Yönetimi", "Sayfa": "78-87"},
-    {"Bölüm": "4", "Konu": "Borçlanma Araçları Transfer/Takas/Temerrüt", "Sayfa": "88-130"},
+    {"Bölüm": "4.1-4.2", "Konu": "Borçlanma Araçları ISIN Kodu ve Kotasyon Yöntemi", "Sayfa": "88-100"},
+    {"Bölüm": "4.3-4.4", "Konu": "Borçlanma Araçları Depo Hesapları ve Piyasa Pazarları (repo/ters repo)", "Sayfa": "101-115"},
+    {"Bölüm": "4.5-4.13", "Konu": "Borçlanma Araçları Takas Prensipleri, Risk ve Teminat Yönetimi, Temerrüt", "Sayfa": "116-130"},
     {"Bölüm": "5", "Konu": "Türev Araçlarda Takas, Uzlaşma, Fiziki Teslimat", "Sayfa": "131-162"},
     {"Bölüm": "6", "Konu": "Takasbank Teminat Yönetimi", "Sayfa": "163-174"},
 ]
