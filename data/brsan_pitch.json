@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "sirket": "Borusan Boru Sanayi (Borusan Birleşik Boru Fabrikaları San. ve Tic. A.Ş.)",
+    "borsa": "Borsa İstanbul",
+    "ticker": "BRSAN",
+    "sektor": "Materials",
+    "endustri": "Çelik boru ve tüp üretimi",
+    "tesis": "10 tesis: Gemlik (ana kampüs), ABD'de Baytown, Panama City ve Mobile, İtalya'da Vobarno, Romanya",
+    "kapasite": "1,7 milyon ton",
+    "kaynak": "Borusan Boru 1Ç26 yatırımcı sunumu"
+  },
+  "sources": {
+    "d1c26": {"ad": "Borusan Boru 1Ç26 yatırımcı sunumu", "url": "https://borusanboru.com/Uploads/investor/docs/2026/yatirimci-sunumlari/borusan-boru-yatirimci-sunumu-1c26.pdf"},
+    "d2c26": {"ad": "Borusan Boru 2Ç26 yatırımcı sunumu (Ocak-Haziran 2026)", "url": "https://borusanboru.com/Uploads/investor/docs/2026/yatirimci-sunumlari/borusan-boru-yatirimci-sunumu-2c26.pdf"},
+    "ert": {"ad": "EquityRT (Snapshot, Peer Performance, Holdings, News, Earnings ekranları), 22 Eylül 2026", "url": null},
+    "cfa_rules": {"ad": "CFA Institute Research Challenge Official Rules 2026/27", "url": "https://www.cfainstitute.org/sites/default/files/-/media/documents/support/research-challenge/challenge/research-challenge-official-rules.pdf"},
+    "cfa_judge": {"ad": "CFA Institute RC Judge Guidelines", "url": "https://www.cfainstitute.org/sites/default/files/docs/insights/events/research-challenge/rc-judge-guidelines.pdf"},
+    "cfa_report": {"ad": "CFA Institute RC Written Report Guidelines", "url": "https://www.cfainstitute.org/sites/default/files/-/media/documents/support/research-challenge/challenge/rc-written-report-guidelines.pdf"},
+    "valentine": {"ad": "Best Practices for Equity Research Analysts (J. Valentine, CFA), CFA Institute RC kaynağı", "url": "https://www.cfainstitute.org/sites/default/files/-/media/documents/support/research-challenge/challenge/best-practices-equity-sample.pdf"},
+    "waterloo": {"ad": "2024 Global Winner, University of Waterloo (Cargojet)", "url": "https://www.cfainstitute.org/sites/default/files/-/media/documents/support/research-challenge/challenge/rc-2024-winning-written-report-university-of-waterloo.pdf"},
+    "niu": {"ad": "2022 Global Winner, Northern Illinois University (Motorola Solutions)", "url": "https://www.cfainstitute.org/sites/default/files/-/media/documents/support/research-challenge/challenge/rc-2022-winning-written-report-northern-illinois-univ.pdf"}
+  },
+  "financials": {
+    "kaynak": "Borusan Boru 1Ç26 ve 2Ç26 yatırımcı sunumları, konsolide, mn $ (2Ç26 sunumu s.18, s.20, s.21)",
+    "ttm_bazi": {"yil": "2025", "onceki": "1Y25", "guncel": "1Y26", "etiket": "1Y26 sonu itibarıyla son 12 ay"},
+    "net_borc_donemi": "2Ç26",
+    "donemler": {
+      "2024": {"gelir": 1689.5, "favok": 101.9, "net_kar": -5.1, "net_borc": 280, "tur": "yil"},
+      "2025": {"gelir": 1796.1, "favok": 133.1, "net_kar": 31.7, "net_borc": 178, "tur": "yil"},
+      "1Ç25": {"gelir": 319.1, "favok": 17.6, "net_kar": -7.9, "net_borc": 251, "tur": "ceyrek"},
+      "2Ç25": {"gelir": 455.5, "favok": 35.8, "net_kar": 22.8, "net_borc": 225, "tur": "ceyrek"},
+      "1Ç26": {"gelir": 421.6, "favok": 26.6, "net_kar": 6.3, "net_borc": 160, "tur": "ceyrek"},
+      "2Ç26": {"gelir": 555.2, "favok": 63.7, "net_kar": 33.5, "net_borc": 144, "tur": "ceyrek"},
+      "1Y25": {"gelir": 774.6, "favok": 53.5, "net_kar": 14.9, "tur": "yariyil"},
+      "1Y26": {"gelir": 976.9, "favok": 90.3, "net_kar": 39.8, "tur": "yariyil"}
+    },
+    "kaldirac_serisi": {"kaynak": "2Ç26 sunumu s.21, son 12 ay FAVÖK ile", "degerler": {"2Ç25": 3.2, "2025": 1.3, "1Ç26": 1.1, "2Ç26": 0.9}},
+    "nakit_akisi_1y26": {"kaynak": "2Ç26 sunumu s.22", "favok": 90, "isletme_sermayesi": 63, "vergi_diger": 3, "yatirim": -82, "serbest_nakit_akimi": 78, "faaliyet_nakdi": 157, "kasa_2c26": 202, "kasa_2025": 127, "not": "Kalemler sunumdaki grafikten okundu; yuvarlama nedeniyle toplam birebir tutmayabilir."}
+  },
+  "segmentler_1y26": {
+    "kaynak": "2Ç26 sunumu s.19",
+    "items": [
+      {"segment": "Altyapı ve Proje", "gelir": 520, "pay": 53, "yillik_degisim": 93.2},
+      {"segment": "Enerji", "gelir": 198, "pay": 20, "yillik_degisim": 1.9},
+      {"segment": "Endüstri ve İnşaat", "gelir": 157, "pay": 16, "yillik_degisim": -25.6},
+      {"segment": "Otomotiv", "gelir": 102, "pay": 11, "yillik_degisim": 1.6}
+    ],
+    "abd_gelir_payi": {"1Y26": 79, "2024": 73, "kaynak": "2Ç26 sunumu"},
+    "global_gelir_payi_1y26": 85
+  },
+  "guidance_2026": {
+    "kaynak": "2Ç26 sunumu s.23 (7 Ağustos 2026)",
+    "hacim_mn_ton": [1.15, 1.25],
+    "gelir_mn_usd": [2200, 2400],
+    "favok_marji": [0.09, 0.11],
+    "onceki": {"kaynak": "1Ç26 sunumu", "gelir_mn_usd": [2100, 2300], "favok_marji": [0.08, 0.10]}
+  },
+  "market_snapshot": {
+    "kaynak": "EquityRT, Peer Performance ve Snapshot ekranları",
+    "tarih": "2026-09-22",
+    "market_cap_mn_usd": 1917.91,
+    "p_e": 33.89,
+    "p_e_snapshot_ekrani": 38.39,
+    "p_bv": 2.06
+  },
+  "siparisler": [
+    {"tarih": "2Ç26 sunumu", "tutar_mn_usd": 2600, "aciklama": "Altyapı ve Proje sipariş portföyü, 2026 ile 2028 arasına yayılıyor; 1,8 milyar $'ı 2025'te imzalandı (yaklaşık)", "kaynak": "2Ç26 sunumu s.3"},
+    {"tarih": "2026-08-14", "tutar_mn_usd": 360, "aciklama": "ABD'de yeni satış siparişleri, çoğu 2027'de sevk edilecek (yaklaşık)", "kaynak": "KAP bildirimi, Reuters"},
+    {"tarih": "2026-08-21", "tutar_mn_usd": 555, "aciklama": "Borusan Berg Pipe'a yeni sipariş, 2028 içinde sevk (yaklaşık)", "kaynak": "KAP bildirimi, Reuters"}
+  ],
+  "siparis_notu": "2Ç26 sunumu 7 Ağustos'ta yayımlandı; 14 ve 21 Ağustos siparişleri tarih sırası gereği o portföy rakamına dahil olmamalı. Rapora koymadan önce şirketten ya da 3Ç26 sunumundan teyit et.",
+  "temettu_notu": "28 Nisan 2026 tarihli KAP bildirimine göre genel kurul 2025 için kâr dağıtmama kararı aldı; yasal kayıtlarda yaklaşık 1,03 milyar TL zarar vardı, UFRS'de ise kâr. Kaynak: KAP bildirimi, basın aktarımı.",
+  "risks": [
+    {"risk": "ABD'ye yoğunlaşma", "kanit": "1Y26'da gelirin %79'u ABD'den (2024'te %73). Ağustos'taki iki büyük sipariş de ABD kaynaklı.", "azaltici": "ABD'deki üç tesis yerel üretim avantajı sağlıyor; gümrük duvarı ithalatçı rakibi vururken yerel üreticiyi koruyabilir.", "olasilik": 3, "etki": 5},
+    {"risk": "Marjın kalıcı olmaması", "kanit": "2Ç26 marjı %11,5 ile rehberliğin üst ucunun da üstünde; 1Ç26 %6,3 idi. Proje karışımı çeyrekten çeyreğe marjı oynatıyor.", "azaltici": "2,6 milyar $'lık sipariş portföyü fiyatları önceden kilitlenmiş projelerden oluşuyor.", "olasilik": 3, "etki": 4},
+    {"risk": "Değerleme priminin erimesi", "kanit": "F/K 33,89, EquityRT Steel & Iron sektör medyanı 15,92. Beklenti hayal kırıklığında çarpan hızla daralabilir.", "azaltici": "İleriye dönük FD/FAVÖK rehberlik ortasında Tenaris'e yakın; prim büyük ölçüde geçmiş kâra bakan çarpanlarda.", "olasilik": 3, "etki": 4},
+    {"risk": "Nakit akışı kalitesi", "kanit": "1Y26 serbest nakit akımı 78 mn $, ama bunun 63 mn $'ı işletme sermayesi çözülmesinden geliyor; tekrarlanması garanti değil.", "azaltici": "Net borç 144 mn $'a indi, kasada 202 mn $ var; bilanço tersine dönüşü tamponluyor.", "olasilik": 3, "etki": 3},
+    {"risk": "Düşük halka açıklık ve likidite", "kanit": "Payların %77,9'u tek ortakta. 16 Eylül 2026'da pay bazında devre kesici devreye girdi.", "azaltici": "Vanguard, BlackRock ve Norges Bank gibi küresel kurumların pay sahipliği kurumsal ilgiyi gösteriyor.", "olasilik": 4, "etki": 2},
+    {"risk": "Hammadde fiyat oynaklığı", "kanit": "Kaynaklı borunun ana girdisi yassı çelik; sayısal girdi maliyeti verisi henüz eklenmedi.", "azaltici": "Proje sözleşmelerinde fiyat geçişkenliği maddeleri; sözleşme yapısı teyit edilmeli.", "olasilik": 3, "etki": 3},
+    {"risk": "TMS 29 ve kur kaynaklı karşılaştırılamazlık", "kanit": "Yasal kayıtlarda 2025 için yaklaşık 1,03 milyar TL zarar, UFRS'de kâr; temettü dağıtılmadı. EquityRT hisse başı kâr dizisi dönemler arasında tutarsız.", "azaltici": "Analizin ana ölçüsü şirketin USD sunumu; TL tablolar sadece mutabakat için.", "olasilik": 4, "etki": 2}
+  ],
+  "catalysts": [
+    {"tarih": "2026-08-07", "olay": "2Ç26 sonuçları; 2026 rehberliği yükseltildi (gelir 2,2 ile 2,4 milyar $, marj %9 ile %11)", "tur": "gecmis", "kaynak": "2Ç26 sunumu s.23"},
+    {"tarih": "2026-08-14", "olay": "ABD'de yaklaşık 360 mn $ yeni sipariş", "tur": "gecmis", "kaynak": "KAP, Reuters"},
+    {"tarih": "2026-08-21", "olay": "Borusan Berg Pipe'a yaklaşık 555 mn $ sipariş", "tur": "gecmis", "kaynak": "KAP, Reuters"},
+    {"tarih": "2026-08-28", "olay": "Kredi derecelendirme notu bildirimi", "tur": "gecmis", "kaynak": "Turkish Company News"},
+    {"tarih": "2026-09-16", "olay": "Pay bazında devre kesici devreye girdi", "tur": "gecmis", "kaynak": "Turkish Company News"},
+    {"tarih": "2026-11 (tahmini)", "olay": "3Ç26 sonuçları: %9 ile %11 marjın kalıcılık sınavı. Geçen yıl 9A25 sonuçları 7 Kasım 2025'te açıklanmıştı.", "tur": "gelecek", "kaynak": "EquityRT Earnings ekranı"},
+    {"tarih": "2027-02 (tahmini)", "olay": "2026 yıl sonu sonuçları, rehberliğin gerçekleşme testi. 2025 sonuçları 26 Şubat 2026'da açıklanmıştı.", "tur": "gelecek", "kaynak": "EquityRT Earnings ekranı"}
+  ],
+  "cfa_playbook": {
+    "yazili_rubrik": [
+      {"bolum": "Business Description", "puan": 5, "kanit": "Hero kartı, tesis ve segment dağılımı"},
+      {"bolum": "Industry Overview & Competitive Positioning", "puan": 10, "kanit": "Dar ve geniş peer grubu, CFA peer seçim metodolojisi"},
+      {"bolum": "Investment Summary", "puan": 15, "kanit": "Tez sekmesi, katalizör takvimi"},
+      {"bolum": "Valuation", "puan": 20, "kanit": "Football field, duyarlılık tablosu, senaryolar, Monte Carlo, reverse DCF"},
+      {"bolum": "Financial Analysis", "puan": 20, "kanit": "Çeyreklik ve yıllık USD seri, marj, kaldıraç, nakit akışı kalitesi"},
+      {"bolum": "Investment Risks", "puan": 15, "kanit": "Olasılık x etki matrisi, her riske azaltıcı"},
+      {"bolum": "ESG", "puan": 15, "kanit": "SASB önemlilik haritası, Borusan ESG verileri, değerlemeye bağlantı"}
+    ],
+    "sunum_rubrik": [
+      {"bolum": "Financial Analysis", "puan": 20},
+      {"bolum": "Valuation", "puan": 20},
+      {"bolum": "Presentation (mantık, ikna)", "puan": 20},
+      {"bolum": "Q&A", "puan": 20},
+      {"bolum": "ESG", "puan": 10},
+      {"bolum": "Team Involvement", "puan": 5},
+      {"bolum": "Materials (slayt kalitesi)", "puan": 5}
+    ],
+    "format": "Rapor en fazla 10 A4 sayfa artı 10 sayfa ek. Sunum 10 dakika, ardından yerel turda 10 dakika soru cevap. Jüri sunumu, alım tarafının satış tarafı sunumunu dinlediği gözle değerlendirir.",
+    "kazanan_desenler": [
+      {"desen": "Football field hedef fiyat grafiği", "bizde": true},
+      {"desen": "WACC ve büyüme duyarlılık tablosu", "bizde": true},
+      {"desen": "Boğa, baz, ayı senaryoları", "bizde": true},
+      {"desen": "Reverse DCF", "bizde": true},
+      {"desen": "Monte Carlo simülasyonu", "bizde": true},
+      {"desen": "Olasılık x etki risk matrisi ve azaltıcılar", "bizde": true},
+      {"desen": "Birden çok yöntemle üçgenlenmiş değerleme", "bizde": true},
+      {"desen": "Kendi ESG skor kartı, peer karşılaştırmalı", "bizde": false},
+      {"desen": "Porter'ın beş gücü, puanlı", "bizde": false},
+      {"desen": "DuPont ve adli muhasebe skorları (Altman Z, Piotroski F)", "bizde": false},
+      {"desen": "Birincil kaynak: uzman görüşmesi, müşteri anketi", "bizde": false}
+    ],
+    "resmi_juri_sorulari": [
+      "How is your recommendation and equity story different from market expectations?",
+      "How did you factor ESG-related costs into your valuation or financial projections?",
+      "What sensitivities could significantly alter your valuation?"
+    ],
+    "faves": [
+      {"harf": "Forecast", "fikir": "Sipariş portföyünün sevk takvimini (2027 ve 2028) gelir tahminine çevirmek; konsensüsün göremediği zamanlama."},
+      {"harf": "Valuation", "fikir": "Sektör kodu yerine iş kolu örtüşmesiyle kurulmuş dar peer grubu ve piyasanın ne fiyatladığını gösteren reverse DCF."},
+      {"harf": "Sentiment", "fikir": "Düşük halka açıklığın yarattığı fiyat oynaklığı; devre kesici günleri gibi duygusal fiyatlamalar giriş fırsatı olabilir mi?"}
+    ]
+  },
+  "jury_questions": [
+    {
+      "soru": "Peer grubunu neye göre seçtiniz?",
+      "iskelet": [
+        "CFA rehberi sektör kodunu değil iş kolu örtüşmesini esas alıyor; gelirin önemli kısmı aynı üründen ve benzer talep ortamından gelmeli.",
+        "Bu yüzden dar grupta kaynaklı ve dikişsiz boru üreten Tenaris ile Vallourec var; Nippon Steel ya da Erdemir gibi yassı çelik üreticileri sadece bağlam için geniş listede duruyor.",
+        "EVRAZ 2022'de Londra borsasından çıkarıldığı için veri güvenilir değil, bilerek dışarıda bıraktık.",
+        "Dar grup şu an iki şirket; Jindal SAW gibi isimlerle beş ile on şirkete çıkarmak raporun sonraki adımı."
+      ],
+      "tuzak": "\"EquityRT'nin sektör listesini aldık\" demek. Jüri seçim gerekçesini duymak ister, listeyi değil."
+    },
+    {
+      "soru": "F/K sektörün iki katı. Bu bir balon mu?",
+      "iskelet": [
+        "Önce mutabakat: EquityRT'deki 33,89, 1.917,9 mn $ piyasa değerinin USD bazlı son 12 ay net kâra (56,6 mn $) bölümüyle birebir tutuyor.",
+        "F/K geçmiş kâra bakıyor ve kâr tabanı yeni oluştu: 2024'te 5,1 mn $ zarar, 1Y26'da tek başına 39,8 mn $ kâr.",
+        "İleriye dönük bakınca tablo değişiyor: yeni rehberliğin ortasında FD/FAVÖK yaklaşık 9x, Tenaris'in 8,5x'ine yakın."
+      ],
+      "tuzak": "Tek bir çarpana bakıp pahalı ya da ucuz hükmü vermek."
+    },
+    {
+      "soru": "Değerlemeniz en çok hangi varsayıma duyarlı?",
+      "iskelet": [
+        "FAVÖK marjına. Yeni rehberliğin ortası olan 2,3 milyar $ gelirde marjdaki bir puanlık fark 23 mn $ FAVÖK demek.",
+        "9x FD/FAVÖK çarpanıyla bu yaklaşık 207 mn $ özsermaye değeri eder; piyasa değerinin yaklaşık yüzde on biri.",
+        "Değerleme Masası'ndaki duyarlılık tablosu bunu çarpan ve FAVÖK ekseninde, Monte Carlo ise olasılık dağılımı olarak gösteriyor."
+      ],
+      "tuzak": "WACC ya da büyüme oranı demek ama sayıyla gösterememek."
+    },
+    {
+      "soru": "Nakit akışı ne kadar kaliteli?",
+      "iskelet": [
+        "1Y26 serbest nakit akımı 78 mn $ ve FAVÖK'ün yaklaşık %86'sı gibi görünüyor.",
+        "Ama bunun 63 mn $'ı işletme sermayesi çözülmesinden geliyor; bu kalem tekrarlanmayabilir.",
+        "Kalıcı dönüşüm oranını ölçmek için yatırım harcamasını ve işletme sermayesini normalize ediyoruz; reverse DCF bu normalize rakamı test ediyor."
+      ],
+      "tuzak": "Serbest nakit akımını FAVÖK ile aynı şey sanmak."
+    },
+    {
+      "soru": "TMS 29 enflasyon muhasebesi analizinizi nasıl etkiliyor?",
+      "iskelet": [
+        "Türkiye'de 2023 sonundan beri TL tablolar yüksek enflasyon düzeltmesiyle yayınlanıyor; dönemler arası TL karşılaştırması yanıltıcı olabiliyor.",
+        "Somut örnek: 2025'te yasal kayıtlarda yaklaşık 1,03 milyar TL zarar çıktı, UFRS'de kâr vardı ve temettü dağıtılmadı.",
+        "Bu yüzden ana ölçü olarak şirketin USD sunumunu kullandık, TL tabloları sadece mutabakat için tutuyoruz."
+      ],
+      "tuzak": "TL ve USD rakamları aynı tabloda karıştırmak."
+    },
+    {
+      "soru": "Firma değerini nasıl hesapladınız, içine neler girdi?",
+      "iskelet": [
+        "Piyasa değeri (EquityRT, 22 Eylül 2026) artı 2Ç26 net finansal borç (144 mn $).",
+        "Azınlık payları ve kiralama yükümlülükleri bu MVP'de henüz eklenmedi; raporda eklenecek ve bunu açıkça yazıyoruz.",
+        "Farklı tarihli iki kaynağı birleştirdiğimizi biliyoruz; 3Ç26 bilançosu gelince net borcu güncelliyoruz."
+      ],
+      "tuzak": "Eksik kalemi saklamak. Jüri eksikliği değil, fark edilmemiş eksikliği cezalandırır."
+    },
+    {
+      "soru": "Tavsiyeniz ne, al mı sat mı?",
+      "iskelet": [
+        "Henüz vermedik ve bu bilinçli bir tercih; bağımsız analist bakışı veriyle karar verir.",
+        "Geriye dönük çarpanlarda BRSAN peer'larından pahalı, yeni rehberliğin ortasında ise Tenaris'e yakın.",
+        "Tezin sorusu net: 2Ç26'daki %11,5 marj kalıcı mı, yoksa proje karışımının tek seferlik etkisi mi? 3Ç26 bunun ilk sınavı."
+      ],
+      "tuzak": "Değerlemeyle tutarsız bir tavsiye vermek; jürinin en sık yakaladığı nokta."
+    }
+  ],
+  "esg": {
+    "ozet": "Borusan Boru birincil çelik üreticisi değil; sıcak haddelenmiş rulo satın alıp kaynaklı boruya çeviriyor. Bu yüzden emisyonunun ağırlığı kendi bacasında değil tedarik zincirinde (Scope 3). Karbon riski, girdi çeliğinin ve AB'ye giden ürünün karbon içeriği üzerinden gelir.",
+    "dogrulanmis": [
+      {"alan": "E", "bilgi": "2024 yılı için TSRS uyumlu ve bağımsız güvence denetiminden geçmiş ilk sürdürülebilirlik raporu 30 Ekim 2025'te KAP'a bildirildi.", "kaynak": "KAP", "url": "https://kap.org.tr/tr/Bildirim/1509545"},
+      {"alan": "E", "bilgi": "Sera gazı muhasebesi ISO 14064'e göre Scope 1, 2 ve 3 kapsamında yapılıyor.", "kaynak": "Sektör basını, 2022", "url": "https://hvac360tr.com/borusan-mannesmann-surdurulebilirlik-alaninda-sektore-liderlik-ediyor/"},
+      {"alan": "S", "bilgi": "2.421 çalışan, üç kıtada 10 üretim tesisi (2024 faaliyet raporu).", "kaynak": "Borusan Boru 2024 faaliyet raporu", "url": "https://www.borusanboru.com/media/2902/borusan-boru_24.pdf"},
+      {"alan": "S", "bilgi": "British Safety Council değerlendirmesinde en üst derece olan Distinction ile Uluslararası İş Güvenliği Ödülü (2022 sonuçları).", "kaynak": "Anadolu Ajansı", "url": "https://www.aa.com.tr/tr/isdunyasi/holding/borusan-mannesmann-a-uluslararasi-is-guvenligi-odulu/671835"},
+      {"alan": "G", "bilgi": "JCR Avrasya, 28 Ağustos 2025: uzun vadeli ulusal not A+ (tr) Stabil; uluslararası not BBB'ye yükseltildi (BBB- idi). 28 Ağustos 2026 tarihli bildirimin içeriği ayrıca teyit edilecek.", "kaynak": "JCR Avrasya, KAP aktarımı", "url": "https://www.jcrer.com.tr/tr/derecelendirme/raporlar/kredi-derecelendirme/borusan-mannesmann-boru-san-ve-tic-as"},
+      {"alan": "G", "bilgi": "Payların %77,9'u Borusan Mannesmann Boru Yatırım Holding'de; 1Ç26 sunumuna göre halka açık kısım %16,07.", "kaynak": "EquityRT Holdings, 1Ç26 sunumu", "url": null},
+      {"alan": "G", "bilgi": "2025 için kâr dağıtılmadı; yasal kayıtlarda TMS 29 etkisiyle zarar, UFRS'de kâr.", "kaynak": "KAP bildirimi (28 Nisan 2026), basın aktarımı", "url": null}
+    ],
+    "tuzaklar": [
+      "Sustainalytics'te görünen 18,9 puanlık ESG risk skoru Borusan Yatırım ve Pazarlama A.Ş.'ye ait, BRSAN'a değil. Rapora koymak jüri önünde ciddi bir hata olur.",
+      "Borusan Grubu'nun %18,2 kadın çalışan oranı grup geneline ait (2022); şirkete özel rakam gibi kullanılmamalı.",
+      "Çalışan sayısı kaynağa göre değişiyor (2.421 ile 2.374); faaliyet raporundaki rakam esas alınmalı."
+    ],
+    "sasb": [
+      {"konu": "Sera gazı ve karbon içeriği", "neden": "Çelik değer zincirinin ana finansal riski; AB karbon sınır düzenlemesi (CBAM) ürünün gömülü emisyonunu fiyatlıyor.", "borusan": "ISO 14064 muhasebesi ve TSRS raporu var; ton başına yoğunluk rakamı henüz çekilmedi.", "degerleme": "AB gelirindeki karbon maliyeti marjdan düşer; aşağıdaki hesaplayıcı etkisini özsermaye değerine çeviriyor.", "kanit": "Kısmi"},
+      {"konu": "Tedarik zinciri ve hammadde", "neden": "Girdi rulonun üretim yöntemi (yüksek fırın ya da elektrik ark ocağı) Scope 3 emisyonunu belirliyor.", "borusan": "Rulo satın alıyor; tedarikçi karışımı kamuya açık veride bulunamadı.", "degerleme": "Düşük karbonlu rulo primi maliyet; ABD'de yerel tedarik gümrük riskini azaltıyor.", "kanit": "Veri yok"},
+      {"konu": "Enerji yönetimi", "neden": "Kaynak, şekillendirme ve ısıl işlem enerji yoğun süreçler.", "borusan": "Yenilenebilir enerji payı rakamı bulunamadı.", "degerleme": "Enerji maliyeti FAVÖK marjına doğrudan yansır.", "kanit": "Veri yok"},
+      {"konu": "İş sağlığı ve güvenliği", "neden": "Ağır sanayide kayıp gün ve kaza sıklığı hem insani hem operasyonel risk.", "borusan": "British Safety Council Distinction ödülü; kayıp zamanlı kaza oranı rakamı bulunamadı.", "degerleme": "Kaza kaynaklı duruşlar teslimat takvimini ve sipariş cezalarını etkiler.", "kanit": "Kısmi"},
+      {"konu": "Kurumsal yönetim ve azınlık hakları", "neden": "Tek ortağın %77,9 payı karar alma ve temettü politikasını belirliyor.", "borusan": "Denetim, Riskin Erken Saptanması ve Kurumsal Yönetim komiteleri var; bağımsız üye sayısı KAP'tan teyit edilecek.", "degerleme": "Düşük halka açıklık likidite iskontosu ve WACC'a ek prim gerekçesi olabilir.", "kanit": "Kısmi"}
+    ],
+    "ab_gelir_payi": {"deger": 15, "not": "2025 faaliyet raporundan arama motoru özeti üzerinden geldi; PDF'ten doğrudan teyit edilmeden rapora konmamalı."}
+  }
+}

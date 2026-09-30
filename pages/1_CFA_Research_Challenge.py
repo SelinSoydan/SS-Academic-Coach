@@ -53,11 +53,11 @@ TARGET_COMPANY = "Borusan Mannesmann Boru (Borusan Birleşik Boru Fabrikaları S
 st.title("📊 CFA Research Challenge")
 st.caption(f"Hedef şirket: {TARGET_COMPANY}")
 
-days_left = (DEADLINE - datetime.date.today()).days
-if days_left >= 0:
-    st.error(f"⏳ Son başvuru tarihine {days_left} gün kaldı, {DEADLINE.strftime('%d %B %Y')}")
+if datetime.date.today() > DEADLINE:
+    st.success("✅ Başvuru yapıldı. Değerleme, senaryo ve jüri provası için Borusan Equity Cockpit sayfasına geç.")
 else:
-    st.warning("Son başvuru tarihi geçti.")
+    st.info(f"⏳ Son başvuru tarihine {(DEADLINE - datetime.date.today()).days} gün kaldı.")
+st.page_link("pages/0_Borusan_Equity_Cockpit.py", label="Borusan Equity Cockpit'i aç", icon="🏆")
 
 with st.expander("🏭 Şirket Profili (kaynak: Borusan Boru resmi 1Ç26 yatırımcı sunumu)", expanded=True):
     st.markdown(
