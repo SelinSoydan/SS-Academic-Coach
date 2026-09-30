@@ -28,10 +28,10 @@ lessons_data = json.loads(LESSONS_PATH.read_text(encoding="utf-8"))
 lessons_by_id = {b["id"]: b for b in lessons_data["bolumler"]}
 
 st.title("🧭 SPL Takas ve Saklama Koçu")
-st.caption("Ders Kodu 1012 — kaynak: 1012_MKT_30062026 (SPK/Takasbank/MKK ortak yayını, 189 sayfa)")
+st.caption("Ders Kodu 1012, kaynak: 1012_MKT_30062026 (SPK/Takasbank/MKK ortak yayını, 189 sayfa)")
 
 if days_left >= 0:
-    st.error(f"⏳ Sınava {days_left} gün kaldı — 2 Ekim 2026")
+    st.error(f"⏳ Sınava {days_left} gün kaldı, 2 Ekim 2026")
 else:
     st.warning("Sınav tarihi geçti.")
 
@@ -67,28 +67,28 @@ STUDY_PHASES = [
 
 DIAGNOSTIC_QUESTIONS = [
     {"id": 1, "zorluk": "Kolay", "tip": "open", "soru": "Takas ile saklama arasındaki temel fark nedir, tek cümleyle?",
-     "model_cevap": "Takas, işlemin karşılıklı yükümlülüklerinin (para↔menkul kıymet) yerine getirilmesi süreci; saklama ise kaydileştirilmiş sermaye piyasası araçlarının merkezi/emanet olarak tutulmasıdır — takas bir an/süreç, saklama süregelen bir durumdur."},
+     "model_cevap": "Takas, işlemin karşılıklı yükümlülüklerinin (para↔menkul kıymet) yerine getirilmesi süreci; saklama ise kaydileştirilmiş sermaye piyasası araçlarının merkezi/emanet olarak tutulmasıdır, takas bir an/süreç, saklama süregelen bir durumdur."},
     {"id": 2, "zorluk": "Kolay", "tip": "open", "soru": "MKK'nın açılımı ve temel görevi nedir?",
-     "model_cevap": "Merkezi Kayıt Kuruluşu — kaydileştirilen sermaye piyasası araçlarını ve bunlara bağlı hakları elektronik ortamda, üyeler ve hak sahipleri itibarıyla kayden izler, merkezi saklamasını yapar."},
+     "model_cevap": "Merkezi Kayıt Kuruluşu: kaydileştirilen sermaye piyasası araçlarını ve bunlara bağlı hakları elektronik ortamda, üyeler ve hak sahipleri itibarıyla kayden izler, merkezi saklamasını yapar."},
     {"id": 3, "zorluk": "Kolay", "tip": "open", "soru": "Bir hisse alım-satım işleminde 'işlem tarihi' ile 'takas tarihi' arasındaki fark nedir?",
-     "model_cevap": "İşlem tarihi (T), alım/satım emrinin borsada eşleştiği tarihtir. Takas tarihi (T+2 gibi), paranın ve hissenin fiilen el değiştirdiği, yükümlülüklerin yerine getirildiği tarihtir — aradaki süre takas riskinin yönetildiği penceredir."},
+     "model_cevap": "İşlem tarihi (T), alım/satım emrinin borsada eşleştiği tarihtir. Takas tarihi (T+2 gibi), paranın ve hissenin fiilen el değiştirdiği, yükümlülüklerin yerine getirildiği tarihtir, aradaki süre takas riskinin yönetildiği penceredir."},
     {"id": 4, "zorluk": "Orta", "tip": "mc",
      "soru": "Aşağıdakilerden hangisi/hangileri MKK'nın kuruluş amaçlarındandır?\nI. Kaydileştirme işlemlerini gerçekleştirmek\nII. Kaydileştirilen araçları merkezî saklamak\nIII. Piyasa yapıcılığı yapmak",
      "secenekler": ["a) Yalnız I", "b) I ve II", "c) I, II ve III", "d) II ve III", "e) Yalnız III"],
      "dogru": "b) I ve II",
      "kaynak": "Diagnostic soru (PDF'teki gerçek soruya benzer tarzda, III şıkkı MKK'nın görevi olmadığı için eklendi)."},
     {"id": 5, "zorluk": "Orta", "tip": "open", "soru": "Takasbank ile MKK arasındaki rol farkını, 'hangi kurum neyi tutar/hangi kurum neyi garanti eder' ekseninde açıkla.",
-     "model_cevap": "MKK, sermaye piyasası araçlarının ve haklarının kaydını tutar (kim, ne kadar sahip). Takasbank ise fiili takas/uzlaşma sürecini yürütür, MKT (merkezi karşı taraf) rolüyle temerrüt riskini üstlenir ve teminat/garanti fonu yönetir — yani MKK 'kayıt', Takasbank 'süreç + risk garantisi'."},
+     "model_cevap": "MKK, sermaye piyasası araçlarının ve haklarının kaydını tutar (kim, ne kadar sahip). Takasbank ise fiili takas/uzlaşma sürecini yürütür, MKT (merkezi karşı taraf) rolüyle temerrüt riskini üstlenir ve teminat/garanti fonu yönetir, yani MKK 'kayıt', Takasbank 'süreç + risk garantisi'."},
     {"id": 6, "zorluk": "Orta", "tip": "mc", "soru": "Aşağıdakilerden hangisi MKK nezdinde hesap açabilecek kuruluşlardan biri değildir?",
      "secenekler": ["a) Takasbank", "b) Aracı kurumlar", "c) Bankalar", "d) TCMB", "e) TSPB"],
      "dogru": "e) TSPB",
-     "kaynak": "PDF Bölüm 2.1, Soru 3 — EK-1 cevap anahtarı."},
+     "kaynak": "PDF Bölüm 2.1, Soru 3, EK-1 cevap anahtarı."},
     {"id": 7, "zorluk": "Zor", "tip": "open", "soru": "'Başlangıç teminatı' ile 'değişim teminatı' arasındaki fark nedir ve her biri hangi risk senaryosunu karşılar?",
-     "model_cevap": "Başlangıç teminatı, pozisyon açılırken ileride oluşabilecek temerrüt riskine karşı baştan alınan teminattır. Değişim teminatı ise pozisyonun günlük piyasa fiyatıyla yeniden değerlenmesi (mark-to-market) sonucu ortaya çıkan farkları karşılamak için ek/eksi olarak talep edilir — başlangıç 'olası' riski, değişim 'gerçekleşen' fiyat hareketini karşılar."},
+     "model_cevap": "Başlangıç teminatı, pozisyon açılırken ileride oluşabilecek temerrüt riskine karşı baştan alınan teminattır. Değişim teminatı ise pozisyonun günlük piyasa fiyatıyla yeniden değerlenmesi (mark-to-market) sonucu ortaya çıkan farkları karşılamak için ek/eksi olarak talep edilir, başlangıç 'olası' riski, değişim 'gerçekleşen' fiyat hareketini karşılar."},
     {"id": 8, "zorluk": "Zor", "tip": "mc", "soru": "Hakkında tedrici tasfiye kararı verilen bir yatırım kuruluşunun MKK nezdindeki kayıtları üzerinde işlem yapma yetkisi kime devredilir?",
      "secenekler": ["a) MKK", "b) SPK", "c) TCMB", "d) Yatırımcı Tazmin Merkezi (YTM)", "e) Yabancı Merkezi Saklama Kuruluşu (YMSK)"],
      "dogru": "d) Yatırımcı Tazmin Merkezi (YTM)",
-     "kaynak": "PDF Bölüm 2.1, Soru 7 — EK-1 cevap anahtarı."},
+     "kaynak": "PDF Bölüm 2.1, Soru 7, EK-1 cevap anahtarı."},
     {"id": 9, "zorluk": "Senaryo", "tip": "open", "soru": "Bir yatırımcı BIST'te 1000 lot hisse alıyor. İşlem anından parasının/hisselerinin hesabına geçmesine kadar hangi kurumlar sırasıyla devreye girer ve her biri ne yapar?",
      "model_cevap": "1) Aracı kurum emri Borsa İstanbul'a iletir. 2) Borsa İstanbul emri eşleştirir (işlem tarihi/T). 3) Takasbank MKT sıfatıyla devreye girer, alıcıya karşı satıcı/satıcıya karşı alıcı konumuna geçer, teminat/risk yönetimini yapar. 4) Takas günü (T+2) para ve hisse el değiştirir. 5) MKK, hisselerin hak sahibi bazında kayıtlarını günceller."},
     {"id": 10, "zorluk": "Senaryo", "tip": "open", "soru": "Bir aracı kurum, MKT üyesi olarak açık pozisyonunu zamanında kapatamıyor (temerrüt). Bundan sonra hangi mekanizma(lar) devreye girer?",
@@ -97,11 +97,11 @@ DIAGNOSTIC_QUESTIONS = [
      "model_cevap": "Borsa İstanbul Vadeli İşlem ve Opsiyon Piyasası ile tezgahüstü vadeli işlem piyasalarında kapatılmamış kısa/uzun pozisyonlar; Ödünç Pay Piyasası'nda ise vadesi gelmemiş menkul kıymet ödünç işlemleri."},
     {"id": 12, "zorluk": "Ek", "tip": "open", "soru": "Garanti fonu ne işe yarar, kim katkı sağlar?",
      "model_cevap": "Merkezi karşı taraf hizmeti verilen piyasalarda takas yükümlülüklerinin yerine getirilmemesi durumunda kullanılır; teminatlar dışında kalan, MKT üyelerinin katkı paylarıyla oluşturulan bir fondur."},
-    {"id": 13, "zorluk": "Ek", "tip": "open", "soru": "Borsa İstanbul'un takas sürecindeki rolü nedir — Takasbank'tan farkı ne?",
-     "model_cevap": "Borsa İstanbul, alım-satım emirlerinin eşleştiği yerdir (fiyat oluşumu, işlem gerçekleşmesi). Takasbank ise işlem gerçekleştikten sonraki takas/uzlaşma ve risk yönetimi sürecini yürütür — Borsa 'işlem', Takasbank 'sonrası'."},
+    {"id": 13, "zorluk": "Ek", "tip": "open", "soru": "Borsa İstanbul'un takas sürecindeki rolü nedir, Takasbank'tan farkı ne?",
+     "model_cevap": "Borsa İstanbul, alım-satım emirlerinin eşleştiği yerdir (fiyat oluşumu, işlem gerçekleşmesi). Takasbank ise işlem gerçekleştikten sonraki takas/uzlaşma ve risk yönetimi sürecini yürütür, Borsa 'işlem', Takasbank 'sonrası'."},
     {"id": 14, "zorluk": "Ek", "tip": "open", "soru": "Portföy saklama hizmeti kimler tarafından verilebilir, hangi tebliğ düzenliyor?",
      "model_cevap": "III-56.1 Portföy Saklama Hizmetine ve Bu Hizmette Bulunacak Kuruluşlara İlişkin Esaslar Tebliği kapsamında, SPK'dan yetki almış kuruluşlar (ör. Takasbank, bankalar) portföy saklama hizmeti verebilir."},
-    {"id": 15, "zorluk": "Ek", "tip": "open", "soru": "Kaydileştirme neden yapılır — hangi problemi çözer (senet basılı sistemine göre)?",
+    {"id": 15, "zorluk": "Ek", "tip": "open", "soru": "Kaydileştirme neden yapılır, hangi problemi çözer (senet basılı sistemine göre)?",
      "model_cevap": "Fiziki senet basımı/saklanması/el değiştirmesinin getirdiği kayıp, sahtecilik, maliyet ve yavaşlık risklerini ortadan kaldırmak için sermaye piyasası araçları elektronik ortamda, senede bağlanmaksızın kayden izlenir."},
 ]
 
@@ -138,7 +138,7 @@ with tab_plan:
     st.caption("Günlük gerçekçi yük ~1,5-2 saat. Son 7 gün kuralı: yeni konu yok, sadece error log + mevzuat/süre/oran/kurum tekrarı.")
     st.info(
         "📰 Güncel bağlantı: Takasbank 15 Eylül 2026'dan itibaren risk parametrelerini güncelledi; "
-        "29 Ağustos 2026 tarihli 2167 sayılı Genel Mektup ile MKT prosedürleri değişti — tam olarak "
+        "29 Ağustos 2026 tarihli 2167 sayılı Genel Mektup ile MKT prosedürleri değişti, tam olarak "
         "Bölüm 2.3 ve Bölüm 6'nın konusu, sektörde şu an tartışılıyor."
     )
 
@@ -171,7 +171,7 @@ with tab_diag:
                 is_correct = ans == q["dogru"]
                 if is_correct:
                     mc_correct += 1
-                    st.success(f"#{q['id']} ✅ Doğru — {q['dogru']}")
+                    st.success(f"#{q['id']} ✅ Doğru, {q['dogru']}")
                 else:
                     st.error(f"#{q['id']} ❌ Yanlış. Doğru cevap: {q['dogru']}")
                     save_error(q["soru"], "Bilinmiyor (senin işaretlemen lazım)", f"Senin cevabın: {ans}")
@@ -180,7 +180,7 @@ with tab_diag:
                     st.write(q["model_cevap"])
         st.metric("Çoktan seçmeli net", f"{mc_correct}/{mc_total}")
         st.caption(
-            "Açık uçlu sorular otomatik puanlanmıyor — model cevapla karşılaştır, yanlış/eksikse "
+            "Açık uçlu sorular otomatik puanlanmıyor, model cevapla karşılaştır, yanlış/eksikse "
             "aşağıdaki Error Log sekmesinden elle kaydet."
         )
 
@@ -192,12 +192,12 @@ LESSON_FIELD_LABELS = [
 
 with tab_lesson:
     st.subheader("Sayfa Sayfa Ders")
-    section = st.selectbox("Bölüm seç:", [f"{t['Bölüm']} — {t['Konu']}" for t in TOC])
-    bolum_id = section.split(" — ")[0]
+    section = st.selectbox("Bölüm seç:", [f"{t['Bölüm']} · {t['Konu']}" for t in TOC])
+    bolum_id = section.split(" · ")[0]
     lesson = lessons_by_id.get(bolum_id)
 
     if lesson is not None and m01["questions"]:
-        with st.expander("🔁 Önce hatırla (spaced repetition — yeni konuya geçmeden 2 eski soru)", expanded=False):
+        with st.expander("🔁 Önce hatırla (spaced repetition, yeni konuya geçmeden 2 eski soru)", expanded=False):
             due = m01["questions"]
             if client is not None and st.session_state.get("user"):
                 try:
@@ -219,16 +219,16 @@ with tab_lesson:
                 st.caption(f"Doğru cevap: {q['dogru']}")
 
     if lesson is None:
-        st.info("Bu bölüm henüz işlenmedi — sıradaki adım. 'Bu sayfayı anlat' dediğinde birlikte işleriz.")
+        st.info("Bu bölüm henüz işlenmedi, sıradaki adım. 'Bu sayfayı anlat' dediğinde birlikte işleriz.")
     else:
-        st.markdown(f"### SAYFA {lesson['sayfa']} — {lesson['baslik']}")
+        st.markdown(f"### SAYFA {lesson['sayfa']} · {lesson['baslik']}")
         ders = lesson["ders"]
         for field_key, label in LESSON_FIELD_LABELS:
             if ders.get(field_key):
                 st.markdown(f"**{label}:** {ders[field_key]}")
 
 with tab_recall:
-    st.subheader("Aktif Recall — PDF kaynaklı gerçek sorular (Bölüm 2.1)")
+    st.subheader("Aktif Recall, PDF kaynaklı gerçek sorular (Bölüm 2.1)")
     st.caption("Kaynak: EK-1 cevap anahtarı. Kitabı kapat, cevapla, sonra kontrol et.")
     for q in m01["questions"]:
         st.markdown(f"**Soru:** {q['soru']}")
@@ -252,7 +252,7 @@ with tab_errors:
         st.info("Henüz kayıtlı hata yok.")
     else:
         for i, entry in enumerate(reversed(log)):
-            st.markdown(f"**{entry['category']}** — {entry['created_at'][:16]}")
+            st.markdown(f"**{entry['category']}** · {entry['created_at'][:16]}")
             st.caption(entry["question"])
             if entry.get("note"):
                 st.caption(entry["note"])
@@ -261,7 +261,7 @@ with tab_errors:
         counts = Counter(e["category"] for e in log)
         repeated = {k: v for k, v in counts.items() if v > 1}
         if repeated:
-            st.warning(f"Tekrar eden hata kategorileri: {repeated} — bu konuları tekrar etmen lazım.")
+            st.warning(f"Tekrar eden hata kategorileri: {repeated}, bu konuları tekrar etmen lazım.")
 
 with tab_exam:
     st.subheader("Deneme Modu")
@@ -297,7 +297,7 @@ with tab_exam:
                     strong.append(q["soru"][:60])
                 else:
                     weak.append(q["soru"][:60])
-                    save_error(q["soru"], "Bilinmiyor (senin işaretlemen lazım)", f"Deneme modunda yanlış — cevabın: {ans}")
+                    save_error(q["soru"], "Bilinmiyor (senin işaretlemen lazım)", f"Deneme modunda yanlış, cevabın: {ans}")
 
             total = len(st.session_state["exam_questions"])
             st.metric("Sonuç", f"{correct}/{total}")

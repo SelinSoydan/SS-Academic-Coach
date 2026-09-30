@@ -53,7 +53,8 @@ TARGET_COMPANY = "Borusan Mannesmann Boru (Borusan Birleşik Boru Fabrikaları S
 st.title("📊 CFA Research Challenge")
 st.caption(f"Hedef şirket: {TARGET_COMPANY}")
 
-if datetime.date.today() > DEADLINE:
+days_left = (DEADLINE - datetime.date.today()).days
+if days_left < 0:
     st.success("✅ Başvuru yapıldı. Değerleme, senaryo ve jüri provası için Borusan Equity Cockpit sayfasına geç.")
 else:
     st.info(f"⏳ Son başvuru tarihine {(DEADLINE - datetime.date.today()).days} gün kaldı.")
@@ -78,8 +79,8 @@ BIST'te 1994'ten beri işlem görüyor.
 | Net Kar | 6,3 | (7,9) | 31,7 | (5,1) |
 | Net Finansal Borç | 160 | 251 | 178 | 280 |
 
-**2026 şirket beklentisi (guidance):** Satış hacmi 1,15–1,25 mln ton, gelir 2,1–2,3 milyar $,
-FAVÖK marjı %8–%10.
+**2026 şirket beklentisi (guidance):** Satış hacmi 1,15 ile 1,25 mln ton, gelir 2,1 ile 2,3 milyar $,
+FAVÖK marjı %8 ile %10.
 
 **Sipariş portföyü:** ABD'de altyapı/enerji segmentinde 2026-2027'ye uzanan ~1,9 milyar $ yeni anlaşma.
 
@@ -135,7 +136,7 @@ try:
               delta=f"{md['lastPrice'] - md['previousClose']:,.2f}" if md["lastPrice"] and md["previousClose"] else None)
     c2.metric("Piyasa Değeri", f"{md['marketCap'] / 1e9:,.2f} milyar {md['currency']}" if md["marketCap"] else "yok")
     c3.metric("Hisse Adedi", f"{md['shares']:,.0f}" if md["shares"] else "yok")
-    c4.metric("52 Hafta Aralığı", f"{md['yearLow']:,.1f} – {md['yearHigh']:,.1f}" if md["yearLow"] else "yok")
+    c4.metric("52 Hafta Aralığı", f"{md['yearLow']:,.1f} ile {md['yearHigh']:,.1f}" if md["yearLow"] else "yok")
 except Exception as exc:
     bug_tracker.log(exc, context="cfa_live_market_data")
     st.error("Canlı veri çekilemedi (bağlantı sorunu olabilir).")

@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(page_title="Matematik Programı", page_icon="📐", layout="wide")
 
-st.title("📐 Matematik Programı — Quant Hazırlık")
+st.title("📐 Matematik Programı · Quant Hazırlık")
 st.caption(
     "Yüksek lisans (AI x Finans) ve ekonometri için gereken matematiği sıfırdan işleyen, "
     "ders ders büyüyen interaktif defter. Log/türev, Σ/varyans/kovaryans, regresyon tekrarı "
