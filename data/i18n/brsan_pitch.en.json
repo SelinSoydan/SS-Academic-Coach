@@ -1,0 +1,188 @@
+{
+  "sources": {
+    "d1c26": {"ad": "Borusan Boru 1Q26 investor presentation"},
+    "d2c26": {"ad": "Borusan Boru 2Q26 investor presentation (January to June 2026)"},
+    "ert": {"ad": "EquityRT (Snapshot, Peer Performance, Holdings, News and Earnings screens), 22 September 2026"},
+    "valentine": {"ad": "Best Practices for Equity Research Analysts (J. Valentine, CFA), a CFA Institute RC resource"}
+  },
+  "meta": {
+    "endustri": "Welded and seamless steel pipe manufacturing",
+    "tesis": "10 plants: Gemlik (main campus), Baytown, Panama City and Mobile in the US, Vobarno in Italy, and Romania",
+    "kapasite": "1.7 million tons"
+  },
+  "financials": {
+    "kaynak": "Borusan Boru 1Q26 and 2Q26 investor presentations, consolidated, USD million (2Q26 deck p.18, p.20, p.21)",
+    "ttm_bazi": {"etiket": "TTM as of 1H26"},
+    "kaldirac_serisi": {"kaynak": "2Q26 deck p.21, using trailing twelve month EBITDA"},
+    "nakit_akisi_1y26": {"kaynak": "2Q26 deck p.22", "not": "Items were read from the chart in the deck; rounding means the total may not add up exactly."}
+  },
+  "segmentler_1y26": {
+    "kaynak": "2Q26 deck p.19",
+    "items": [
+      {"segment": "Infrastructure & Project"},
+      {"segment": "Energy"},
+      {"segment": "Industry & Construction"},
+      {"segment": "Automotive"}
+    ]
+  },
+  "siparis_notu": "The 2Q26 deck was published on 7 August, so the orders of 14 and 21 August should not be included in its backlog figure. Confirm with the company or the 3Q26 deck before using it in the report.",
+  "risks": [
+    {"risk": "Concentration in the US", "kanit": "79% of 1H26 revenue came from the US (73% in 2024). Both large orders in August 2026 were US orders.", "azaltici": "Three US plants give a local production advantage; a tariff wall that hurts importers can protect a local producer."},
+    {"risk": "Margin not sustained", "kanit": "The 2Q26 margin of 11.5% is above even the top of the guidance range, while 1Q26 was 6.3%. Project mix moves the margin from quarter to quarter.", "azaltici": "The USD 2.6 billion backlog consists of projects whose prices are largely locked in."},
+    {"risk": "Valuation premium eroding", "kanit": "P/E of 33.89 against an EquityRT Steel & Iron sector median of 15.92. A disappointment could compress the multiple quickly.", "azaltici": "On forward EV/EBITDA at the guidance midpoint the stock is close to Tenaris; the premium sits mostly in trailing multiples."},
+    {"risk": "Cash flow quality", "kanit": "1H26 free cash flow was USD 78 million, but USD 63 million of it came from a working capital release, which is not guaranteed to repeat.", "azaltici": "Net debt is down to USD 144 million with USD 202 million of cash; the balance sheet cushions a reversal."},
+    {"risk": "Low free float and liquidity", "kanit": "77.9% of shares sit with a single holder. A stock level circuit breaker was triggered on 16 September 2026.", "azaltici": "Global institutions such as Vanguard, BlackRock and Norges Bank hold shares, showing institutional interest."},
+    {"risk": "Raw material price volatility", "kanit": "The main input for welded pipe is flat steel; quantitative input cost data has not been added yet.", "azaltici": "Price pass through clauses in project contracts; the contract structure needs to be confirmed."},
+    {"risk": "TAS 29 and FX comparability", "kanit": "Statutory books showed a loss of about TRY 1.03 billion for 2025 while IFRS showed a profit, and no dividend was paid. The EquityRT EPS series is inconsistent across periods.", "azaltici": "The main yardstick is the company's USD presentation; TRY statements are used only for reconciliation."}
+  ],
+  "catalysts": [
+    {"olay": "2Q26 results; 2026 guidance raised (revenue USD 2.2 to 2.4 billion, margin 9% to 11%)", "kaynak": "2Q26 deck p.23"},
+    {"olay": "About USD 360 million of new US orders"},
+    {"olay": "About USD 555 million order for Borusan Berg Pipe"},
+    {"olay": "Credit rating disclosure"},
+    {"olay": "Stock level circuit breaker triggered"},
+    {"tarih": "2026-11 (est.)", "olay": "3Q26 results: the durability test for a 9% to 11% margin. Last year 9M25 results were announced on 7 November 2025.", "kaynak": "EquityRT Earnings screen"},
+    {"tarih": "2027-02 (est.)", "olay": "FY2026 results, the delivery test for guidance. FY2025 results were announced on 26 February 2026.", "kaynak": "EquityRT Earnings screen"}
+  ],
+  "katalizor_yonu": {
+    "not": "Possible triggers are analyst judgement; each one comes with the indicator that would confirm or refute it.",
+    "yukari": [
+      {"olay": "EBITDA margin above 9% in 3Q26", "izle": "November 2026 results; the first proof that guidance is durable."},
+      {"olay": "New US infrastructure and energy orders", "izle": "KAP order disclosures; the backlog gives visibility out to 2028."},
+      {"olay": "Guidance raised again", "izle": "3Q26 deck; it was already raised once in 2Q26."},
+      {"olay": "Recovery in the steel cycle", "izle": "Industry & Construction fell 25.6% in 1H26; if the cycle turns, this is the first line to recover."},
+      {"olay": "Credit rating improvement", "izle": "JCR raised the international rating to BBB in 2025; another upgrade would lower funding costs."}
+    ],
+    "asagi": [
+      {"olay": "Margin falling back to the 6% to 7% band", "izle": "The 1Q26 margin was 6.3%; if the 11.5% in 2Q26 came from project mix it may not last."},
+      {"olay": "Adverse change in US trade or energy policy", "izle": "79% of revenue comes from the US; tariff and pipeline permit decisions."},
+      {"olay": "Order postponement or cancellation", "izle": "A single order is about USD 555 million; a shift in delivery timing moves revenue from quarter to quarter."},
+      {"olay": "Sharp move in steel prices", "izle": "If pass through lags, margins get squeezed; the shock simulator on the Valuation Desk measures it."}
+    ]
+  },
+  "cfa_playbook": {
+    "yazili_rubrik": [
+      {"kanit": "Hero card, plant and segment breakdown"},
+      {"kanit": "Narrow and broad peer groups, CFA peer selection methodology"},
+      {"kanit": "Thesis tab, catalyst calendar"},
+      {"kanit": "Football field, sensitivity table, scenarios, Monte Carlo, reverse DCF"},
+      {"kanit": "Quarterly and annual USD series, margins, leverage, cash flow quality"},
+      {"kanit": "Probability x impact matrix, a mitigant for every risk"},
+      {"kanit": "SASB materiality map, Borusan ESG facts, link to valuation"}
+    ],
+    "sunum_rubrik": [
+      {}, {}, {"bolum": "Presentation (logic, persuasiveness)"}, {}, {}, {}, {"bolum": "Materials (slide quality)"}
+    ],
+    "format": "The report is at most 10 A4 pages plus a 10 page appendix. The presentation is 10 minutes, followed by 10 minutes of Q&A in the local round. Judges assess the pitch from the perspective of the buy side listening to a sell side pitch.",
+    "kazanan_desenler": [
+      {"desen": "Football field target price chart"},
+      {"desen": "WACC and growth sensitivity table"},
+      {"desen": "Bull, base and bear scenarios"},
+      {"desen": "Reverse DCF"},
+      {"desen": "Monte Carlo simulation"},
+      {"desen": "Probability x impact risk matrix with mitigants"},
+      {"desen": "Valuation triangulated across several methods"},
+      {"desen": "Proprietary ESG scorecard benchmarked against peers"},
+      {"desen": "Porter's five forces with ratings"},
+      {"desen": "DuPont and forensic accounting scores (Altman Z, Piotroski F)"},
+      {"desen": "Primary research: expert interviews, customer survey"}
+    ],
+    "faves": [
+      {"fikir": "Turning the delivery schedule of the backlog (2027 and 2028) into a revenue forecast; timing the consensus cannot see."},
+      {"fikir": "A narrow peer group built on business overlap rather than sector codes, plus a reverse DCF showing what the market is pricing."},
+      {"fikir": "The price volatility created by a low free float; can emotional pricing days such as circuit breaker sessions be entry points?"}
+    ]
+  },
+  "jury_questions": [
+    {
+      "soru": "How did you choose your peer group?",
+      "iskelet": [
+        "CFA guidance puts business overlap ahead of sector codes: a significant part of revenue should come from the same product and a similar demand environment.",
+        "That is why the narrow group holds welded and seamless pipe makers Tenaris and Vallourec, while flat steel producers such as Nippon Steel or Erdemir stay in the broad list for context only.",
+        "EVRAZ was delisted from the London Stock Exchange in 2022, so its data is unreliable and we left it out on purpose.",
+        "The narrow group has two companies today; extending it to five to ten names such as Jindal SAW is the next step for the report."
+      ],
+      "tuzak": "Saying \"we took EquityRT's sector list\". Judges want the reasoning behind the selection, not the list."
+    },
+    {
+      "soru": "P/E is twice the sector. Is this a bubble?",
+      "iskelet": [
+        "First the reconciliation: the 33.89 on EquityRT matches market value of USD 1,917.9 million divided by USD trailing net profit of USD 56.6 million.",
+        "P/E looks at past profit, and the profit base has only just formed: a USD 5.1 million loss in 2024, USD 39.8 million of profit in 1H26 alone.",
+        "Looking forward the picture changes: at the midpoint of the new guidance, EV/EBITDA is about 9x, close to Tenaris at 8.5x."
+      ],
+      "tuzak": "Calling the stock cheap or expensive from a single multiple."
+    },
+    {
+      "soru": "Which assumption is your valuation most sensitive to?",
+      "iskelet": [
+        "The EBITDA margin. At USD 2.3 billion of revenue, the midpoint of new guidance, one point of margin is USD 23 million of EBITDA.",
+        "At a 9x EV/EBITDA multiple that is about USD 207 million of equity value, roughly eleven percent of market value.",
+        "The sensitivity table on the Valuation Desk shows this on the multiple and EBITDA axes, and the Monte Carlo shows it as a probability distribution."
+      ],
+      "tuzak": "Answering WACC or growth without being able to show the number."
+    },
+    {
+      "soru": "How good is the cash flow quality?",
+      "iskelet": [
+        "1H26 free cash flow was USD 78 million, which looks like about 86% of EBITDA.",
+        "But USD 63 million of it came from a working capital release, which may not repeat.",
+        "To measure sustainable conversion we normalise capex and working capital; the reverse DCF tests that normalised figure."
+      ],
+      "tuzak": "Treating free cash flow and EBITDA as the same thing."
+    },
+    {
+      "soru": "How does TAS 29 inflation accounting affect your analysis?",
+      "iskelet": [
+        "Since the end of 2023, TRY financial statements in Turkey are restated under hyperinflation accounting, so comparing TRY figures across periods can be misleading.",
+        "A concrete example: in 2025 the statutory books showed a loss of about TRY 1.03 billion while IFRS showed a profit, and no dividend was paid.",
+        "That is why we use the company's USD presentation as the main yardstick and keep TRY statements for reconciliation only."
+      ],
+      "tuzak": "Mixing TRY and USD figures in the same table."
+    },
+    {
+      "soru": "How did you calculate enterprise value, and what went into it?",
+      "iskelet": [
+        "Market value (EquityRT, 22 September 2026) plus 2Q26 net financial debt (USD 144 million).",
+        "Minority interests and lease liabilities are not yet included in this MVP; they will be in the report, and we say so explicitly.",
+        "We know we are combining two sources with different dates; net debt will be updated when the 3Q26 balance sheet arrives."
+      ],
+      "tuzak": "Hiding a missing item. Judges do not penalise a gap, they penalise a gap nobody noticed."
+    },
+    {
+      "soru": "What is your recommendation, buy or sell?",
+      "iskelet": [
+        "We have not issued one yet, and that is deliberate; an independent analyst decides with data.",
+        "On trailing multiples BRSAN is more expensive than its peers; at the midpoint of the new guidance it is close to Tenaris.",
+        "The thesis question is clear: is the 11.5% margin of 2Q26 durable, or a one off effect of project mix? 3Q26 is the first test."
+      ],
+      "tuzak": "Giving a recommendation inconsistent with the valuation; the point judges catch most often."
+    }
+  ],
+  "esg": {
+    "ozet": "Borusan Boru is not a primary steelmaker; it buys hot rolled coil and turns it into welded pipe. Most of its emissions therefore sit not in its own stacks but in the supply chain (Scope 3). Carbon risk arrives through the carbon content of the input steel and of the product shipped to the EU.",
+    "dogrulanmis": [
+      {"bilgi": "Its first TSRS compliant, independently assured sustainability report, covering 2024, was disclosed on KAP on 30 October 2025."},
+      {"bilgi": "Greenhouse gas accounting follows ISO 14064 across Scope 1, 2 and 3.", "kaynak": "Trade press, 2022"},
+      {"bilgi": "2,421 employees and 10 plants on three continents (2024 annual report).", "kaynak": "Borusan Boru 2024 annual report"},
+      {"bilgi": "International Safety Award with Distinction, the highest grade in the British Safety Council assessment (2022 results).", "kaynak": "Anadolu Agency"},
+      {"bilgi": "JCR Eurasia, 28 August 2025: long term national rating A+ (tr) Stable; international rating upgraded to BBB (from BBB-). The content of the 28 August 2026 disclosure is still to be confirmed.", "kaynak": "JCR Eurasia, via KAP"},
+      {"bilgi": "77.9% of shares are held by Borusan Mannesmann Boru Yatırım Holding; according to the 1Q26 deck the free float is 16.07%.", "kaynak": "EquityRT Holdings, 1Q26 deck"},
+      {"bilgi": "No dividend was paid for 2025; statutory books showed a loss due to TAS 29 while IFRS showed a profit.", "kaynak": "KAP disclosure (28 April 2026), press coverage"}
+    ],
+    "tuzaklar": [
+      "The ESG risk score of 18.9 shown on Sustainalytics belongs to Borusan Yatırım ve Pazarlama A.Ş., not to BRSAN. Putting it in the report would be a serious mistake in front of judges.",
+      "The Borusan Group's 18.2% share of women employees is a group wide figure (2022); it must not be used as if it were company specific.",
+      "The employee count differs by source (2,421 or 2,374); the annual report figure should be used.",
+      "Borusan EnBW Enerji is a joint venture between Borusan Holding and the German utility EnBW; it is not a subsidiary of BRSAN. Its renewable investments must not be presented as Borusan Boru's ESG performance. A link can only be made with evidence, for example if green electricity is supplied within the group."
+    ],
+    "sasb": [
+      {"konu": "GHG emissions and carbon content", "neden": "The main financial risk in the steel value chain; the EU Carbon Border Adjustment Mechanism (CBAM) prices a product's embedded emissions.", "borusan": "ISO 14064 accounting and a TSRS report exist; an emissions intensity per ton has not been extracted yet.", "degerleme": "Carbon cost on EU revenue comes out of margin; the calculator below turns it into equity value.", "kanit": "Partial"},
+      {"konu": "Supply chain and raw materials", "neden": "The production route of the input coil (blast furnace or electric arc furnace) determines Scope 3 emissions.", "borusan": "Buys coil; the supplier mix was not found in public data.", "degerleme": "A low carbon coil premium is a cost; local sourcing in the US reduces tariff risk.", "kanit": "No data"},
+      {"konu": "Energy management", "neden": "Welding, forming and heat treatment are energy intensive processes.", "borusan": "No renewable energy share figure found.", "degerleme": "Energy cost feeds straight into EBITDA margin.", "kanit": "No data"},
+      {"konu": "Health and safety", "neden": "In heavy industry lost time and accident frequency are both a human and an operational risk.", "borusan": "British Safety Council Distinction award; no lost time injury rate found.", "degerleme": "Accident related stoppages affect delivery schedules and order penalties.", "kanit": "Partial"},
+      {"konu": "Governance and minority rights", "neden": "A single shareholder with 77.9% sets decision making and dividend policy.", "borusan": "Audit, Early Detection of Risk and Corporate Governance committees exist; the number of independent directors is to be confirmed on KAP.", "degerleme": "A low free float can justify a liquidity discount and an extra premium on WACC.", "kanit": "Partial"}
+    ],
+    "ab_gelir_payi": {"not": "This came from a search engine snippet of the 2025 annual report; it must not go into the report before it is confirmed directly from the PDF."}
+  }
+}

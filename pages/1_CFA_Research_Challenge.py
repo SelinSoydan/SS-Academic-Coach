@@ -50,8 +50,8 @@ REPORT_SECTIONS = [
 
 TARGET_COMPANY = "Borusan Mannesmann Boru (Borusan Birleşik Boru Fabrikaları San. ve Tic. A.Ş., BIST: BRSAN)"
 
-st.title("📊 CFA Research Challenge")
-st.caption(f"Hedef şirket: {TARGET_COMPANY}")
+st.title("🗂️ Veri Odası")
+st.caption(f"Ham veri ve kaynaklar. Analiz, senaryo ve takım çalışması Borusan Equity Cockpit sayfasında. Hedef şirket: {TARGET_COMPANY}")
 
 days_left = (DEADLINE - datetime.date.today()).days
 if days_left < 0:
@@ -60,7 +60,7 @@ else:
     st.info(f"⏳ Son başvuru tarihine {(DEADLINE - datetime.date.today()).days} gün kaldı.")
 st.page_link("pages/0_Borusan_Equity_Cockpit.py", label="Borusan Equity Cockpit'i aç", icon="🏆")
 
-with st.expander("🏭 Şirket Profili (kaynak: Borusan Boru resmi 1Ç26 yatırımcı sunumu)", expanded=True):
+with st.expander("🏭 Arşiv: 1Ç26 yatırımcı sunumu özeti (güncel 2Ç26 verisi ve yükseltilmiş rehberlik Cockpit'te)", expanded=False):
     st.markdown(
         """
 **Ortaklık yapısı:** Borusan Grubu %83,93 (Borusan Holding %74,85, Borusan Yatırım ve Pazarlama %9,08) ,
