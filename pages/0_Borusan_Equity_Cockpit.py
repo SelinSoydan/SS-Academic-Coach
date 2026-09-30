@@ -113,7 +113,7 @@ kpis = [
     ("FD/FAVÖK son 12 ay", f"{tr(EV / TTM_EBITDA)}x", BASE["etiket"]),
     ("FD/FAVÖK 2026T", f"{tr(EV / E26_MID)}x", "yükseltilmiş rehberliğin ortası"),
     ("F/K", tr(MKT["p_e"], 2), f"mutabakat: {tr(MCAP / TTM_NI, 2)}"),
-    ("Net borç / FAVÖK", f"{tr(ND / TTM_EBITDA)}x", f"2Ç25'te {tr(LEV['2Ç25'])}x"),
+    ("Net borç / FAVÖK", f"{tr(ND / TTM_EBITDA, 2)}x", f"sunumda {tr(LEV['2Ç26'])}x · 2Ç25'te {tr(LEV['2Ç25'])}x"),
 ]
 if quote:
     chg = quote["price"] / quote["prev"] - 1 if quote["prev"] else 0
@@ -219,8 +219,10 @@ with tabs[1]:
     ])
     color = alt.Color("grup:N", scale=alt.Scale(range=[PINK, LAV, MAUVE]), legend=alt.Legend(orient="bottom", title=None))
     base = alt.Chart(ff).encode(y=alt.Y("yontem:N", sort=None, title=None, axis=alt.Axis(labelLimit=280)))
+    x_dom = [min(ff["low"].min(), MCAP) * 0.8, max(ff["high"].max(), MCAP) * 1.22]
     bars = base.mark_bar(size=22, cornerRadius=6).encode(
-        x=alt.X("low:Q", title="Özsermaye değeri (mn $)", scale=alt.Scale(zero=False, nice=True)), x2="high:Q", color=color,
+        x=alt.X("low:Q", title="Özsermaye değeri (mn $)", scale=alt.Scale(domain=x_dom, nice=False),
+                axis=alt.Axis(labelExpr="replace(datum.label, ',', '.')")), x2="high:Q", color=color,
         tooltip=[alt.Tooltip("yontem:N", title="Yöntem"), alt.Tooltip("etiket:N", title="Aralık (mn $)")],
     )
     points = base.mark_point(filled=True, size=160, shape="diamond").encode(x="low:Q", color=color).transform_filter(
@@ -229,7 +231,7 @@ with tabs[1]:
     labels = base.mark_text(align="left", dx=8, color=PLUM, fontSize=11).encode(x="high:Q", text="etiket:N")
     rule_df = pd.DataFrame({"x": [MCAP], "t": [f"Bugünkü piyasa değeri {tr(MCAP, 0)}"]})
     rule = alt.Chart(rule_df).mark_rule(color=PLUM, strokeDash=[6, 4], size=2).encode(x="x:Q")
-    rule_txt = alt.Chart(rule_df).mark_text(align="left", dx=6, dy=-8, color=PLUM, fontWeight="bold").encode(
+    rule_txt = alt.Chart(rule_df).mark_text(align="right", dx=-6, dy=8, color=PLUM, fontWeight="bold").encode(
         x="x:Q", y=alt.value(0), text="t:N"
     )
     st.altair_chart((bars + points + labels + rule + rule_txt).properties(height=320), width="stretch")
@@ -252,7 +254,7 @@ with tabs[1]:
     heat = alt.Chart(hm).mark_rect(cornerRadius=4).encode(
         x=alt.X("favok:O", title="2026T FAVÖK (mn $), rehberlik aralığı", sort=[f"{tr(e, 0)}" for e in ebitda_grid]),
         y=alt.Y("carpan:O", title="FD/FAVÖK çarpanı", sort=[f"{m}x" for m in reversed(mult_grid)]),
-        color=alt.Color("up:Q", scale=alt.Scale(domain=[-60, 0, 60], range=["#B23A48", "#FFF3F8", "#2F7D5B"], clamp=True), legend=None),
+        color=alt.Color("up:Q", scale=alt.Scale(domain=[-60, 0, 60], range=["#D9546A", "#FFF6FA", "#3E9A72"], clamp=True, interpolate="rgb"), legend=None),
         tooltip=[alt.Tooltip("carpan:N", title="Çarpan"), alt.Tooltip("favok:N", title="FAVÖK"), alt.Tooltip("lbl:N", title="Fark")],
     )
     heat_txt = alt.Chart(hm).mark_text(fontSize=12, fontWeight="bold", color=PLUM).encode(
@@ -347,7 +349,7 @@ with tabs[1]:
     rheat = alt.Chart(rhm).mark_rect(cornerRadius=4).encode(
         x=alt.X("g:O", title="Sonsuz büyüme", sort=[f"%{tr(x)}" for x in [1.0, 1.5, 2.0, 2.5, 3.0, 3.5]]),
         y=alt.Y("wacc:O", title="WACC", sort=[f"%{w}" for w in [8, 9, 10, 11, 12, 13, 14]]),
-        color=alt.Color("oran:Q", scale=alt.Scale(range=["#F6E4F2", "#7B3F6E"]), legend=None),
+        color=alt.Color("oran:Q", scale=alt.Scale(range=["#F6E4F2", "#7B3F6E"], interpolate="rgb"), legend=None),
     )
     rtxt = alt.Chart(rhm).mark_text(fontSize=12, fontWeight="bold").encode(
         x=alt.X("g:O", sort=[f"%{tr(x)}" for x in [1.0, 1.5, 2.0, 2.5, 3.0, 3.5]]),
