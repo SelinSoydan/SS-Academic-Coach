@@ -310,11 +310,11 @@ with tabs[1]:
     new_e = E26_MID + ds + dfx + dv
     new_rev = REV_MID * (1 + vol_chg / 100) + REV_MID * steel_share / 100 * steel_chg / 100 * pass_thru / 100
     s1, s2, s3, s4 = st.columns(4)
-    s1.metric("Yeni 2026T FAVÖK", f"{tr(new_e)} mn $", delta=f"{tr(new_e - E26_MID)} mn $")
+    s1.metric("Yeni 2026T FAVÖK (mn $)", tr(new_e), delta=tr(new_e - E26_MID))
     s2.metric("Yeni FAVÖK marjı", pct(new_e / new_rev), delta=f"{tr((new_e / new_rev - M_MID) * 100)} puan")
-    s3.metric("Özsermaye değerine etkisi", f"{tr((new_e - E26_MID) * IMPLIED_MULT, 0)} mn $",
+    s3.metric("Özsermaye etkisi (mn $)", tr((new_e - E26_MID) * IMPLIED_MULT, 0),
               delta=pct((new_e - E26_MID) * IMPLIED_MULT / MCAP, 1, sign=True))
-    s4.metric("Etki kırılımı (çelik / kur / hacim)", f"{tr(ds, 0)} / {tr(dfx, 0)} / {tr(dv, 0)}")
+    s4.metric("Çelik / kur / hacim (mn $)", f"{tr(ds, 0)} / {tr(dfx, 0)} / {tr(dv, 0)}")
 
     tor = []
     for name, lo_d, hi_d in [
@@ -378,10 +378,10 @@ with tabs[1]:
     p5, p50, p95 = sims[int(0.05 * n)], sims[int(0.5 * n)], sims[int(0.95 * n)]
     prob_above = sum(1 for s in sims if s > MCAP) / n
     m1, m2, m3, m4 = st.columns(4)
-    m1.metric("5. persentil", f"{tr(p5, 0)} mn $")
-    m2.metric("Medyan", f"{tr(p50, 0)} mn $", delta=pct(v.upside(p50, MCAP), 1, sign=True))
-    m3.metric("95. persentil", f"{tr(p95, 0)} mn $")
-    m4.metric("Bugünkü fiyatın üstünde kalma olasılığı", pct(prob_above, 1))
+    m1.metric("5. persentil (mn $)", tr(p5, 0))
+    m2.metric("Medyan (mn $)", tr(p50, 0), delta=pct(v.upside(p50, MCAP), 1, sign=True))
+    m3.metric("95. persentil (mn $)", tr(p95, 0))
+    m4.metric("Bugünkü fiyatı aşma olasılığı", pct(prob_above, 1))
     lo_v, hi_v = sims[0], sims[-1]
     width_b = (hi_v - lo_v) / 40 or 1
     counts = [0] * 40
@@ -406,7 +406,7 @@ with tabs[1]:
     g_term = r2.slider("Sonsuz büyüme (%)", 0.0, 4.0, 2.5, step=0.25, help="Varsayım, veri değil.")
     fcff = v.implied_steady_fcff(EV, wacc / 100, g_term / 100)
     k1, k2, k3 = st.columns(3)
-    k1.metric("Piyasanın ima ettiği kalıcı serbest nakit akımı", f"{tr(fcff)} mn $/yıl")
+    k1.metric("İma edilen kalıcı SNA (mn $/yıl)", tr(fcff))
     k2.metric("Son 12 ay FAVÖK'e oranı", pct(fcff / TTM_EBITDA, 0))
     k3.metric("2026T FAVÖK ortasına oranı", pct(fcff / E26_MID, 0))
     st.info(md(
@@ -437,11 +437,11 @@ with tabs[1]:
 with tabs[2]:
     h1, h2 = P["1Y25"], P["1Y26"]
     f1, f2, f3, f4 = st.columns(4)
-    f1.metric("1Y26 gelir", f"{tr(h2['gelir'])} mn $", delta=pct(v.growth(h2["gelir"], h1["gelir"]), 1, sign=True))
-    f2.metric("1Y26 FAVÖK", f"{tr(h2['favok'])} mn $", delta=pct(v.growth(h2["favok"], h1["favok"]), 1, sign=True))
+    f1.metric("1Y26 gelir (mn $)", tr(h2["gelir"]), delta=pct(v.growth(h2["gelir"], h1["gelir"]), 1, sign=True))
+    f2.metric("1Y26 FAVÖK (mn $)", tr(h2["favok"]), delta=pct(v.growth(h2["favok"], h1["favok"]), 1, sign=True))
     f3.metric("1Y26 FAVÖK marjı", pct(h2["favok"] / h2["gelir"]),
               delta=f"{tr((h2['favok'] / h2['gelir'] - h1['favok'] / h1['gelir']) * 100)} puan")
-    f4.metric("1Y26 net kâr", f"{tr(h2['net_kar'])} mn $", delta=pct(v.growth(h2["net_kar"], h1["net_kar"]), 0, sign=True))
+    f4.metric("1Y26 net kâr (mn $)", tr(h2["net_kar"]), delta=pct(v.growth(h2["net_kar"], h1["net_kar"]), 0, sign=True))
 
     q_keys = [k for k, d in P.items() if d["tur"] == "ceyrek"]
     qdf = pd.DataFrame([{"donem": k, "gelir": P[k]["gelir"], "marj": P[k]["favok"] / P[k]["gelir"] * 100} for k in q_keys])
@@ -686,9 +686,9 @@ with tabs[4]:
     hit = REV_MID * eu_share / 100 * carbon / 100
     eq_hit = hit * mult_e
     z1, z2, z3 = st.columns(3)
-    z1.metric("Yıllık FAVÖK etkisi", f"−{tr(hit)} mn $")
+    z1.metric("Yıllık FAVÖK etkisi (mn $)", f"-{tr(hit)}")
     z2.metric("Marj etkisi", f"−{tr(hit / REV_MID * 100, 2)} puan")
-    z3.metric("Özsermaye değerine etkisi", f"−{tr(eq_hit, 0)} mn $", delta=pct(-eq_hit / MCAP, 1, sign=True))
+    z3.metric("Özsermaye etkisi (mn $)", f"-{tr(eq_hit, 0)}", delta=pct(-eq_hit / MCAP, 1, sign=True))
     st.markdown("#### ESG'yi iskonto oranına bağla: risk primi hesaplayıcı")
     st.caption(
         f"Jüriler ESG'yi finansal modelden ayrı görmez; burada ESG, WACC'a eklenen bir prim olarak modele giriyor. Baz WACC "
@@ -702,7 +702,7 @@ with tabs[4]:
         return v.ev_from_fcff(fcff_base, wacc / 100 + bp / 10000, g_term / 100) - EV
 
     p1, p2 = st.columns([1, 2])
-    p1.metric("Özsermaye değerine etkisi", f"{tr(eq_delta(prem), 0)} mn $", delta=pct(eq_delta(prem) / MCAP, 1, sign=True))
+    p1.metric("Özsermaye etkisi (mn $)", tr(eq_delta(prem), 0), delta=pct(eq_delta(prem) / MCAP, 1, sign=True))
     p1.caption(md(f"Her 50 baz puan yaklaşık {tr(-eq_delta(50), 0)} mn $ değer siliyor."))
     pdf_ = pd.DataFrame([{"bp": b, "d": eq_delta(b)} for b in range(0, 210, 10)])
     p2.altair_chart(
