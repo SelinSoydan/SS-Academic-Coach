@@ -59,6 +59,13 @@ class TeamBoard:
                     self.data[key] = copy.deepcopy(payload[key])
 
 
+BOARD_SCHEMA = 2  # TeamBoard sınıfı değişince artır: önbellekteki eski nesne yerine yenisi kurulur
+
+
 @st.cache_resource
-def get_board() -> TeamBoard:
+def _board(schema: int) -> TeamBoard:
     return TeamBoard()
+
+
+def get_board() -> TeamBoard:
+    return _board(BOARD_SCHEMA)
