@@ -35,6 +35,18 @@ def test_reverse_dcf_round_trip():
     assert math.isclose(fcff0 * (1 + g) / (wacc - g), ev, rel_tol=1e-12)
 
 
+def test_ev_from_fcff_inverts_implied_fcff():
+    fcff0 = v.implied_steady_fcff(2061.91, 0.11, 0.025)
+    assert math.isclose(v.ev_from_fcff(fcff0, 0.11, 0.025), 2061.91, rel_tol=1e-12)
+    # WACC'a eklenen prim değeri düşürmeli
+    assert v.ev_from_fcff(fcff0, 0.115, 0.025) < 2061.91
+
+
+def test_dupont_product_equals_roe():
+    d = v.dupont(net_income=56.6, revenue=1998.4, assets=2095.91, equity=931.0)
+    assert math.isclose(d["roe"], 56.6 / 931.0, rel_tol=1e-12)
+
+
 def test_reverse_dcf_rejects_wacc_below_growth():
     with pytest.raises(ValueError):
         v.implied_steady_fcff(1000, 0.03, 0.03)

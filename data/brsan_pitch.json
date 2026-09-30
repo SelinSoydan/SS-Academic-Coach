@@ -35,7 +35,7 @@
       "1Y26": {"gelir": 976.9, "favok": 90.3, "net_kar": 39.8, "tur": "yariyil"}
     },
     "kaldirac_serisi": {"kaynak": "2Ç26 sunumu s.21, son 12 ay FAVÖK ile", "degerler": {"2Ç25": 3.2, "2025": 1.3, "1Ç26": 1.1, "2Ç26": 0.9}},
-    "nakit_akisi_1y26": {"kaynak": "2Ç26 sunumu s.22", "favok": 90, "isletme_sermayesi": 63, "vergi_diger": 3, "yatirim": -82, "serbest_nakit_akimi": 78, "faaliyet_nakdi": 157, "kasa_2c26": 202, "kasa_2025": 127, "not": "Kalemler sunumdaki grafikten okundu; yuvarlama nedeniyle toplam birebir tutmayabilir."}
+    "nakit_akisi_1y26": {"kaynak": "2Ç26 sunumu s.22", "favok": 90, "isletme_sermayesi": 63, "vergi_diger": 3, "yatirim": -82, "serbest_nakit_akimi": 78, "faaliyet_nakdi": 157, "kasa_2c26": 202, "kasa_2025": 127, "yatirim_nakit_cikisi": -79, "finansman_nakit_cikisi": -4, "not": "Kalemler sunumdaki grafikten okundu; yuvarlama nedeniyle toplam birebir tutmayabilir."}
   },
   "segmentler_1y26": {
     "kaynak": "2Ç26 sunumu s.19",
@@ -88,6 +88,22 @@
     {"tarih": "2026-11 (tahmini)", "olay": "3Ç26 sonuçları: %9 ile %11 marjın kalıcılık sınavı. Geçen yıl 9A25 sonuçları 7 Kasım 2025'te açıklanmıştı.", "tur": "gelecek", "kaynak": "EquityRT Earnings ekranı"},
     {"tarih": "2027-02 (tahmini)", "olay": "2026 yıl sonu sonuçları, rehberliğin gerçekleşme testi. 2025 sonuçları 26 Şubat 2026'da açıklanmıştı.", "tur": "gelecek", "kaynak": "EquityRT Earnings ekranı"}
   ],
+  "katalizor_yonu": {
+    "not": "Olası tetikleyiciler analist yargısıdır; her birinin yanında onu doğrulayacak ya da çürütecek gösterge duruyor.",
+    "yukari": [
+      {"olay": "3Ç26'da %9 üzeri FAVÖK marjı", "izle": "Kasım 2026 sonuçları; rehberliğin kalıcı olduğunun ilk kanıtı olur."},
+      {"olay": "Yeni ABD altyapı ve enerji siparişleri", "izle": "KAP sipariş bildirimleri; portföy 2028'e kadar görünürlük veriyor."},
+      {"olay": "Rehberliğin yeniden yükseltilmesi", "izle": "3Ç26 sunumu; 2Ç26'da bir kez yukarı çekildi."},
+      {"olay": "Çelik döngüsünde toparlanma", "izle": "Endüstri ve İnşaat segmenti 1Y26'da %25,6 geriledi; döngü dönerse ilk toparlanacak kalem bu."},
+      {"olay": "Kredi notunda iyileşme", "izle": "JCR 2025'te uluslararası notu BBB'ye çıkarmıştı; yeni bir artış finansman maliyetini düşürür."}
+    ],
+    "asagi": [
+      {"olay": "Marjın %6 ile %7 bandına geri dönmesi", "izle": "1Ç26 marjı %6,3 idi; 2Ç26'daki %11,5 proje karışımından geliyorsa kalıcı olmayabilir."},
+      {"olay": "ABD ticaret ya da enerji politikasında olumsuz değişiklik", "izle": "Gelirin %79'u ABD'den; gümrük ve boru hattı izin kararları."},
+      {"olay": "Sipariş ertelemesi ya da iptali", "izle": "Tek bir sipariş yaklaşık 555 mn $; teslimat takvimindeki kayma geliri çeyrekten çeyreğe oynatır."},
+      {"olay": "Çelik fiyatında sert hareket", "izle": "Fiyat geçişkenliği gecikirse marj sıkışır; Değerleme Masası'ndaki şok simülatörüyle ölçülebilir."}
+    ]
+  },
   "cfa_playbook": {
     "yazili_rubrik": [
       {"bolum": "Business Description", "puan": 5, "kanit": "Hero kartı, tesis ve segment dağılımı"},
@@ -212,7 +228,8 @@
     "tuzaklar": [
       "Sustainalytics'te görünen 18,9 puanlık ESG risk skoru Borusan Yatırım ve Pazarlama A.Ş.'ye ait, BRSAN'a değil. Rapora koymak jüri önünde ciddi bir hata olur.",
       "Borusan Grubu'nun %18,2 kadın çalışan oranı grup geneline ait (2022); şirkete özel rakam gibi kullanılmamalı.",
-      "Çalışan sayısı kaynağa göre değişiyor (2.421 ile 2.374); faaliyet raporundaki rakam esas alınmalı."
+      "Çalışan sayısı kaynağa göre değişiyor (2.421 ile 2.374); faaliyet raporundaki rakam esas alınmalı.",
+      "Borusan EnBW Enerji, Borusan Holding ile Alman EnBW'nin ortak şirketi; BRSAN'ın bağlı ortaklığı değil. Onun yenilenebilir enerji yatırımları Borusan Boru'nun ESG performansı gibi sunulmamalı. Grup içinden yeşil elektrik tedariki varsa bağlantı ancak belgeyle kurulabilir."
     ],
     "sasb": [
       {"konu": "Sera gazı ve karbon içeriği", "neden": "Çelik değer zincirinin ana finansal riski; AB karbon sınır düzenlemesi (CBAM) ürünün gömülü emisyonunu fiyatlıyor.", "borusan": "ISO 14064 muhasebesi ve TSRS raporu var; ton başına yoğunluk rakamı henüz çekilmedi.", "degerleme": "AB gelirindeki karbon maliyeti marjdan düşer; aşağıdaki hesaplayıcı etkisini özsermaye değerine çeviriyor.", "kanit": "Kısmi"},

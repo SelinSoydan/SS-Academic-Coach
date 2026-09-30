@@ -193,6 +193,18 @@ with tabs[0]:
     html(f'<div class="sac-tl">{items}</div>')
     st.caption(PITCH["siparis_notu"])
 
+    st.markdown("#### Fiyatı ne hareket ettirir? Yukarı ve aşağı katalizörler")
+    KY = PITCH["katalizor_yonu"]
+    st.caption(KY["not"])
+    cu, cdn = st.columns(2)
+    for col, items_k, cls, label in ((cu, KY["yukari"], "green", "▲ YUKARI"), (cdn, KY["asagi"], "amber", "▼ AŞAĞI")):
+        with col:
+            for k in items_k:
+                html(
+                    f'<div class="sac-card"><span class="sac-pill {cls}">{label}</span>'
+                    f'<h4 style="font-size:1.12rem">{k["olay"]}</h4><p>{k["izle"]}</p></div>'
+                )
+
 # 2. DEĞERLEME MASASI
 with tabs[1]:
     st.markdown("#### Football field: çarpanlar bugünkü fiyat hakkında ne söylüyor?")
@@ -267,6 +279,69 @@ with tabs[1]:
         f"{tr(EV / E26_MID)}x, üst ucunda {tr(EV / E26_HI)}x. Karşılaştırma: {NARROW[0]['name']} {tr(PEER_FWD[0])}x, "
         f"{NARROW[1]['name']} {tr(PEER_FWD[1])}x (ileriye dönük, EquityRT)."
     )
+
+    st.markdown("#### Makro şok simülatörü: çelik fiyatı, kur ve hacim FAVÖK'ü nasıl etkiler?")
+    st.caption(md(
+        f"Baz: 2026 rehberliğinin ortası, gelir {tr(REV_MID, 0)} mn $ ve FAVÖK {tr(E26_MID, 0)} mn $. Değer etkisi bugünkü fiyatın "
+        f"ima ettiği {tr(EV / E26_MID)}x çarpanla hesaplanıyor. Maliyet yapısı girdileri şirket verisi değil varsayım; "
+        "faaliyet raporundaki maliyet kırılımıyla güncellenmeli."
+    ))
+    a1, a2, a3, a4 = st.columns(4)
+    steel_share = a1.number_input("Girdi çeliğin gelire oranı (%)", 20.0, 90.0, 60.0, step=5.0, help="Varsayım")
+    pass_thru = a2.number_input("Fiyat geçişkenliği (%)", 0.0, 100.0, 70.0, step=5.0,
+                                help="Çelik maliyet değişiminin ne kadarı satış fiyatına yansıyor. Varsayım.")
+    tl_share = a3.number_input("TL cinsi maliyetlerin gelire oranı (%)", 0.0, 50.0, 15.0, step=1.0, help="Varsayım")
+    contrib = a4.number_input("Hacimde katkı marjı (%)", 0.0, 50.0, 20.0, step=1.0,
+                              help="Ek bir ton satışın FAVÖK'e kattığı pay. Varsayım.")
+    b1, b2, b3 = st.columns(3)
+    steel_chg = b1.slider("Çelik fiyatı değişimi (%)", -30, 30, -10)
+    fx_chg = b2.slider("TL reel değerlenmesi (%)", -20, 20, 10,
+                       help="Artı değer: TL, enflasyon farkına göre dolar karşısında reel değer kazanıyor, yani kur makası açılıyor; TL maliyetler dolar bazında şişer.")
+    vol_chg = b3.slider("Satış hacmi değişimi (%)", -20, 20, 0)
+    IMPLIED_MULT = EV / E26_MID
+
+    def shock(steel: float, fx: float, vol: float) -> tuple:
+        d_steel = -REV_MID * steel_share / 100 * steel / 100 * (1 - pass_thru / 100)
+        d_fx = -REV_MID * tl_share / 100 * fx / 100
+        d_vol = REV_MID * vol / 100 * contrib / 100
+        return d_steel, d_fx, d_vol
+
+    ds, dfx, dv = shock(steel_chg, fx_chg, vol_chg)
+    new_e = E26_MID + ds + dfx + dv
+    new_rev = REV_MID * (1 + vol_chg / 100) + REV_MID * steel_share / 100 * steel_chg / 100 * pass_thru / 100
+    s1, s2, s3, s4 = st.columns(4)
+    s1.metric("Yeni 2026T FAVÖK", f"{tr(new_e)} mn $", delta=f"{tr(new_e - E26_MID)} mn $")
+    s2.metric("Yeni FAVÖK marjı", pct(new_e / new_rev), delta=f"{tr((new_e / new_rev - M_MID) * 100)} puan")
+    s3.metric("Özsermaye değerine etkisi", f"{tr((new_e - E26_MID) * IMPLIED_MULT, 0)} mn $",
+              delta=pct((new_e - E26_MID) * IMPLIED_MULT / MCAP, 1, sign=True))
+    s4.metric("Etki kırılımı (çelik / kur / hacim)", f"{tr(ds, 0)} / {tr(dfx, 0)} / {tr(dv, 0)}")
+
+    tor = []
+    for name, lo_d, hi_d in [
+        ("Çelik fiyatı ±%10", sum(shock(10, 0, 0)), sum(shock(-10, 0, 0))),
+        ("TL reel kur ±%10", sum(shock(0, 10, 0)), sum(shock(0, -10, 0))),
+        ("Satış hacmi ±%10", sum(shock(0, 0, -10)), sum(shock(0, 0, 10))),
+        ("FAVÖK marjı ±1 puan", -REV_MID * 0.01, REV_MID * 0.01),
+    ]:
+        tor.append({"surucu": name, "x": 0, "x2": lo_d * IMPLIED_MULT, "yon": "Olumsuz"})
+        tor.append({"surucu": name, "x": 0, "x2": hi_d * IMPLIED_MULT, "yon": "Olumlu"})
+    tor.append({"surucu": "FD/FAVÖK çarpanı ±1x", "x": 0, "x2": -E26_MID, "yon": "Olumsuz"})
+    tor.append({"surucu": "FD/FAVÖK çarpanı ±1x", "x": 0, "x2": E26_MID, "yon": "Olumlu"})
+    tdf = pd.DataFrame(tor)
+    tdf["lbl"] = tdf["x2"].map(lambda z: f"{'+' if z > 0 else ''}{tr(z, 0)}")
+    order = tdf.assign(a=tdf["x2"].abs()).groupby("surucu")["a"].max().sort_values(ascending=False).index.tolist()
+    tbars = alt.Chart(tdf).mark_bar(size=22, cornerRadius=4).encode(
+        y=alt.Y("surucu:N", sort=order, title=None, axis=alt.Axis(labelLimit=220)),
+        x=alt.X("x:Q", title="Özsermaye değerine etkisi (mn $)", axis=alt.Axis(labelExpr="replace(datum.label, ',', '.')")),
+        x2="x2:Q",
+        color=alt.Color("yon:N", scale=alt.Scale(domain=["Olumsuz", "Olumlu"], range=["#D9546A", "#3E9A72"]), legend=alt.Legend(orient="bottom", title=None)),
+        tooltip=["surucu:N", "lbl:N"],
+    )
+    tt_base = alt.Chart(tdf).encode(y=alt.Y("surucu:N", sort=order), x="x2:Q", text="lbl:N")
+    ttxt = (tt_base.mark_text(fontSize=11, color=PLUM, align="left", dx=4).transform_filter("datum.x2 > 0")
+            + tt_base.mark_text(fontSize=11, color=PLUM, align="right", dx=-4).transform_filter("datum.x2 <= 0"))
+    st.altair_chart((tbars + ttxt).properties(height=250, title="Tornado: her sürücü tek başına oynatılınca değer ne kadar değişir?"), width="stretch")
+    st.caption("Tornado, jürinin resmi soru havuzundaki 'değerlemenizi en çok hangi duyarlılık değiştirir?' sorusunun görsel cevabı.")
 
     st.markdown("#### Senaryolar: ayı, baz, boğa")
     st.caption("Varsayılanlar rehberliğin uçları ve dar peer grubunun ileriye dönük çarpanlarıdır. Hücreleri değiştirip kendi senaryonu savunabilirsin.")
@@ -433,6 +508,87 @@ with tabs[2]:
         f"- **Mutabakat.** Piyasa değeri / son 12 ay net kâr = {tr(MCAP, 1)} / {tr(TTM_NI, 1)} = {tr(MCAP / TTM_NI, 2)}; "
         f"EquityRT Peer Performance ekranındaki {tr(MKT['p_e'], 2)} ile tutuyor. Snapshot ekranındaki {tr(MKT['p_e_snapshot_ekrani'], 2)} farklı bir dönem ya da kur bazı kullanıyor olmalı."
     )
+    st.markdown("#### Rasyo panosu: BRSAN ve dar peer grubu")
+    BV = MCAP / MKT["p_bv"]
+    TA = PEERS["target"]["total_assets_mn_usd"]
+    tn, vk = NARROW[0], NARROW[1]
+
+    def xf(val, d=1):
+        return "yok" if val is None else f"{tr(val, d)}x"
+
+    def pf(val, d=1):
+        return "yok" if val is None else f"%{tr(val, d)}"
+
+    capex_rev = -CF["yatirim"] / h2["gelir"]
+    ratio_rows = [
+        ("Değerleme", "FD/FAVÖK son 12 ay", xf(EV / TTM_EBITDA), xf(tn["ev_ebitda_ttm"]), xf(vk["ev_ebitda_ttm"]), "FD / son 12 ay FAVÖK"),
+        ("Değerleme", "FD/FAVÖK ileriye dönük", xf(EV / E26_MID), xf(tn["ev_ebitda_forward"]), xf(vk["ev_ebitda_forward"]),
+         "BRSAN: rehberlik ortası; peer'lar: EquityRT konsensüsü"),
+        ("Değerleme", "F/K son 12 ay", xf(MKT["p_e"], 2), xf(tn["p_e_ttm"], 2), xf(vk["p_e_ttm"], 2), "EquityRT; USD son 12 ay net kârla mutabık"),
+        ("Değerleme", "PD/DD", xf(MKT["p_bv"], 2), xf(tn["p_bv"], 2), xf(vk["p_bv"], 2), "EquityRT"),
+        ("Değerleme", "FD/Satış son 12 ay", xf(EV / TTM_REV, 2), "yok", "yok", "FD / son 12 ay gelir"),
+        ("Kârlılık", "FAVÖK marjı son 12 ay", pct(TTM_EBITDA / TTM_REV), "yok", "yok", "Son 12 ay FAVÖK / gelir"),
+        ("Kârlılık", "Net kâr marjı son 12 ay", pct(TTM_NI / TTM_REV), "yok", "yok", "Son 12 ay net kâr / gelir"),
+        ("Kârlılık", "ROE", pct(TTM_NI / BV), pf(tn["roe_pct"]), pf(vk["roe_pct"]), "Net kâr / özsermaye (PD ÷ PD/DD)"),
+        ("Kârlılık", "ROA", pct(TTM_NI / TA), pf(tn["roa_pct"]), pf(vk["roa_pct"]), "Net kâr / toplam aktif (EquityRT)"),
+        ("Verimlilik", "Aktif devir hızı", xf(TTM_REV / TA, 2), "yok", "yok", "Son 12 ay gelir / toplam aktif"),
+        ("Bilanço", "Net borç / FAVÖK", xf(ND / TTM_EBITDA, 2), xf(tn["net_debt_ebitda"], 2), xf(vk["net_debt_ebitda"], 2), "Eksi değer net nakit demek"),
+        ("Bilanço", "Borç / aktif", "yok", pf(tn["debt_asset_pct"]), pf(vk["debt_asset_pct"]), "EquityRT; BRSAN için brüt borç KAP'tan eklenecek"),
+        ("Nakit", "Yatırım harcaması / gelir 1Y26", pct(capex_rev), "yok", "yok", "2Ç26 sunumu s.22"),
+        ("Nakit", "Nakit dönüşümü 1Y26", pct(CF["serbest_nakit_akimi"] / h2["favok"], 0), "yok", "yok", "SNA / FAVÖK, işletme sermayesi dahil"),
+        ("Ortaklara", "Temettü verimi", "yok (2025 kârı dağıtılmadı)", pf(tn["dividend_yield_ttm_pct"], 2), pf(vk["dividend_yield_ttm_pct"], 2), "EquityRT, KAP"),
+        ("Risk", "Beta (2 yıl)", "yok", tr(tn["beta_2y"], 2), tr(vk["beta_2y"], 2), "EquityRT"),
+    ]
+    st.dataframe(pd.DataFrame(ratio_rows, columns=["Grup", "Rasyo", "BRSAN", tn["name"], vk["name"], "Hesap ve kaynak"]), hide_index=True)
+    st.caption("BRSAN özsermayesi piyasa değerinin PD/DD'ye bölünmesiyle, toplam aktif EquityRT Peer Performance ekranından alındı (22.09.2026). \"yok\" olan hücreler kaynakta bulunmayan verilerdir, tahminle doldurulmadı.")
+
+    dp = v.dupont(TTM_NI, TTM_REV, TA, BV)
+    tn_lev, vk_lev = tn["roe_pct"] / tn["roa_pct"], vk["roe_pct"] / vk["roa_pct"]
+    html(
+        f'<div class="sac-thesis"><b>DuPont:</b> ROE {pct(dp["roe"])} = net marj {pct(dp["net_marj"])} × aktif devir hızı '
+        f'{tr(dp["aktif_devir"], 2)}x × finansal kaldıraç {tr(dp["kaldirac"], 2)}x. Karşılaştırma: Tenaris ROE %{tr(tn["roe_pct"])}, '
+        f'Vallourec %{tr(vk["roe_pct"])}. BRSAN\'ın finansal kaldıracı, Tenaris\'in yaklaşık {tr(tn_lev, 2)}x ve Vallourec\'in yaklaşık '
+        f'{tr(vk_lev, 2)}x seviyesinin (ROE ÷ ROA) üstünde. Yani ROE\'yi borçla büyütme alanı yok; ROE\'yi taşıyacak asıl kaldıraç net marj. '
+        'Bu da tezin sorusuyla aynı yere çıkıyor: marj kalıcı mı?</div>'
+    )
+
+    st.markdown("#### Sermaye dağılımı: nakit nereye gitti? (1Y26)")
+    steps = [
+        ("2025 sonu kasa", CF["kasa_2025"], "Kasa"),
+        ("Faaliyetlerden", CF["faaliyet_nakdi"], "Giriş"),
+        ("Yatırım", CF["yatirim_nakit_cikisi"], "Çıkış"),
+        ("Finansman", CF["finansman_nakit_cikisi"], "Çıkış"),
+        ("2Ç26 sonu kasa", CF["kasa_2c26"], "Kasa"),
+    ]
+    wf, run = [], 0.0
+    for name, val, kind in steps:
+        if kind == "Kasa":
+            wf.append({"adim": name, "y": 0, "y2": val, "tur": kind, "lbl": tr(val, 0)})
+            run = val
+        else:
+            wf.append({"adim": name, "y": run, "y2": run + val, "tur": kind, "lbl": f"{'+' if val > 0 else ''}{tr(val, 0)}"})
+            run += val
+    wdf = pd.DataFrame(wf)
+    wbars = alt.Chart(wdf).mark_bar(size=54, cornerRadius=4).encode(
+        x=alt.X("adim:N", sort=[s[0] for s in steps], title=None, axis=alt.Axis(labelAngle=0)),
+        y=alt.Y("y:Q", title="mn $"), y2="y2:Q",
+        color=alt.Color("tur:N", scale=alt.Scale(domain=["Kasa", "Giriş", "Çıkış"], range=[LAV, "#3E9A72", "#D9546A"]), legend=alt.Legend(orient="bottom", title=None)),
+    )
+    wtxt = alt.Chart(wdf).mark_text(dy=-8, color=PLUM, fontWeight="bold").encode(
+        x=alt.X("adim:N", sort=[s[0] for s in steps]), y=alt.Y("y2:Q"), text="lbl:N"
+    )
+    wc1, wc2 = st.columns([3, 2])
+    wc1.altair_chart((wbars + wtxt).properties(height=280), width="stretch")
+    wc2.markdown(md(
+        f"- Faaliyetlerden {tr(CF['faaliyet_nakdi'], 0)} mn $ nakit girdi, {tr(-CF['yatirim_nakit_cikisi'], 0)} mn $'ı yatırıma gitti; "
+        f"yatırım harcaması gelirin {pct(capex_rev)}'ü.\n"
+        f"- Net borç bir yılda {tr(P['2Ç25']['net_borc'], 0)} mn $'dan {tr(ND, 0)} mn $'a indi, kasa {tr(CF['kasa_2c26'], 0)} mn $'a çıktı.\n"
+        "- Ortaklara dağıtım yok: 2025 kârı dağıtılmadı (yasal kayıtlarda TMS 29 kaynaklı zarar).\n"
+        "- **Okuma:** Sermaye önce bilançoya ve büyüme yatırımına gidiyor. Jürinin soracağı soru: bu yatırımın getirisi (ROIC) "
+        "sermaye maliyetini aşıyor mu? Yatırılan sermaye KAP bilançosundan eklenince ROIC ile WACC yan yana konacak."
+    ))
+    st.caption(f"Kaynak: {CF['kaynak']}. {CF['not']}")
+
     st.markdown("##### Kaynak tablo")
     tbl = pd.DataFrame([
         {"Dönem": k, "Gelir": tr(d["gelir"]), "FAVÖK": tr(d["favok"]), "FAVÖK marjı": pct(d["favok"] / d["gelir"]),
@@ -533,6 +689,28 @@ with tabs[4]:
     z1.metric("Yıllık FAVÖK etkisi", f"−{tr(hit)} mn $")
     z2.metric("Marj etkisi", f"−{tr(hit / REV_MID * 100, 2)} puan")
     z3.metric("Özsermaye değerine etkisi", f"−{tr(eq_hit, 0)} mn $", delta=pct(-eq_hit / MCAP, 1, sign=True))
+    st.markdown("#### ESG'yi iskonto oranına bağla: risk primi hesaplayıcı")
+    st.caption(
+        f"Jüriler ESG'yi finansal modelden ayrı görmez; burada ESG, WACC'a eklenen bir prim olarak modele giriyor. Baz WACC "
+        f"(%{tr(wacc, 2)}) ve büyüme (%{tr(g_term, 2)}) Değerleme Masası'ndaki reverse DCF ayarlarından geliyor. Prim veri değil, "
+        "gerekçelendirilmesi gereken bir yargı: düşük halka açıklık, emisyon verisindeki boşluklar, AB karbon düzenlemesine maruziyet."
+    )
+    prem = st.slider("ESG ve yönetişim risk primi (baz puan)", 0, 200, 50, step=10)
+    fcff_base = v.implied_steady_fcff(EV, wacc / 100, g_term / 100)
+
+    def eq_delta(bp: float) -> float:
+        return v.ev_from_fcff(fcff_base, wacc / 100 + bp / 10000, g_term / 100) - EV
+
+    p1, p2 = st.columns([1, 2])
+    p1.metric("Özsermaye değerine etkisi", f"{tr(eq_delta(prem), 0)} mn $", delta=pct(eq_delta(prem) / MCAP, 1, sign=True))
+    p1.caption(md(f"Her 50 baz puan yaklaşık {tr(-eq_delta(50), 0)} mn $ değer siliyor."))
+    pdf_ = pd.DataFrame([{"bp": b, "d": eq_delta(b)} for b in range(0, 210, 10)])
+    p2.altair_chart(
+        alt.Chart(pdf_).mark_area(line={"color": PINK}, color=alt.Gradient(
+            gradient="linear", stops=[alt.GradientStop(color="#FBE3F0", offset=0), alt.GradientStop(color=ROSE, offset=1)], x1=1, x2=1, y1=1, y2=0,
+        )).encode(x=alt.X("bp:Q", title="Risk primi (baz puan)"), y=alt.Y("d:Q", title="Özsermaye etkisi (mn $)")).properties(height=200),
+        width="stretch",
+    )
     st.warning("**Veri tuzakları (rapora girmemeli):**\n\n" + "\n".join(f"- {t}" for t in E["tuzaklar"]))
 
 # 6. CFA PUAN HARİTASI
