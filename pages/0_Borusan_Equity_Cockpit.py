@@ -180,8 +180,6 @@ GV = {
     "esg50": num(EV - v.ev_from_fcff(CUR_FCFF, CUR_W / 100 + 0.005, CUR_G / 100), 0),
 }
 
-with st.sidebar:
-    st.text_input(L("Takım Masası için adın", "Your name for the Team Desk"), key="me_name", placeholder="Selin")
 ME = SS.get("me_name", "").strip()
 
 # HERO
@@ -541,7 +539,7 @@ with tabs[1]:
     sh2.write("")
     if sh2.button(L("Takım kütüphanesine kaydet", "Save to team library")):
         if not ME:
-            st.warning(L("Önce kenar çubuğuna adını yaz.", "Enter your name in the sidebar first."))
+            st.warning(L("Önce Takım Masası sekmesinde adını yaz.", "Enter your name on the Team Desk tab first."))
         else:
             summary = f"WACC {pp(wacc, 2)}, g {pp(g_term, 2)}, {L('medyan', 'median')} {money(p50, 0)}, P(>{L('bugün', 'today')}) {pct(prob_above, 0)}"
             get_board().save_scenario(scen_name or L("Adsız senaryo", "Untitled scenario"), ME, share_url, summary)
@@ -962,7 +960,7 @@ with tabs[6]:
             get_board().record_score(ME, score, len(QUIZ))
             st.caption(L("Skorun Takım Masası'ndaki tabloya yazıldı.", "Your score was posted to the Team Desk leaderboard."))
         else:
-            st.caption(L("Skorunu takım tablosuna yazmak için kenar çubuğuna adını gir.", "Enter your name in the sidebar to post your score to the team leaderboard."))
+            st.caption(L("Skorunu takım tablosuna yazmak için Takım Masası sekmesinde adını gir.", "Enter your name on the Team Desk tab to post your score to the team leaderboard."))
 
     st.markdown("##### " + L("60 saniyelik İngilizce pitch", "60 second pitch"))
     pitch = (
@@ -1032,8 +1030,7 @@ with tabs[7]:
         "yedeği alınabilir. Kalıcı kayıt için sıradaki adım Supabase bağlantısı.",
         "This desk is shared by everyone who has the app open at the same time and updates live. It resets if the app restarts, so a JSON backup can be "
         "downloaded below. The next step for permanent storage is a Supabase connection."))
-    if not ME:
-        st.info(L("Katılmak için kenar çubuğuna adını yaz.", "Enter your name in the sidebar to join."))
+    st.text_input(L("Adın (takımda böyle görünecek)", "Your name (this is how the team sees you)"), key="me_name", placeholder="Selin")
     v1, v2 = st.columns([2, 3])
     with v1:
         st.markdown("##### 🗳️ " + L("Yatırım komitesi oyu", "Investment committee vote"))
@@ -1049,7 +1046,7 @@ with tabs[7]:
                 board.vote(ME, call, target, thesis_txt, risk_txt)
                 st.success(L("Oyun kaydedildi.", "Your vote is in."))
             else:
-                st.warning(L("Önce kenar çubuğuna adını yaz.", "Enter your name in the sidebar first."))
+                st.warning(L("Önce Takım Masası sekmesinde adını yaz.", "Enter your name on the Team Desk tab first."))
         st.caption(md(L(f"Bugünkü piyasa değeri {money(MCAP)}; hedefin bunun üstündeyse yukarı potansiyel görüyorsun.",
                         f"Market value today is {money(MCAP)}; a target above it means you see upside.")))
     with v2:
@@ -1069,7 +1066,7 @@ with tabs[7]:
                 board.set_member(ME, role, mine)
                 st.success(L("Görev dağılımı güncellendi.", "Ownership updated."))
             else:
-                st.warning(L("Önce kenar çubuğuna adını yaz.", "Enter your name in the sidebar first."))
+                st.warning(L("Önce Takım Masası sekmesinde adını yaz.", "Enter your name on the Team Desk tab first."))
     with o2:
         members = board.snapshot()["members"]
         cov = []
