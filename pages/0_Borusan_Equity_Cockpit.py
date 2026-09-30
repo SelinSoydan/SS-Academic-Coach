@@ -1031,6 +1031,11 @@ with tabs[7]:
         "This desk is shared by everyone who has the app open at the same time and updates live. It resets if the app restarts, so a JSON backup can be "
         "downloaded below. The next step for permanent storage is a Supabase connection."))
     st.text_input(L("Adın (takımda böyle görünecek)", "Your name (this is how the team sees you)"), key="me_name", placeholder="Selin")
+    _snap_me = board.snapshot()
+    if ME and any(ME in _snap_me[k] for k in ("votes", "members", "scores")):
+        if st.button(L("Kayıtlarımı sil", "Remove my entries"), key="remove_me"):
+            board.remove_person(ME)
+            st.rerun()
     v1, v2 = st.columns([2, 3])
     with v1:
         st.markdown("##### 🗳️ " + L("Yatırım komitesi oyu", "Investment committee vote"))

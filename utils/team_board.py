@@ -39,6 +39,12 @@ class TeamBoard:
             self.data["scenarios"].insert(0, {"name": name, "author": author, "url": url, "summary": summary, "ts": _now()})
             del self.data["scenarios"][20:]
 
+    def remove_person(self, name: str) -> None:
+        """Bir üyenin oyunu, görevini ve skorunu siler; senaryo kütüphanesine dokunmaz."""
+        with self._lock:
+            for key in ("votes", "members", "scores"):
+                self.data[key].pop(name, None)
+
     def snapshot(self) -> dict:
         with self._lock:
             return copy.deepcopy(self.data)

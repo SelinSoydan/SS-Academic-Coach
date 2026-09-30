@@ -68,3 +68,5 @@ def test_team_board_vote_score_and_roundtrip():
     restored = TeamBoard()
     restored.load(json.loads(board.export_json()))
     assert restored.snapshot()["members"] == snap["members"]
+    restored.remove_person("Selin")
+    assert all("Selin" not in restored.snapshot()[k] for k in ("votes", "members", "scores"))
