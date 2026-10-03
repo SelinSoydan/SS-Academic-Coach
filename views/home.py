@@ -74,6 +74,11 @@ st.markdown(
 )
 
 modules = [
+    ("pages/4_Degerleme_Akademisi.py", "🎯", L("Değerleme Akademisi", "Valuation Academy"), L("SUNUM", "PRESENTATION"),
+     L("How to Value a Company: CFA'nın beş adımlı değerleme süreci Borusan üzerinde. 12 slayt, her slayt için önce öğren, Türkçe ve İngilizce "
+       "konuşma metni, gerçek hayatta değerleme hesaplayıcıları, adım adım Excel rehberi ve zorlandığın soruyu daha sık getiren jüri provası.",
+       "How to Value a Company: the CFA five step valuation process applied to Borusan. 12 slides, each with a lesson and Turkish and English "
+       "speaking scripts, real world valuation calculators, a step by step Excel guide and jury practice that repeats the questions you find hard.")),
     ("pages/0_Borusan_Equity_Cockpit.py", "🏆", "Borusan Equity Cockpit", L("ANALİZ", "ANALYSIS"),
      L("CFA Research Challenge değerleme masası: football field, duyarlılık, Monte Carlo, reverse DCF, risk matrisi, ESG, jüri provası "
        "ve beş kişilik takım için ortak Takım Masası. Resmi CFA rubriğine göre kurgulandı.",

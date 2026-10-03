@@ -1,0 +1,505 @@
+{
+ "meta": {
+  "deck": "BRSAN_How_to_Value_v6.pptx",
+  "presentation_date": "2026-10-07",
+  "version": "v6",
+  "source_note": "Konuşma rehberi ve Nasıl yapılır dosyalarından üretildi; rakamlar calc.py çıktısı (calc.json)."
+ },
+ "slides": [
+  {
+   "n": 1,
+   "title": "Hook: \"Same pipe. Two costs of capital.\"",
+   "level": 1,
+   "image": "slides/s-01.jpg",
+   "learn": "Ağırlıklı Ortalama Sermaye Maliyeti (WACC), yatırımcıların ve borç verenlerin bu işe para koymak için istediği ortalama getiridir. Risk yükseldikçe bu oran yükselir; oran yükseldikçe gelecekteki nakit bugüne daha ağır indirgenir, değer düşer. Borusan'ın ABD fabrikaları ile Türkiye fabrikaları aynı işi yapıyor ama farklı ülke riskleri taşıyor. Bu yüzden iki ayrı Ağırlıklı Ortalama Sermaye Maliyeti (WACC) kullandık: ABD %9,4, Türkiye %13,6.",
+   "tr": "Bu Borusan Boru, Türk bir boru üreticisi. Aynı boru, aynı şirket. Ama ABD fabrikaları için yaklaşık yüzde 9,4, Türkiye fabrikaları için yüzde 13,6 Ağırlıklı Ortalama Sermaye Maliyeti, yani WACC kullanıyorum. Neden? Bunu cevaplamak, değerlemenin ta kendisi. Bugün hisse satmıyorum; herhangi bir şirketin nasıl değerleneceğini, Borusan'ı örnek alarak göstereceğim.",
+   "en": "This is Borusan Boru, a Turkish pipe maker. Same pipe, same company. But for its US plants I use a Weighted Average Cost of Capital, or WACC, of about 9.4 percent, and for its Turkish plants about 13.6 percent. Why? Answering this is what valuation is about. Today I'm not selling a stock. I'll show you how to value any company, using Borusan as the example.",
+   "again": "The Weighted Average Cost of Capital (WACC) is the average return that shareholders and lenders want from a company. More risk means a higher rate, and a higher rate means a lower value today. Borusan's plants do the same job in two countries with different risks.",
+   "keywords": "cost of capital (sermaye maliyeti), plant (fabrika), required return (beklenen getiri)."
+  },
+  {
+   "n": 2,
+   "title": "Contents: the CFA valuation process, plus two EM steps",
+   "level": 1,
+   "image": "slides/s-02.jpg",
+   "learn": "Bu çerçeve bizim icadımız değil, bu yüzden güçlü. CFA Institute (Yetkili Finansal Analist Enstitüsü) müfredatındaki \"Equity Valuation: Applications and Processes\" okuması değerlemeyi beş adımda anlatır: (1) işi anla, (2) şirketin performansını tahmin et, (3) uygun modeli seç, (4) tahminleri değere çevir, (5) sonuca ve tavsiyeye dönüştür. Biz gelişmekte olan piyasalar (EM, Emerging Markets) için 1. adımın içine iki adım ekledik: ülke riski ve ortaklık yapısı. Fiyat ancak 4. adımda geliyor.",
+   "tr": "Yöntemim benim icadım değil. Bu, CFA Institute'un beş adımlı değerleme süreci: işi anla, tahmin et, modeli seç, tahmini değere çevir ve sonuca bağla. Gelişmekte olan piyasalar için birinci adımın içine iki adım ekliyorum: ülke riski ve ortaklık yapısı. Dikkat edin, fiyat ancak dördüncü adımda geliyor.",
+   "en": "My method is not my invention. It is the CFA Institute's five step valuation process: understand the business, forecast, choose the model, turn the forecast into value, and conclude. For emerging markets, I add two steps: country risk and ownership. And notice: the price comes only at step four.",
+   "again": "The Chartered Financial Analyst (CFA) Institute teaches a five step valuation process. I keep it, and for emerging markets I add two checks: country risk and who controls the company. Understanding always comes before the price.",
+   "keywords": "process (süreç), step (adım), emerging market (gelişmekte olan piyasa)."
+  },
+  {
+   "n": 3,
+   "title": "The toolbox: \"The business decides the method\"",
+   "level": 1,
+   "image": "slides/s-03.jpg",
+   "learn": "Değerleme yöntemleri üç aileye ayrılır (CFA Institute müfredatı da böyle gruplar):\n- **İçsel değer (Intrinsic):** Şirket kendi nakdiyle ne eder? İndirgenmiş Nakit Akışı (DCF, Discounted Cash Flow), temettü indirgeme modeli, artık gelir modeli.\n- **Göreceli değer (Relative):** Benzer şirketler kaça fiyatlanıyor? Firma Değeri / FAVÖK (FD/FAVÖK, EV/EBITDA), Fiyat/Kazanç (F/K, P/E), Piyasa Değeri / Defter Değeri (PD/DD, P/BV).\n- **Varlık bazlı (Asset based):** Parçalar ne eder? Net Aktif Değer (NAV, Net Asset Value), Parçaların Toplamı (SOTP, Sum of the Parts).\n\nHangi şirkete hangisi? Nakit üreten sanayi şirketine (Borusan) İndirgenmiş Nakit Akışı (DCF) + Firma Değeri/FAVÖK kontrolü; bankaya temettü modeli ve PD/DD (çünkü bankada borç hammaddedir, serbest nakit anlamsızdır); holdinge holding iskontolu Net Aktif Değer (NAV); henüz kâr etmeyen genç şirkete Firma Değeri / Satışlar ve senaryolu DCF. Tek doğru yöntem yoktur; yöntemi iş seçer.",
+   "tr": "Önce alet çantası. Değerlemenin üç ailesi var. İçsel: şirket kendi nakdiyle ne eder, İndirgenmiş Nakit Akışı yani DCF gibi. Göreceli: benzer şirketler kaça fiyatlanıyor. Varlık bazlı: parçalar ne eder. Banka, holding ve genç bir şirket için farklı araçlar gerekir. Borusan'da nakit ve iki farklı risk, çarpanlarla kontrol edilen bir DCF'i işaret ediyor.",
+   "en": "First, the toolbox. There are three families of valuation. Intrinsic: what is it worth on its own cash flows, like a Discounted Cash Flow model, or DCF. Relative: what are similar companies priced at. And asset based: what are the pieces worth. A bank, a holding and a young company each need a different tool. For Borusan, cash and two different risks point to a DCF, checked with multiples.",
+   "again": "There are three ways to value a company: from its own cash (intrinsic), from what similar companies cost (relative), or from what its parts are worth (asset based). A good analyst picks the tool that fits the business.",
+   "keywords": "intrinsic (içsel), relative (göreceli), asset (varlık), toolbox (alet çantası)."
+  },
+  {
+   "n": 4,
+   "title": "Step 1, Country (EM step): \"The world charges Türkiye twice Germany's risk premium\"",
+   "level": 2,
+   "image": "slides/s-04.jpg",
+   "learn": "Hisse Risk Primi (ERP, Equity Risk Premium), yatırımcının devlet tahvili yerine hisse tutmak için istediği ek getiridir. Damodaran her ülke için hesaplıyor: Almanya %4,23 (en güvenli ülke, taban değer), Türkiye %8,89. Aradaki %4,66, Ülke Risk Primi (CRP, Country Risk Premium). Grafikte 12 ülke var: gelişmiş ülkeler yeşil, gelişmekte olanlar gri, Türkiye turuncu. Kritik fikir: Ülke Risk Primi (CRP), şirketin hangi borsada işlem gördüğüne göre değil, nakdin üretildiği yere göre eklenir. Borusan'ın gelirinin %85'i yurt dışından.",
+   "tr": "Birinci adım ülkeyle başlıyor; bu benim ilk gelişmekte olan piyasa adımım. Yatırımcılar Almanya'da yaklaşık yüzde 4, Türkiye'de neredeyse yüzde 9 ek getiri istiyor. İki katından fazla. Gelişmiş piyasalarda makro arka planda kalır; burada değerlemenin yarısıdır. Ama risk borsa kodunu değil fabrikayı takip eder. Borusan İstanbul'da işlem görüyor ama gelirinin yüzde 85'i yurt dışından.",
+   "en": "Step one starts with the country, my first emerging market step. Investors ask for about 4 percent extra return in Germany and almost 9 percent in Türkiye. That's more than double. In developed markets, macro is in the background. Here, it is half of the valuation. But risk follows the factory, not the ticker. Borusan is listed in Istanbul, yet 85 percent of its revenue comes from abroad.",
+   "again": "The Equity Risk Premium (ERP) is the extra return people want for owning shares instead of safe government bonds. Riskier countries have a bigger premium. The Country Risk Premium (CRP) should be added only to the part of the business that is really in that country.",
+   "keywords": "premium (prim), ticker (borsa kodu), abroad (yurt dışı)."
+  },
+  {
+   "n": 5,
+   "title": "Step 1, Sector and business: \"A Turkish listing, an American business\"",
+   "level": 2,
+   "image": "slides/s-05.jpg",
+   "learn": "İki adımı tek slaytta birleştirdik.\n- **Sektör:** Her sektörün kendine özgü göstergeleri vardır. Boru üreticisi için: sipariş portföyü (kazanılmış ama henüz teslim edilmemiş iş), boru fiyatı ile çelik rulo fiyatı arasındaki fark (marjın kaynağı) ve kapasite. ABD, 2 Nisan 2026 tarihli başkanlık kararıyla 6 Nisan'dan beri ithal çeliğe %50 gümrük vergisi uyguluyor (Section 232). Bu, Borusan'ın ABD'deki 3 fabrikasını korur, Gemlik'ten gönderilen boruyu ise vurur.\n- **İş:** \"Parayı takip et.\" 2026 ilk yarı (1Y26, 1H26) gelirinin %53'ü altyapı ve proje borusu, bu kalem bir yıl önceye göre %93 büyüdü. Gelirin %79'u ABD'den (2024'te %73). Hikâyeyi Türkiye ekonomisi değil, ABD enerji ve altyapı döngüsü belirliyor.\n- Not: Fiyat/Kazanç oranı (F/K, P/E) 33,9 kat, genel çelik sektörü medyanı 15,9 kat. Bu fark yanlış emsal grubundan gelir; doğru emsaller boru üreticileri (soru gelirse).",
+   "tr": "Sonra sektör ve iş. Boru üreticilerinin kendi anahtar rakamları var: sipariş portföyü, çelik fiyat farkı ve kapasite. Borusan'ın 2028'e kadar 2,6 milyar dolarlık sipariş portföyü var ve gelirinin yüzde 79'u ABD'den geliyor. ABD Nisan'dan beri ithal çeliğe yüzde 50 gümrük vergisi uyguluyor. Bu Borusan'ın ABD'deki üç fabrikasını koruyor ama Türkiye'den giden boruyu vuruyor. İstanbul'da işlem görüyor ama aslında bir Amerikan işi.",
+   "en": "Next, the sector and the business. Pipe makers have their own key numbers: the order book, the steel spread and capacity. Borusan has a 2.6 billion dollar order book until 2028, and 79 percent of its revenue comes from the US. Since April, the US charges a 50 percent duty on imported steel. That protects Borusan's three US plants, but it hits pipes shipped from Turkey. Listed in Istanbul, but an American business.",
+   "again": "An order book is work the company has already won but not yet delivered. A tariff, or duty, is a tax on imports. Because Borusan produces inside the US, the tariff helps those plants and hurts its exports from Turkey. Most of its money comes from US infrastructure projects.",
+   "keywords": "order book (sipariş portföyü), duty / tariff (gümrük vergisi), revenue (gelir), cycle (döngü)."
+  },
+  {
+   "n": 6,
+   "title": "Step 1, Ownership (EM step): \"Capital is not control\"",
+   "level": 2,
+   "image": "slides/s-06.jpg",
+   "learn": "Sermaye payı ile oy hakkı aynı şey değildir. Borusan Boru'nun yatırımcı ilişkileri sayfasına göre: Borusan Holding sermayenin %68,85'ine ama oyların %74,22'sine; Borusan Yatırım ve Pazarlama sermayenin %9,08'ine, oyların %10,02'sine; halka açık kısım sermayenin %22,07'sine ama oyların sadece %15,76'sına sahip. Sebep imtiyazlı paylar. İkinci niş bilgi: Türkiye'de temettü, Uluslararası Finansal Raporlama Standartları (UFRS, IFRS) tablolarından değil, yasal kayıtlardaki kârdan dağıtılır. Borusan 2025'te Uluslararası Finansal Raporlama Standartları (UFRS) tablosunda kâr etti ama yasal kayıtlarda zarar etti; temettü dağıtılmadı. Üçüncü: 1998'den beri ortak olan Alman Salzgitter Mannesmann'ın %23'lük payı 27 Kasım 2023'te Borusan grubuna geçti ve şirketin adı Borusan Boru oldu.",
+   "tr": "İkinci gelişmekte olan piyasa adımım: ortaklık. Bir pay bir oy demek değil. Halk sermayenin yüzde 22'sine sahip ama oyların sadece yüzde 16'sına. Ayrıca Türkiye'de temettü UFRS'den değil yasal defterlerden dağıtılır. 2025'te Borusan UFRS'de kâr etti ama yasal defterde zarar etti, temettü olmadı. İyi bir analist her zaman nakdi kimin kontrol ettiğini sorar.",
+   "en": "My second emerging market step: ownership. One share is not one vote. The public owns 22 percent of the capital, but only 16 percent of the votes. And in Turkey, dividends come from the statutory books, not from International Financial Reporting Standards, or IFRS. In 2025, Borusan made an IFRS profit but a statutory loss, so there was no dividend. A good analyst always asks who controls the cash.",
+   "again": "Owning money and owning control are different things. Privileged shares give the group more votes than its capital. Statutory books are the official local accounts, and in Türkiye they decide how much dividend a company can legally pay, not the International Financial Reporting Standards (IFRS) accounts.",
+   "keywords": "voting rights (oy hakkı), privileged shares (imtiyazlı paylar), statutory books (yasal defterler), dividend (temettü)."
+  },
+  {
+   "n": 7,
+   "title": "Step 1, Earnings quality: \"Profit is an opinion. Cash is a fact.\"",
+   "level": 2,
+   "image": "slides/s-07.jpg",
+   "learn": "Kâr muhasebe tercihlerine göre değişir, nakit değişmez. Faiz, Amortisman ve Vergi Öncesi Kâr (FAVÖK, EBITDA) marjı 2026 birinci çeyrekte (1Ç26) %6,3, ikinci çeyrekte (2Ç26) %11,5: tek çeyrek trend değildir, bu yüzden normalize ederiz. 2026 ilk yarıda 78 milyon dolarlık serbest nakit akışının 63 milyonu işletme sermayesinin çözülmesinden geldi; bu her dönem tekrarlanmaz. Olumlu taraf: net borç / Faiz, Amortisman ve Vergi Öncesi Kâr (FAVÖK) 3,2 kattan 0,9 kata indi. Enflasyonda işletme sermayesi nakit yer; eski fiyatlarla hesaplanan amortisman da kârı olduğundan büyük gösterir ve fazla vergi ödetir.",
+   "tr": "Birinci adımın son parçası kâr kalitesi. Marj bir çeyrekte yüzde 6'dan 11,5'e sıçradı. Yeni normal mi, şanslı bir proje karışımı mı? Ve 78 milyon dolarlık serbest nakit akışının 63'ü işletme sermayesinden geldi; bu tekrarlanmaz. İyi haber: borç FAVÖK'ün 3,2 katından 0,9 katına indi. Kâr bir görüştür, nakit bir gerçek.",
+   "en": "The last part of step one is earnings quality. The margin jumped from about 6 to 11.5 percent in one quarter. New normal, or lucky project mix? And 63 of the 78 million dollars of free cash flow came from working capital, which won't repeat. The good news: debt fell from 3.2 to 0.9 times EBITDA. Profit is an opinion, cash is a fact.",
+   "again": "Working capital is money tied up in stock and unpaid customer bills. When it shrinks, cash comes in, but only once. To normalize means to use a typical level, not the best or the worst quarter. Earnings Before Interest, Taxes, Depreciation and Amortization (EBITDA) is a rough measure of operating profit.",
+   "keywords": "margin (marj), free cash flow (serbest nakit akışı), working capital (işletme sermayesi), normalize (olağan seviyeye çekmek)."
+  },
+  {
+   "n": 8,
+   "title": "Step 2, Forecast: \"Guidance is their forecast. Build your own from drivers.\"",
+   "level": 2,
+   "image": "slides/s-08.jpg",
+   "learn": "Rehberlik (guidance), şirketin kendi tahminidir; analist onu sürücülerden yeniden kurar. En temel ayrıştırma: gelir = hacim × fiyat. Borusan'ın 2026 rehberliği: 1,15 ile 1,25 milyon ton hacim, 2,2 ile 2,4 milyar dolar gelir, %9 ile %11 Faiz, Amortisman ve Vergi Öncesi Kâr (FAVÖK) marjı. Orta noktalar: 2,3 milyar dolar / 1,2 milyon ton = ton başına yaklaşık 1.920 dolar. Geçmiş: gelir 2024'te 1.690, 2025'te 1.796 milyon dolar; marj 2024'te %6,0, 2025'te %7,4. Ağustos 2026'da Kamuyu Aydınlatma Platformu (KAP) bildirimlerine göre yaklaşık 915 milyon dolarlık yeni sipariş geldi (360 + 555), 2027 ve 2028'de sevk edilecek. Sonuç: hacim görünür, asıl tartışma marj; senaryoları marja kuruyoruz.",
+   "tr": "İkinci adım tahmin. Rehberlik şirketin tahmini, benim değil; o yüzden onu sürücülerden yeniden kuruyorum. Gelir eşittir hacim çarpı fiyat: yaklaşık 1,2 milyon ton çarpı ton başına 1.900 dolar civarı, 2,3 milyar dolar ediyor. Sipariş portföyü ve yeni siparişler 2028'e kadar görünürlük veriyor, yani hacim ana endişem değil. Asıl soru marj: 2024'te yüzde 6, 2026 için yüzde 10 rehberlik. Bu yüzden marjı senaryolarla tahmin ediyorum.",
+   "en": "Step two: forecast. Guidance is the company's forecast, not mine, so I rebuild it from drivers. Revenue is volume times price: about 1.2 million tonnes at roughly 1,900 dollars a tonne, so 2.3 billion dollars. The order book gives visibility until 2028, so volume is not my main worry. The real question is the margin, so I forecast it in scenarios.",
+   "again": "A driver is a simple number that pushes revenue or cost, like tonnes sold or price per tonne. Guidance is what management expects. A good analyst tests guidance against history and the order book, then builds bear, base and bull scenarios.",
+   "keywords": "forecast (tahmin), driver (sürücü), guidance (şirket rehberliği), scenario (senaryo)."
+  },
+  {
+   "n": 9,
+   "title": "Step 4, Into value: \"How a DCF works\"",
+   "level": 1,
+   "image": "slides/s-09.jpg",
+   "learn": "İndirgenmiş Nakit Akışı (DCF) üç hareketten oluşur:\n1. **5 yıllık serbest nakit akışını tahmin et** (Firmaya Serbest Nakit Akışı, FCFF).\n2. **Her yılı bugüne indir:** o yılın nakdini, kaç yıl uzaktaysa o kadar kez (1 + Ağırlıklı Ortalama Sermaye Maliyeti) ile böl.\n3. **Uç değeri ekle:** 5. yıldan sonrası için tek formül: sonraki yılın nakdi / (WACC eksi büyüme). Bu sayı da 5 yıl uzakta olduğu için bugüne indirilir.\n\nSlayttaki rakamlar **öğretmek için seçilmiş örnek** nakit akışları (115'ten 131 milyon dolara), Borusan'ın gerçek tahmini değil. Oran, Borusan'ın harmanlanmış oranı (%10,25). Sonuç: 5 yılın bugünkü değeri toplam 463, uç değerin bugünkü değeri 1.064, toplam 1.527. Değerin **%70'i 5. yıldan sonra** geliyor; bu yüzden oran ve büyüme varsayımı her şeyi belirler. Telefon sayfasındaki kaydırıcılarla bunu kendin oynatabilirsin.",
+   "tr": "Dördüncü adım: bir DCF gerçekte nasıl çalışır. Beş yıllık serbest nakit akışını tahmin ediyorum. Her yılı, kaç yıl uzaktaysa o kadar kez bir artı WACC'a bölüyorum. Sonra uç değeri ekliyorum: beşinci yıldan sonraki nakit, bölü oran eksi büyüme. Turuncu çubuğa bakın: bu örnekte değerin yaklaşık yüzde 70'i beşinci yıldan sonra geliyor. Yani oran ve büyüme her şeyi belirliyor.",
+   "en": "Step four: how a DCF really works. I forecast five years of free cash flow. I divide each year by one plus the WACC, once for every year. Then I add the terminal value: the cash after year five, divided by the rate minus growth. Look at the orange bar. In this example, about 70 percent of the value comes after year five. So the rate and growth decide everything.",
+   "again": "A Discounted Cash Flow (DCF) model forecasts cash for a few years, brings each year back to today, and adds one number for everything after that: the terminal value. Because the terminal value is usually most of the total, small changes in the rate or growth move the answer a lot.",
+   "keywords": "terminal value (uç değer), present value (bugünkü değer), discount (indirgemek), illustrative (örnek, temsili)."
+  },
+  {
+   "n": 10,
+   "title": "Steps 3 and 4, Model and value: \"One company, two risks, two discount rates\"",
+   "level": 1,
+   "image": "slides/s-10.jpg",
+   "learn": "Yöntemi işin doğası seçer. Nakit üreten bir sanayi şirketine İndirgenmiş Nakit Akışı (DCF) uygun; Firma Değeri / FAVÖK (FD/FAVÖK, EV/EBITDA) ile kontrol edilir. Fiyat/Kazanç oranı (F/K, P/E) burada yanıltıcı çünkü net kâr yüksek enflasyon muhasebesi (TMS 29, IAS 29) ve vergi ile bozuluyor. Parçaların Toplamı (SOTP) yöntemini coğrafyaya göre uyguladık: ABD kısmı %9,4, Türkiye kısmı %13,6 Ağırlıklı Ortalama Sermaye Maliyeti (WACC) ile. Yöntemler birlikte yaklaşık 1,0 ile 2,5 milyar dolar aralığı veriyor; piyasa değeri 1,9 milyar dolar. Uç değer 1 / (oran eksi büyüme) ile çalışır: %9 oranda büyümeyi %2'den %3'e çıkarmak değeri %17 artırır.",
+   "tr": "Üçüncü ve dördüncü adım. Modeli iş seçer. Nakit üreten bir şirket için İndirgenmiş Nakit Akışı, yani DCF kullanıyorum ve Firma Değeri / FAVÖK ile kontrol ediyorum. F/K değil, çünkü enflasyon muhasebesi kârı bozuyor. Her risk için ayrı WACC: ABD yüzde 9,4, Türkiye 13,6. Yöntemler birlikte yaklaşık 1 ile 2,5 milyar dolar diyor. Dikkat: bir puan fazla büyüme değeri yaklaşık yüzde 17 artırıyor.",
+   "en": "Now I apply it to Borusan. I use one WACC for each risk: 9.4 percent for the US plants and 13.6 percent for the Turkish plants, and I value each part separately. Then I cross-check with Enterprise Value to EBITDA. Not the price to earnings ratio, because inflation accounting distorts profit. Every method gives a range, and together they say about 1 to 2.5 billion dollars.",
+   "again": "A Discounted Cash Flow (DCF) model adds up future cash flows and brings them back to today with a discount rate. Enterprise Value (EV) is the value of the whole business, for lenders and shareholders. The football field chart puts the ranges from each method side by side.",
+   "keywords": "discount rate (iskonto oranı), range (aralık), football field (değer aralığı grafiği), terminal value (uç değer)."
+  },
+  {
+   "n": 11,
+   "title": "Step 5, Conclude: \"Ask what the price assumes\"",
+   "level": 1,
+   "image": "slides/s-11.jpg",
+   "learn": "Ters İndirgenmiş Nakit Akışı (reverse DCF) tersten çalışır: \"değeri ne?\" yerine \"bugünkü fiyat hangi büyümeyi varsayıyor?\" diye sorar. Bugünkü Firma Değeri (FD, EV) 2.062 milyon dolar; bizim nakit akışımızla bu değer ancak yaklaşık %4,4 sonsuz büyüme ile açıklanabiliyor. Biz %2,5 varsayıyoruz. Yani piyasa, yükseltilmiş 2026 rehberliğini kalıcı sayıyor. Fikrimizi değiştirecek dört şey: marjın geri düşmesi, ABD politika şoku, sipariş gecikmesi, nakit kalitesi. İlk test Kasım'daki 2026 üçüncü çeyrek (3Ç26) sonuçları.",
+   "tr": "Beşinci adım, sonuç. Sadece şirketin ne ettiğini sormuyorum; fiyatın neyi varsaydığını soruyorum. Buna ters DCF deniyor. Bugünkü fiyat sonsuza kadar yaklaşık yüzde 4,4 büyüme gerektiriyor; benim temel senaryom 2,5. Yani piyasa yeni rehberliğin kalıcı olacağına inanıyor. Fikrimi ne değiştirir? Marjın geri düşmesi, ABD'de bir politika şoku, siparişlerin gecikmesi ya da zayıf nakit.",
+   "en": "Step five, the conclusion. I don't only ask what the company is worth. I ask what the price assumes. This is called a reverse DCF. Today's price needs about 4.4 percent growth forever. My base case is 2.5. So the market believes the new guidance will last. What would change my mind? Margins falling back, a US policy shock, delayed orders, or weaker cash.",
+   "again": "A reverse Discounted Cash Flow (reverse DCF) starts from the price and works backwards. It shows the belief hidden inside the price. To have an opinion, you must know which belief you disagree with.",
+   "keywords": "assume (varsaymak), base case (temel senaryo), view (görüş)."
+  },
+  {
+   "n": 12,
+   "title": "Close: \"How I'd value Borusan, step by step\"",
+   "level": 1,
+   "image": "slides/s-12.jpg",
+   "learn": "Bu slayt her adımın Borusan'a uygulanmış tek satırlık özeti. Çevresel, Sosyal ve Yönetişim (ESG) faktörleri ayrı bir süs değil, aynı filtreden geçer: nakit akışını, riski ya da büyümeyi değiştiriyorsa modele girer. Borusan için: Avrupa Birliği'nin Sınırda Karbon Düzenleme Mekanizması (CBAM) Avrupa satışlarına maliyet ekler; şirket Ekim 2025'te bağımsız denetimden geçmiş ilk Türkiye Sürdürülebilirlik Raporlama Standartları (TSRS) raporunu Kamuyu Aydınlatma Platformu'na (KAP) bildirdi.",
+   "tr": "İşte adım adım Borusan. Dolar bazlı bir model, Türkiye riski sadece olduğu yerde. Korunan bir ABD nişi. Grup kontrolü. Kanıtlanması gereken kâr kalitesi. Hacim görünür, tartışma marjda. Yaklaşık 1 ile 2,5 milyar dolar değer aralığı, piyasa 1,9 milyarda. ESG de aynı testten geçiyor: ancak nakdi ya da riski değiştiriyorsa. İyi bir analist \"ucuz mu?\" diye başlamaz, \"neyin doğru olması gerekir?\" diye başlar. Teşekkür ederim.",
+   "en": "So here is Borusan, step by step. A dollar model, with Turkish risk only where it lives. A protected US niche with group control. Volume is visible; the margin is the debate. A value range of about 1 to 2.5 billion dollars, with the market at 1.9. ESG passes the same test: only if it moves cash or risk. A great analyst doesn't start with 'is it cheap?'. She starts with 'what must be true?'. Thank you.",
+   "again": "The close repeats each step as one short answer. Environmental, Social and Governance (ESG) factors are treated like any other factor: they matter when they change money or risk.",
+   "keywords": "niche (niş), debate (tartışma), filter (filtre)."
+  }
+ ],
+ "questions": [
+  {
+   "n": 1,
+   "q": "How is your view different from market expectations?",
+   "note": "jüri rehberindeki ilk örnek soru",
+   "tr": "Ters İndirgenmiş Nakit Akışı (reverse DCF) bunu cevaplıyor: piyasa %4,4 sonsuz büyüme fiyatlıyor, biz %2,5 görüyoruz. Fark, marjın kalıcılığı.",
+   "en": "The reverse DCF shows the market is pricing about 4.4 percent growth forever. I assume 2.5. The difference is one belief: whether the 10 percent margin is permanent.",
+   "level": 1
+  },
+  {
+   "n": 2,
+   "q": "What drives revenue in the next 3 to 5 years, and how did you get there?",
+   "note": "",
+   "tr": "Hacim × fiyat. Hacim: sipariş portföyü 2028'e kadar görünürlük veriyor. Fiyat: ABD gümrük duvarı yerel üretimi destekliyor. Marj ise senaryoya bağlı.",
+   "en": "Volume times price. Volume is supported by the order book until 2028. Price is supported by the US tariff wall. The margin is the uncertain part, so I use scenarios.",
+   "level": 1
+  },
+  {
+   "n": 3,
+   "q": "Why two WACCs? Isn't that over-engineering?",
+   "note": "",
+   "tr": "Tek oran (%10,2) ABD fabrikalarını Türkiye riskiyle cezalandırır, Türkiye kısmını olduğundan güvenli gösterir.",
+   "en": "One blended rate would punish the US plants for Turkish risk and make the Turkish plants look safer than they are. Two rates put the risk where it really is.",
+   "level": 1
+  },
+  {
+   "n": 4,
+   "q": "Why do you value in dollars, not lira?",
+   "note": "",
+   "tr": "Şirket dolar raporluyor, gelirin %85'i yurt dışından. Türk lirasıyla çalışsak %30'luk enflasyonu hem nakde hem orana tutarlı koymamız gerekirdi.",
+   "en": "Borusan reports in dollars and 85 percent of its revenue is foreign. In lira, I would need to forecast 30 percent inflation in both cash flows and rates. That adds error, not information.",
+   "level": 1
+  },
+  {
+   "n": 5,
+   "q": "Where does your risk-free rate come from? 5.19% is high.",
+   "note": "",
+   "tr": "ABD Hazinesi'nin 30 Eylül 2026 tarihli 10 yıllık getirisi. Yüksek ama bugünün piyasası bu, dolar bazlı değerlemeyle tutarlı.",
+   "en": "It's the US Treasury 10 year yield on 30 September 2026. It is high, but it's today's market, and it is consistent with a dollar valuation.",
+   "level": 2
+  },
+  {
+   "n": 6,
+   "q": "How did you get the beta?",
+   "note": "",
+   "tr": "Damodaran'ın Ocak 2026 çelik sektörü borçsuz betası 0,94; Borusan'ın düşük borcuyla yeniden borçlu hale getirdim, yaklaşık 1,0. Tek hissenin kendi betası düşük halka açıklık yüzünden güvenilmez.",
+   "en": "I used Damodaran's unlevered steel beta of 0.94 and relevered it for Borusan's low debt, which gives about 1.0. A single stock's own beta is noisy, especially with a small free float.",
+   "level": 2
+  },
+  {
+   "n": 7,
+   "q": "Why the full country risk premium on the Turkish part?",
+   "note": "",
+   "tr": "Temkinli seçim (lambda, λ = 1). Türkiye fabrikası da dolar satıyorsa risk payı daha düşük olabilir; o zaman değer artar. Açık soru olarak bırakıyorum.",
+   "en": "It's a conservative choice. If the Turkish plant also sells in dollars, its exposure could be lower, which would raise the value. I keep that as an open question.",
+   "level": 3
+  },
+  {
+   "n": 8,
+   "q": "Is revenue share the same as operations share?",
+   "note": "",
+   "tr": "Hayır, en zayıf varsayımım bu. Gemlik'ten ABD'ye ihracat ABD gelirine yazılıyor. Finansal tablolardaki coğrafi bölüm dipnotuyla düzelteceğim.",
+   "en": "No, and that's my weakest assumption. Some US revenue is exported from Gemlik. My next step is the geographic segment note in the financial statements.",
+   "level": 2
+  },
+  {
+   "n": 9,
+   "q": "Where does 50% cash conversion come from?",
+   "note": "",
+   "tr": "Vergi ve bakım yatırımı sonrası makul bir varsayım. Ters İndirgenmiş Nakit Akışı (reverse DCF), piyasanın yaklaşık %68 beklediğini gösteriyor; tartışma hangisinin gerçekçi olduğu.",
+   "en": "It's my assumption after tax and maintenance spending. The reverse DCF shows the market needs about 68 percent. So the real debate is which number is realistic.",
+   "level": 2
+  },
+  {
+   "n": 10,
+   "q": "Which method did you prioritize, and why?",
+   "note": "",
+   "tr": "İndirgenmiş Nakit Akışı (DCF) birincil, çünkü değeri nakit üretiyor ve iki farklı risk var. Firma Değeri / FAVÖK (EV/EBITDA) kontrol için. Fiyat/Kazanç (F/K, P/E) kullanmadım.",
+   "en": "The DCF is my main method, because the company creates value through cash and has two different risks. Enterprise Value to EBITDA is my cross-check. I didn't rely on P/E.",
+   "level": 1
+  },
+  {
+   "n": 11,
+   "q": "Why not P/E?",
+   "note": "",
+   "tr": "Net kâr yüksek enflasyon muhasebesi (TMS 29) ve vergi ile bozuluyor. Fiyat/Kazanç 34 kat, 2026 FAVÖK'üne göre Firma Değeri / FAVÖK yaklaşık 9 kat; ikincisi daha adil.",
+   "en": "Net profit is distorted by inflation accounting and tax. The P/E is 34 times, but Enterprise Value to 2026 EBITDA is about 9 times. The second one is fairer.",
+   "level": 1
+  },
+  {
+   "n": 12,
+   "q": "What is IAS 29, in one sentence?",
+   "note": "",
+   "tr": "Yüksek enflasyonlu ülkede finansal tabloları bugünkü paranın satın alma gücüne göre yeniden ifade eden standart (Türkiye'de TMS 29); Türkiye'de 2023 yıl sonundan itibaren uygulanıyor.",
+   "en": "It's the standard that restates financial statements for inflation, so that old numbers are shown in today's money.",
+   "level": 2
+  },
+  {
+   "n": 13,
+   "q": "Why no holding discount?",
+   "note": "",
+   "tr": "Borusan Boru faaliyet şirketi, holding değil. Holding iskontosu Borusan Yatırım gibi yatırım şirketlerinde olur.",
+   "en": "Borusan Boru is an operating company, not a holding, so a holding discount doesn't apply. My sum of the parts here is by geography.",
+   "level": 2
+  },
+  {
+   "n": 14,
+   "q": "How did you put ESG costs into the valuation?",
+   "note": "jüri rehberindeki örnek soru",
+   "tr": "Sınırda Karbon Düzenleme Mekanizması (CBAM) Avrupa satışlarının marjına etki eder; Borusan rulo satın aldığı için emisyonun çoğu tedarik zincirinde. ABD ağırlığı yüzünden etki sınırlı; Avrupa satış payını faaliyet raporundan doğrulayıp marj senaryosuna ekleyeceğim.",
+   "en": "Through cash flows. The EU Carbon Border Adjustment Mechanism, or CBAM, affects the margin on European sales. Most of Borusan's emissions are in the steel it buys. Because the US is its main market, the effect is small, and I treat it in the margin scenarios, not in the discount rate.",
+   "level": 2
+  },
+  {
+   "n": 15,
+   "q": "So, should I buy it?",
+   "note": "",
+   "tr": "Bu bir yöntem sunumu. Ama fiyatın yeni rehberliği kalıcı saydığını söyleyebilirim; ilk bakacağım veri Kasım'daki marj.",
+   "en": "This is a method session, not a recommendation. What I can say is that the price already assumes the new guidance is permanent. The first thing I'd check is the margin in November.",
+   "level": 1
+  },
+  {
+   "n": 16,
+   "q": "What would you do with more time?",
+   "note": "",
+   "tr": "2027 ve 2028 teslim takvimiyle üç aşamalı İndirgenmiş Nakit Akışı (DCF) kurmak, coğrafi dipnotla ABD ve Türkiye bölünmesini düzeltmek, dar emsal grubunu (Tenaris, Vallourec) eklemek.",
+   "en": "Three things: build a three stage DCF with the 2027 and 2028 deliveries, fix the US and Turkey split with the segment note, and add pipe peers like Tenaris and Vallourec.",
+   "level": 2
+  }
+ ],
+ "glossary": [
+  {
+   "kisaltma": "WACC",
+   "ingilizce": "Weighted Average Cost of Capital",
+   "turkce": "Ağırlıklı Ortalama Sermaye Maliyeti",
+   "tek_cumle": "Şirketin parasının ortalama maliyeti; nakit akışlarını bugüne indirgerken kullandığımız oran."
+  },
+  {
+   "kisaltma": "Ke",
+   "ingilizce": "Cost of Equity",
+   "turkce": "Özsermaye Maliyeti",
+   "tek_cumle": "Hissedarın beklediği getiri."
+  },
+  {
+   "kisaltma": "Kd",
+   "ingilizce": "Cost of Debt",
+   "turkce": "Borç Maliyeti",
+   "tek_cumle": "Şirketin borca ödediği faiz."
+  },
+  {
+   "kisaltma": "Rf",
+   "ingilizce": "Risk-free rate",
+   "turkce": "Risksiz Faiz Oranı",
+   "tek_cumle": "Batma riski yok sayılan devlet tahvilinin getirisi."
+  },
+  {
+   "kisaltma": "ERP",
+   "ingilizce": "Equity Risk Premium",
+   "turkce": "Hisse Risk Primi",
+   "tek_cumle": "Tahvil yerine hisse tutmak için istenen ek getiri."
+  },
+  {
+   "kisaltma": "CRP",
+   "ingilizce": "Country Risk Premium",
+   "turkce": "Ülke Risk Primi",
+   "tek_cumle": "Gelişmekte olan ülke için eklenen ek getiri."
+  },
+  {
+   "kisaltma": "β",
+   "ingilizce": "Beta",
+   "turkce": "Beta katsayısı",
+   "tek_cumle": "Hissenin piyasaya göre ne kadar oynak olduğu."
+  },
+  {
+   "kisaltma": "DCF",
+   "ingilizce": "Discounted Cash Flow",
+   "turkce": "İndirgenmiş Nakit Akışı",
+   "tek_cumle": "Gelecekteki nakdi bugünkü paraya çevirerek değer bulma yöntemi."
+  },
+  {
+   "kisaltma": "FCFF",
+   "ingilizce": "Free Cash Flow to the Firm",
+   "turkce": "Firmaya Serbest Nakit Akışı",
+   "tek_cumle": "Vergi ve yatırımdan sonra, borç ve hissedarlara kalan nakit."
+  },
+  {
+   "kisaltma": "EV",
+   "ingilizce": "Enterprise Value",
+   "turkce": "Firma Değeri (FD)",
+   "tek_cumle": "İşin tamamının değeri: piyasa değeri + net borç."
+  },
+  {
+   "kisaltma": "EBITDA",
+   "ingilizce": "Earnings Before Interest, Taxes, Depreciation and Amortization",
+   "turkce": "Faiz, Amortisman ve Vergi Öncesi Kâr (FAVÖK)",
+   "tek_cumle": "Faaliyetten gelen kârın kaba ölçüsü."
+  },
+  {
+   "kisaltma": "EV/EBITDA",
+   "ingilizce": "Enterprise Value to EBITDA",
+   "turkce": "Firma Değeri / FAVÖK (FD/FAVÖK)",
+   "tek_cumle": "İşin, yıllık faaliyet kârının kaç katına fiyatlandığı."
+  },
+  {
+   "kisaltma": "P/E",
+   "ingilizce": "Price to Earnings ratio",
+   "turkce": "Fiyat / Kazanç oranı (F/K)",
+   "tek_cumle": "Hissenin, net kârının kaç katına fiyatlandığı."
+  },
+  {
+   "kisaltma": "TTM",
+   "ingilizce": "Trailing Twelve Months",
+   "turkce": "Son On İki Ay",
+   "tek_cumle": "En son açıklanan 12 aylık dönem."
+  },
+  {
+   "kisaltma": "SOTP",
+   "ingilizce": "Sum of the Parts",
+   "turkce": "Parçaların Toplamı",
+   "tek_cumle": "Şirketi parçalara ayırıp her birini ayrı değerleyip toplamak."
+  },
+  {
+   "kisaltma": "IFRS",
+   "ingilizce": "International Financial Reporting Standards",
+   "turkce": "Uluslararası Finansal Raporlama Standartları (UFRS)",
+   "tek_cumle": "Uluslararası muhasebe kuralları."
+  },
+  {
+   "kisaltma": "IAS 29",
+   "ingilizce": "International Accounting Standard 29",
+   "turkce": "Türkiye Muhasebe Standardı 29 (TMS 29)",
+   "tek_cumle": "Yüksek enflasyonda tabloları bugünkü paraya göre yeniden ifade etme kuralı."
+  },
+  {
+   "kisaltma": "IFRS 16",
+   "ingilizce": "IFRS 16 Leases",
+   "turkce": "UFRS 16 Kiralamalar",
+   "tek_cumle": "Kira ödemelerini borç gibi gösteren kural; FAVÖK'ü yükseltir."
+  },
+  {
+   "kisaltma": "CBAM",
+   "ingilizce": "Carbon Border Adjustment Mechanism",
+   "turkce": "Sınırda Karbon Düzenleme Mekanizması",
+   "tek_cumle": "Avrupa Birliği'nin ithal ürünün karbonunu vergilendirmesi."
+  },
+  {
+   "kisaltma": "ESG",
+   "ingilizce": "Environmental, Social and Governance",
+   "turkce": "Çevresel, Sosyal ve Yönetişim",
+   "tek_cumle": "Sürdürülebilirlik ve yönetim kalitesi faktörleri."
+  },
+  {
+   "kisaltma": "TSRS",
+   "ingilizce": "Turkish Sustainability Reporting Standards",
+   "turkce": "Türkiye Sürdürülebilirlik Raporlama Standartları",
+   "tek_cumle": "Türkiye'nin zorunlu sürdürülebilirlik raporlama kuralları."
+  },
+  {
+   "kisaltma": "KAP",
+   "ingilizce": "Public Disclosure Platform",
+   "turkce": "Kamuyu Aydınlatma Platformu",
+   "tek_cumle": "Borsa şirketlerinin resmi açıklama sitesi."
+  },
+  {
+   "kisaltma": "CFA",
+   "ingilizce": "Chartered Financial Analyst",
+   "turkce": "Yetkili Finansal Analist",
+   "tek_cumle": "Dünyada en saygın yatırım analistliği sertifikası."
+  },
+  {
+   "kisaltma": "EM / DM",
+   "ingilizce": "Emerging / Developed Markets",
+   "turkce": "Gelişmekte Olan / Gelişmiş Piyasalar",
+   "tek_cumle": "Türkiye EM, Almanya DM."
+  },
+  {
+   "kisaltma": "1Q26, 2Q26",
+   "ingilizce": "First / second quarter 2026",
+   "turkce": "2026 birinci / ikinci çeyrek (1Ç26, 2Ç26)",
+   "tek_cumle": "Üç aylık dönemler."
+  },
+  {
+   "kisaltma": "1H26",
+   "ingilizce": "First half 2026",
+   "turkce": "2026 ilk yarı (1Y26)",
+   "tek_cumle": "Ocak'tan Haziran'a."
+  }
+ ],
+ "howto": [
+  {
+   "title": "0. Isınma: \"Bugüne indirmek\" ne demek?",
+   "body": "**Tek cümle:** Gelecekte alacağın para, bugün elindeki paradan daha az değerlidir; \"indirmek\", gelecekteki parayı bugünkü değerine çevirmektir.\n\nNeden daha az değerli? Çünkü bugünkü 100 doları yatırıp büyütebilirsin, ve gelecekteki parayı alamama riski var.\n\n**Örnek.** İstediğin getiri yılda %10.\n\n| Ne zaman alacaksın | Ne kadar | Bugün ne eder | Nasıl |\n|---|---|---|---|\n| 1 yıl sonra | 110 $ | 100 $ | 110 / 1,10 |\n| 2 yıl sonra | 121 $ | 100 $ | 121 / 1,10 / 1,10 |\n| 10 yıl sonra | 100 $ | 38,6 $ | 100 / 1,10^10 |\n\nYani **indirmek = bölmek**. Kaç yıl uzaktaysa, o kadar kez bölersin.\n\n**Oran neden her şey?** Risk arttıkça daha yüksek getiri istersin, daha büyük sayıya bölersin, bugünkü değer küçülür. 10 yıl sonra gelecek 100 doların bugünkü değeri:\n\n| Oran | Hesap | Bugünkü değer |\n|---|---|---|\n| ABD fabrikası, %9,4 | 100 / 1,094^10 | **≈ 41 $** |\n| Türkiye fabrikası, %13,6 | 100 / 1,136^10 | **≈ 28 $** |\n\nExcel'de: `=100/(1+9,4%)^10`\n\n**Şirket = her yıl nakit üreten bir makine.** Her yılın nakdini bugüne indirip toplarsan şirketin bugünkü değerini bulursun. Bunun adı **İndirgenmiş Nakit Akışı (DCF, Discounted Cash Flow)**.\n\n**Sonsuza kadar süren nakit (kısayol formül).** Nakit her yıl sabit bir oranla (g) büyüyorsa, sonsuz toplamın kısa yolu vardır:\n\n> Değer = Gelecek yılın nakdi / (oran − büyüme)\n\nÖrnek: gelecek yıl 100 $, oran %10, büyüme %2 → 100 / (0,10 − 0,02) = **1.250 $**. Büyümeyi %3'e çıkarırsan: 100 / 0,07 = **1.429 $** (yaklaşık %14 fazla). Paydaki küçük fark değeri çok oynatır; sunumdaki \"bir puan büyüme değeri %17 artırır\" cümlesi buradan geliyor.\n\nKendini dene: 50 $, oran %8, büyüme %3 → ? (Cevap en sonda.)\n\n---"
+  },
+  {
+   "title": "1. Veriyi topla (hep birincil kaynak)",
+   "body": "| Ne lazım | Nereden | Borusan için |\n|---|---|---|\n| Gelir, Faiz, Amortisman ve Vergi Öncesi Kâr (FAVÖK, EBITDA), net borç, segmentler, rehberlik | Şirketin yatırımcı sunumu ve finansal tabloları | borusanboru.com → Yatırımcı İlişkileri → 2Ç26 sunumu |\n| Resmi açıklamalar (sipariş, temettü, ortaklık değişikliği) | Kamuyu Aydınlatma Platformu (KAP) | kap.org.tr, BRSAN |\n| Ortaklık yapısı, oy hakları | Şirketin yatırımcı ilişkileri sayfası, KAP genel bilgi formu | Borusan Holding %68,85 sermaye / %74,22 oy |\n| Piyasa değeri | Borsa verisi (EquityRT, Borsa İstanbul) | 1.917,9 milyon $ (22.09.2026) |\n| Risksiz faiz (dolar) | ABD Hazinesi (US Treasury) günlük getiri eğrisi | 10 yıllık, 30.09.2026: %5,19 |\n| Hisse Risk Primi (ERP), Ülke Risk Primi (CRP), sektör betası, sektör çarpanları | Damodaran (NYU Stern) veri setleri | ERP %4,23; Türkiye CRP %4,66; ABD CRP %0,23; çelik beta 0,94 |\n\n**Kural:** Rakamın yanına hep kaynağını ve tarihini yaz. Bulamadığın rakamı uydurma; \"varsayım\" diye işaretle (sunumdaki † işareti).\n\n---"
+  },
+  {
+   "title": "2. Para birimini seç",
+   "body": "Borusan dolar raporluyor ve gelirinin %85'i yurt dışından. Bu yüzden **her şey dolar**: nakit akışı dolar, risksiz faiz dolar (ABD tahvili), büyüme dolar.\n\nKarıştırırsan ne olur? Türk lirası nakit akışını dolar oranıyla indirirsen, enflasyonu bir tarafa koyup diğerine koymamış olursun; çıkan değer anlamsızdır. Bağlantıyı kuran formül **Fisher denklemi**: (1 + nominal faiz) = (1 + reel faiz) × (1 + enflasyon).\n\n---"
+  },
+  {
+   "title": "3. Ağırlıklı Ortalama Sermaye Maliyeti'ni (WACC) adım adım kur",
+   "body": "WACC = hissedarın istediği getiri ile borç maliyetinin, ağırlıklarına göre ortalaması.\n\n### 3a. Betayı ayarla\n**Beta (β)**: hissenin piyasaya göre ne kadar oynak olduğu. Damodaran'ın çelik sektörü **borçsuz betası** 0,94 (borcun etkisi temizlenmiş, sadece iş riski). Bunu Borusan'ın borcuyla yeniden \"borçlu\" hale getiriyoruz:\n\n> Borçlu beta = Borçsuz beta × (1 + (1 − vergi oranı) × Borç / Özsermaye)\n\nBorç / Özsermaye = 144 / 1.917,9 = 0,0751\n\n- ABD (vergi %21): 0,94 × (1 + 0,79 × 0,0751) = **1,00**\n- Türkiye (vergi %25): 0,94 × (1 + 0,75 × 0,0751) = **0,99**\n\nExcel: `=0,94*(1+(1-21%)*144/1917,9)`\n\n### 3b. Özsermaye Maliyeti (Ke, Cost of Equity)\n> Ke = Risksiz faiz + Beta × Hisse Risk Primi + Ülke Risk Primi\n\n- ABD: 5,19 + 1,00 × 4,23 + 0,23 = **%9,63**\n- Türkiye: 5,19 + 0,99 × 4,23 + 4,66 = **%14,05**\n\n### 3c. Borç Maliyeti (Kd, Cost of Debt)\n> Kd = Risksiz faiz + ülke temerrüt farkı + şirket kredi farkı\n\n- ABD: 5,19 + 0 + 2,0† = %7,19 → vergi sonrası 7,19 × (1 − 0,21) = **%5,68**\n- Türkiye: 5,19 + 3,06 + 2,0† = %10,25 → vergi sonrası 10,25 × (1 − 0,25) = **%7,69**\n\nNeden vergi sonrası? Faiz gideri vergiden düşer, yani borcun gerçek maliyeti daha düşüktür (\"vergi kalkanı\").\n\n### 3d. Ağırlıklar (piyasa değeriyle)\n- Özsermaye: 1.917,9 / (1.917,9 + 144) = **%93,0**\n- Borç: 144 / 2.061,9 = **%7,0**\n\n### 3e. WACC\n> WACC = %93,0 × Ke + %7,0 × Kd (vergi sonrası)\n\n- ABD: 0,930 × 9,63 + 0,070 × 5,68 = **%9,36**\n- Türkiye: 0,930 × 14,05 + 0,070 × 7,69 = **%13,61**\n\nExcel: `=0,930*9,63%+0,070*5,68%`\n\nKendini dene: Borç %30, özsermaye %70, Ke %12, vergi sonrası Kd %6 → WACC = ?\n\n---"
+  },
+  {
+   "title": "4. Firma Değeri (FD, EV) ile Özsermaye Değeri farkı",
+   "body": "- **Firma Değeri (Enterprise Value)**: işin tamamı; hem borç verenlerin hem hissedarların payı.\n- **Özsermaye Değeri (Equity Value)**: hissedara kalan = Firma Değeri − net borç.\n\nBorusan bugün: 1.917,9 (piyasa değeri) + 144 (net borç) = **2.061,9 milyon $ Firma Değeri**.\n\nNeden önemli? Değerlemeyi önce Firma Değeri düzeyinde yaparsın (borç yapısından bağımsız), sonra borcu düşüp hisse başına inersin.\n\n---"
+  },
+  {
+   "title": "5. Tahmin (CFA'nın 2. adımı)",
+   "body": "1. **Rehberliği al:** 2026 gelir 2,2 ile 2,4 milyar $, Faiz, Amortisman ve Vergi Öncesi Kâr (FAVÖK) marjı %9 ile %11, hacim 1,15 ile 1,25 milyon ton.\n2. **Sürücülere ayır:** gelir = hacim × fiyat. Orta nokta: 2.300 / 1,2 = ton başına ≈ 1.920 $.\n3. **Geçmişle test et:** marj 2024'te %6,0, 2025'te %7,4. Rehberlik %10 diyor: bu büyük bir sıçrama, bu yüzden senaryo kur.\n4. **Sipariş portföyüyle test et:** 2,6 milyar $ portföy + Ağustos'ta 915 milyon $ yeni sipariş → hacim 2028'e kadar görünür. Belirsiz olan marj.\n\n2026 FAVÖK (orta nokta) = 2.300 × %10 = **230 milyon $**.\n\n---"
+  },
+  {
+   "title": "6. Serbest nakit akışı",
+   "body": "Faiz, Amortisman ve Vergi Öncesi Kâr (FAVÖK) nakit değildir: vergi ödenir, yatırım yapılır. **Firmaya Serbest Nakit Akışı (FCFF, Free Cash Flow to the Firm)** = FAVÖK − vergi − yatırım harcaması − işletme sermayesi artışı.\n\nElimizde yıllık detay olmadığı için bir varsayım kullandık: FAVÖK'ün %50'si nakde dönüyor†.\n\n> FCFF = 230 × %50 = **115 milyon $**\n\n(Ters hesap daha sonra bu varsayımı test edecek.)\n\n---"
+  },
+  {
+   "title": "7. Coğrafi Parçaların Toplamı (SOTP, Sum of the Parts)",
+   "body": "Nakdi ABD ve Türkiye diye ikiye bölüyoruz (gelir payına göre†: %79 / %21) ve her parçayı kendi oranıyla indiriyoruz. Büyüme g = %2,5†.\n\n> Değer = Nakit × (1 + g) / (WACC − g)\n\n- ABD: 115 × 0,79 = 90,85 → 90,85 × 1,025 / (0,0936 − 0,025) = **1.358 milyon $**\n- Türkiye: 115 × 0,21 = 24,15 → 24,15 × 1,025 / (0,1361 − 0,025) = **223 milyon $**\n- Firma Değeri toplam = 1.581 → − 144 net borç = **Özsermaye Değeri 1.437 milyon $**\n\nExcel (ABD): `=90,85*(1+2,5%)/(9,36%-2,5%)`\n\nKarşılaştır: piyasa değeri 1.917,9 milyon $. Temel senaryomuz piyasanın altında.\n\n---"
+  },
+  {
+   "title": "8. Çarpanlarla kontrol",
+   "body": "**Firma Değeri / FAVÖK (FD/FAVÖK, EV/EBITDA)**: iş, yıllık faaliyet kârının kaç katına fiyatlanıyor?\n\nDamodaran Ocak 2026 ABD sektör çarpanları: petrol hizmetleri ekipmanı 8,63 kat, çelik 11,59 kat. Borusan bu ikisinin arasında bir iş.\n\n- 8,63 × 230 = 1.985 − 144 = **1.841 milyon $**\n- 11,59 × 230 = 2.666 − 144 = **2.522 milyon $**\n\nNeden Fiyat/Kazanç (F/K, P/E) değil? Net kâr, yüksek enflasyon muhasebesi (TMS 29, IAS 29) ve vergi yüzünden bozuk. F/K 34 kat görünüyor ama FD/FAVÖK 2026'ya göre sadece ~9 kat.\n\n---"
+  },
+  {
+   "title": "9. Duyarlılık tablosu",
+   "body": "Tek bir sayı yerine aralık göster. İki şeyi oynat: WACC (±1 puan) ve büyüme (%1,5 ile %3,5). Sonuç özsermaye değeri 1.084 ile 2.067 milyon $ arasında değişiyor.\n\nExcel'de: **Veri** sekmesi → **Durum Çözümlemesi** → **Veri Tablosu**. Satıra büyüme oranlarını, sütuna WACC değişimlerini koy, köşeye sonuç hücresine bağlantı ver.\n\nSenaryolar: kötü (rehberliğin alt ucu, WACC +0,5, g %2) **1.047**; temel **1.437**; iyi (üst uç, WACC −0,5, g %3) **1.973** milyon $.\n\n---"
+  },
+  {
+   "title": "10. Ters İndirgenmiş Nakit Akışı (reverse DCF)",
+   "body": "Soru değişir: \"değeri ne?\" değil, \"**bugünkü fiyat neyi varsayıyor?**\"\n\nHarmanlanmış WACC = 0,79 × 9,36 + 0,21 × 13,61 = **%10,25**\n\nFormülü tersine çevir: Değer = Nakit × (1 + g) / (WACC − g) ise,\n\n> g = (Firma Değeri × WACC − Nakit) / (Firma Değeri + Nakit)\n> g = (2.061,9 × 0,1025 − 115) / (2.061,9 + 115) = **%4,4**\n\nYorum: Piyasa sonsuza kadar yılda %4,4 büyüme fiyatlıyor, biz %2,5 diyoruz. Ya da büyümeyi %2,5'te tutarsak, piyasa FAVÖK'ün %68'inin nakde dönmesini bekliyor (biz %50 dedik). İşte \"piyasa yeni rehberliği kalıcı sayıyor\" cümlesi buradan.\n\n---"
+  },
+  {
+   "title": "11. Futbol sahası grafiği (football field)",
+   "body": "Her yöntemin verdiği aralığı yatay çubuk olarak alt alta koy, en alta bugünkü piyasa değerini çiz. Çubuklar nerede üst üste biniyorsa, o bölge en güvenilir değer aralığıdır. Bizde: yaklaşık **1,0 ile 2,5 milyar $**, piyasa 1,9.\n\n---"
+  },
+  {
+   "title": "12. Sayısal olmayan adımlar (kontrol listesi)",
+   "body": "- **Ülke:** Hangi para birimi? Risk nerede üretiliyor?\n- **Sektör:** Sektörün kendi göstergeleri ne? Hangi politika talebi belirliyor? Emsaller iş modeline göre mi seçildi?\n- **İş:** Gelir hangi segment, ülke, sözleşmeden? Ne kilitli, ne açık?\n- **Ortaklık:** Sermaye mi, oy mu? Temettü hangi defterden? Yapı neden değişti?\n- **Kâr kalitesi:** Marj normal mi? Kâr nakde dönüyor mu? Enflasyon muhasebesi temizlendi mi?\n\n---"
+  },
+  {
+   "title": "Öz-test (cevaplar aşağıda)",
+   "body": "1. 2 yıl sonra alacağın 144 $, %20 oranla bugün kaç $?\n2. Gelecek yıl 50 $, oran %8, büyüme %3: sonsuz akışın değeri?\n3. Borç %30, özsermaye %70, Ke %12, vergi sonrası Kd %6: WACC?\n4. Piyasa değeri 900, net borç 100: Firma Değeri? Özsermaye değeri?\n5. Firma Değeri 1.000, FAVÖK 125: FD/FAVÖK kaç kat?\n6. Bir şirketin ABD ve Türkiye fabrikaları için neden farklı oran kullanırsın? (tek cümle)\n\n**Cevaplar:** 1) 144 / 1,2 / 1,2 = **100 $** · 2) 50 / (0,08 − 0,03) = **1.000 $** · 3) 0,7 × 12 + 0,3 × 6 = **%10,2** · 4) **1.000** ve **900** · 5) **8 kat** · 6) Risk, şirketin borsasına değil nakdin üretildiği ülkeye göre fiyatlanır.\n\n---"
+  },
+  {
+   "title": "Çalışma planı",
+   "body": "| Ne zaman | Ne yap | Süre |\n|---|---|---|\n| Bugün | Bölüm 0'ı oku, öz-test 1 ve 2'yi çöz | 20 dk |\n| Bugün | Bölüm 3'ü (WACC) Excel'de kendin kur | 30 dk |\n| Yarın | Bölüm 6 ile 10'u Excel'de kur, sonuçları sunumla karşılaştır | 45 dk |\n| Yarın | `konusma_rehberi.md` ile sesli prova: önce Türkçe, sonra İngilizce | 30 dk |\n| Sunumdan önceki gün | \"Faruk Hoca may ask\" sorularına yüksek sesle cevap ver, süre tut | 30 dk |\n\nRakamları hatırlamak zorunda değilsin; **mantığı** hatırlaman yeterli. Jüri ezberi değil, düşünceyi ölçer."
+  }
+ ],
+ "numbers": {
+  "wacc_us": 9.36,
+  "wacc_tr": 13.61,
+  "wacc_blend": 10.25,
+  "eq_base": 1437,
+  "eq_bear": 1047,
+  "eq_bull": 1973,
+  "ev_market": 2061.9,
+  "g_implied": 4.42,
+  "fcff": 115.0,
+  "mult_hi_26": 2522,
+  "rf": 5.19
+ }
+}

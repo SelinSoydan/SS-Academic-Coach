@@ -11,6 +11,7 @@ Bu dosya, projeyi başka bir Claude hesabından ya da başka bir bilgisayardan d
 - `pages/1_CFA_Research_Challenge.py`: Veri Odası (ham veri, ortaklık, haberler, EquityRT Excel yükleme, 14 şirketlik sektör, rasyo ansiklopedisi)
 - `pages/3_SPL_Takas_Saklama_Koc.py`: SPL 1012 modülü koçu, dersler `data/spl_lessons/M01.json` içinde (15 bölüm, tamamı işlendi)
 - `pages/2_Matematik_Programi.py`: Finansal Modelleme Defteri
+- `pages/4_Degerleme_Akademisi.py`: "How to Value a Company" sunumunun çalışma sayfası (plan, 12 slayt + konuşma metinleri, gerçek hayat hesaplayıcıları, nasıl yapılır, ağırlıklı jüri provası, sözlük, CFA notları). İçerik `data/how_to_value/content.json` içinde; bu dosya `Desktop/SelinOS/BRSAN_How_to_Value/export_to_coach.py` ile konuşma rehberinden üretilir, elle düzenlenmez. İlerleme oturumda tutulur, JSON olarak indirilip geri yüklenir.
 - `utils/valuation.py`: bütün değerleme formülleri, Streamlit'ten bağımsız ve birim testli
 - `utils/i18n.py`: dil yardımcıları; İngilizce metinler `data/i18n/brsan_pitch.en.json` içinde, sayılar tek kaynakta
 - `utils/team_board.py`: Takım Masası'nın ortak canlı panosu (sunucu belleğinde, uygulama yeniden başlarsa sıfırlanır, JSON yedeği alınabilir)

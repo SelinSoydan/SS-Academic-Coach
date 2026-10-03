@@ -23,8 +23,9 @@ home = st.Page("views/home.py", title=L("Ana Sayfa", "Home"), icon="🎓", defau
 cockpit = st.Page("pages/0_Borusan_Equity_Cockpit.py", title="Borusan Equity Cockpit", icon="🏆", url_path="Borusan_Equity_Cockpit")
 data_room = st.Page("pages/1_CFA_Research_Challenge.py", title=L("Veri Odası", "Data Room"), icon="🗂️", url_path="CFA_Research_Challenge")
 spl = st.Page("pages/3_SPL_Takas_Saklama_Koc.py", title="SPL Takas ve Saklama Koçu", icon="📘", url_path="SPL_Takas_Saklama_Koc")
+academy = st.Page("pages/4_Degerleme_Akademisi.py", title="Değerleme Akademisi", icon="🎯", url_path="Degerleme_Akademisi")
 notebook = st.Page("pages/2_Matematik_Programi.py", title=L("Finansal Modelleme Defteri", "Financial Modelling Notebook"), icon="🧮", url_path="Matematik_Programi")
-nav = st.navigation([home, cockpit, data_room, spl, notebook])
+nav = st.navigation([home, academy, cockpit, data_room, spl, notebook])
 
 # İki dilli sayfalarda en üstte TR/EN anahtarı
 if nav.title in (home.title, cockpit.title):
