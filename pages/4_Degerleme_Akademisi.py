@@ -73,6 +73,17 @@ if days_left > 0:
 elif days_left == 0:
     st.success("🎤 Bugün sunum günü. Sakin ol: mantığı biliyorsun, rakamlar slaytta.")
 
+# widget state is already current at the top of a rerun: sync it before counting, so the metrics never lag
+for s in SLIDES:
+    if f"known_{s['n']}" in ss:
+        ss["htv_slides"][str(s["n"])] = ss[f"known_{s['n']}"]
+for q in QUESTIONS:
+    if f"rate_{q['n']}" in ss:
+        ss["htv_q"][str(q["n"])] = ss[f"rate_{q['n']}"]
+for k in ALL_TASKS:
+    if f"task_{k}" in ss:
+        ss["htv_tasks"][k] = ss[f"task_{k}"]
+
 known_s = sum(1 for s in SLIDES if ss["htv_slides"].get(str(s["n"])))
 known_q = sum(1 for q in QUESTIONS if ss["htv_q"].get(str(q["n"])) == "Bildim")
 done_t = sum(1 for k in ALL_TASKS if ss["htv_tasks"].get(k))
@@ -227,6 +238,7 @@ with tabs[4]:
                 if col.button(label, key=f"cur_{label}_{cur['n']}", width="stretch"):
                     ss["htv_q"][str(cur["n"])] = label
                     ss[f"rate_{cur['n']}"] = label
+                    st.rerun()
             st.caption(f"Şu anki durum: {ss['htv_q'].get(str(cur['n']), 'Henüz bakmadım')}")
     st.markdown("#### Bütün sorular")
     for q in QUESTIONS:
